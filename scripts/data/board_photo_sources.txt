@@ -1,0 +1,21 @@
+Board product photos (one per product line), sources for attribution:
+board-flex            https://www.lpmexpress.com/products/flexboard-fiber-cement-board
+board-smart           https://www.zmartbuild.com/internal-external-fiber-cement-board/
+board-gardner         https://clc.com.ph/gardner/
+board-shera           https://saversdepot.com.ph/product/shera-fiber-cement-board-4-5mmx4x8-162-crt/
+board-duraflex        https://duraflex.com.vn/vi/tam-cemboard-9mm
+board-senepa          https://clc.com.ph/clc-product/senepa/
+board-mdf             https://www.lpmexpress.com/products/mdf-medium-density-fiber-board
+board-marineplex      https://www.phoenixconstructionsupply.com.ph/product/marineflex-phenolic-board/
+board-crocodile       https://www.aaainteriorhomedeco.com/product/crocodile-phenolic-board/
+board-imwood          https://www.phoenixconstructionsupply.com.ph/product/imwood-phenolic-board/
+board-gyproc          https://www.saint-gobain.com.ph/products/gyprocr-regular-board-12mm
+board-gyprex          https://www.gyproc.in/products-ceiling-tiles-solutions/gypsum-ceiling-tiles/gyprex-range
+board-gypline         https://www.thaiwatsadu.com/en/product/ (GYPLINE Regular RE 9mm, product 60391112)
+board-eastberg        https://www.cwhomedepot.com/index.php/c_home/product_details/12700
+board-eastberg-tile   https://clc.com.ph/clc-product/ceiling-tile/
+board-eastberg-compound https://clc.com.ph/eastberg/
+board-weber-finewhite https://citihardware.com/products/weber-skim-coat-white-1080100710367
+board-weber-taivis    https://citihardware.com/products/weber-adhesive-tai-vis-yellow-1090100605136
+board-pp-hollow       https://solidermaterials.com/product/plastic-hollow-sheet-corrugated-board/
+board-gypcote, board-gyproc-profin: none found; the Gyproc board photo stands in.

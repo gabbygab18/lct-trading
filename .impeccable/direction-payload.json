@@ -1,0 +1,110 @@
+{
+  "title": "LCT Trading: choose the visual world",
+  "question": "The roll assigned the Shadow-Foam Tool Case. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Shadow-Foam Tool Case",
+      "kicker": "THE ROLL",
+      "lineage": "two-layer kaizen foam in socket sets and shop shadow boards",
+      "thesis": "The catalog is an open tool case: every SKU sits in its own cut pocket, and what you take shows as red.",
+      "palette": ["#1b1b1d", "#2a2a2d", "#c7c9cc", "#d7141a", "#f4f4f2"],
+      "materials": ["charcoal closed-cell foam", "red under-layer", "stamped brushed-steel SKU plates", "hex nut geometry from the logo"],
+      "viewport": "Search/SKU bar as the case lid rail; below, a tight grid of foam pockets per product, each with a stamped steel plate (SKU, price) and qty + Add right on it; cart is the tray docked at the side.",
+      "risk": "Dark foam ground can feel heavy on bright outdoor phones; stamped plates must stay crisp, not skeuomorphic kitsch.",
+      "raised": [
+        {"from": "challenger-timetable", "raise": "SKU list view set at one type size: rank carried by weight, case and reversal only, so contractors scan rows like a price sheet."},
+        {"from": "challenger-seven-segment", "raise": "Absence is designed: an out-of-stock pocket is an empty cut showing red foam, drawn as deliberately as a full one."},
+        {"from": "challenger-streaming", "raise": "Focus discipline: the pocket under focus lifts and reveals qty controls; neighbours stay quiet."}
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Parts-Bin Wall",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "labelled drawer walls of Banawe and Binondo hardware counters",
+      "thesis": "Every product is a bin drawer with a paper label card slid into its steel frame.",
+      "palette": ["#e9e6df", "#2b2b2b", "#8b9095", "#d7141a"],
+      "materials": ["steel drawer frames", "slid-in label cards", "hand-written price tags"],
+      "viewport": "A wall of drawer fronts by brand, label cards carrying SKU and price, qty stepper in the drawer pull.",
+      "risk": "Also the direction most hardware-shop concepts land on; light ground softens the logo's black."
+    },
+    {
+      "id": "challenger-seven-segment",
+      "label": "Price Totem",
+      "verdict": "declined",
+      "lineage": "gas-station seven-segment price totems",
+      "thesis": "Prices lit as segment digits on a black totem.",
+      "palette": ["#0e0e0e", "#ff2a1a", "#3a1512"],
+      "materials": ["LED segments", "ghost cells"],
+      "viewport": "Brand totems with prices in lit segments.",
+      "case": "Fuses weakly: segment digits slow price reading and do not carry SKU names.",
+      "risk": "Novelty over clarity.",
+      "kept": "Absence drawn as deliberately as light: designed out-of-stock state."
+    },
+    {
+      "id": "challenger-timetable",
+      "label": "Timetable Rack",
+      "verdict": "declined",
+      "lineage": "pocket airline timetables",
+      "thesis": "One type size, rank by weight and reversal.",
+      "palette": ["#d9a520", "#1f1f1f", "#f2ecd9", "#c0331e"],
+      "materials": ["tinted glass", "goldenrod stock"],
+      "viewport": "Raked slides of fares.",
+      "case": "Fuses poorly: raked panes hurt fast SKU scanning on phones.",
+      "risk": "Raked containers fight a dense catalog.",
+      "kept": "Single-size dense rows for the SKU list view."
+    },
+    {
+      "id": "challenger-streaming",
+      "label": "Title-Card Wall",
+      "verdict": "declined",
+      "lineage": "streaming poster walls",
+      "thesis": "Brand rows scrolling sideways, focused tile expands.",
+      "palette": ["#141414", "#e50914", "#ffffff"],
+      "materials": ["poster art", "dimmed rows"],
+      "viewport": "Row per brand of product tiles.",
+      "case": "Fuses poorly: hides price/SKU until focus; horizontal rails slow ordering.",
+      "risk": "Browsing theatre over ordering speed.",
+      "kept": "Focused-item discipline: only the pocket in focus reveals controls."
+    },
+    {
+      "id": "challenger-specimen",
+      "label": "Type Specimen",
+      "verdict": "declined",
+      "lineage": "variable-font specimens",
+      "thesis": "Hierarchy by scale contrast alone.",
+      "palette": ["#fafafa", "#111111", "#d7141a"],
+      "materials": ["paper", "ink"],
+      "viewport": "Giant glyph with a grid below.",
+      "case": "Fuses poorly: nothing to do with buying tools.",
+      "risk": "Irrelevant to buyers.",
+      "kept": "Scale contrast: huge brand wordmark vs tiny stamped labels."
+    },
+    {
+      "id": "challenger-quarry",
+      "label": "Cloud Quarry",
+      "verdict": "declined",
+      "lineage": "surreal quarry worlds",
+      "thesis": "Cut blocks of weather.",
+      "palette": ["#f4f6f8", "#6fa8dc", "#5b5f66", "#c0c0c0"],
+      "materials": ["cumulus blocks", "saw line"],
+      "viewport": "Cloud strata with tally boards.",
+      "case": "Fuses poorly: dreamlike, no link to hardware buyers.",
+      "risk": "Off-brand.",
+      "kept": "Stencil tally-board caps for measurements."
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": false},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "White hardware e-commerce grid like khmtools: brand strip, product cards, red buttons.",
+    "palette": ["#ffffff", "#1b1b1d", "#d7141a"],
+    "materials": ["clean grid", "product photography"],
+    "viewport": "Header with search, brand logo strip, product card grid.",
+    "risk": "Indistinguishable from the competition by design."
+  },
+  "steer": true
+}

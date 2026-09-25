@@ -1,0 +1,940 @@
+@import '@fontsource/poppins/latin-400.css';
+@import '@fontsource/poppins/latin-500.css';
+@import '@fontsource/poppins/latin-600.css';
+@import './fonts.css';
+@import 'boxicons/css/boxicons.min.css';
+@import 'tailwindcss';
+@import './site.css';
+
+/* The registry components' dark: styles follow html.dark, not the OS setting,
+   so the public site looks the same on every machine. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../**/*.blade.php';
+@source '../**/*.jsx';
+
+/*
+ * Shadow-foam tool case. Charcoal closed-cell foam is the ground; brushed
+ * steel plates carry the facts (SKU, price) so they read in daylight; red is
+ * the under-layer that shows where something was taken, plus the one action.
+ */
+@theme {
+    /* Two faces: Poppins for reading, buttons and nav (as in elnovian);
+       Satoshi for headings and the data people scan (SKUs, prices). */
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Satoshi', 'Poppins', ui-sans-serif, sans-serif;
+    --font-cond: 'Satoshi', 'Poppins', ui-sans-serif, sans-serif;
+
+    --color-foam-950: #111113;
+    --color-foam-900: #161618;
+    --color-foam-800: #1b1b1d;
+    --color-foam-700: #232326;
+    --color-foam-600: #2d2d31;
+    --color-foam-500: #3b3b40;
+    --color-foam-400: #55555b;
+
+    --color-steel-50: #f6f6f4;
+    --color-steel-100: #ececea;
+    --color-steel-200: #dcdddf;
+    --color-steel-300: #c7c9cc;
+    --color-steel-400: #a8abaf;
+    --color-steel-500: #8e9196;
+    --color-steel-700: #55585c;
+    --color-steel-800: #3a3c3f;
+
+    --color-ink: #1b1b1d;
+    --color-signal: #d7141a;
+    --color-signal-600: #b80f14;
+    --color-signal-700: #8f0c10;
+    --color-signal-soft: #f3c9ca;
+
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Token names the elnovian component set asks for, on LCT's palette. */
+    --color-rose: #d7141a;
+    --color-rose-deep: #b80f14;
+    --color-rose-soft: #f3c9ca;
+    --color-ink-soft: #2d2d31;
+    --color-cream: #f4f4f2;
+    --color-hairline: #e2e2e0;
+    --color-hairline-soft: #e2e2e0;
+    --color-ring: #d7141a;
+    --color-border: #e2e2e0;
+    --color-card: #ffffff;
+    --color-card-foreground: #1b1b1d;
+    --color-muted-foreground: rgb(17 17 19 / 0.64);
+    --color-muted: #55555b;
+    --radius-pill: 6px;
+    --shadow-card: 0 0 0.5px rgb(0 0 0 / 0.16), 0 1px 2px rgb(0 0 0 / 0.22);
+    --shadow-deep: 0 18px 36px rgb(0 0 0 / 0.35);
+    --animate-marquee: marquee 32s linear infinite;
+    --animate-orb-pulse: orb-pulse 3.2s ease-in-out infinite;
+
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    @keyframes orb-pulse {
+        0%, 100% { transform: scale(1); opacity: 0.85; }
+        50% { transform: scale(1.18); opacity: 1; }
+    }
+}
+
+@layer base {
+    /* Height of the sticky site header (elnovian .nav + 2px rule). */
+    :root {
+        --hdr: 66px;
+    }
+    @media (min-width: 480px) {
+        :root { --hdr: 74px; }
+    }
+    @media (min-width: 768px) {
+        :root { --hdr: 85px; }
+    }
+    html {
+        color-scheme: dark;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        background-color: var(--color-foam-800);
+        /* closed-cell foam speckle, authored as a tiny noise tile */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        color: var(--color-steel-200);
+        font-family: var(--font-sans);
+        font-feature-settings: 'tnum' 0;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+        background: var(--color-signal);
+        color: #fff;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-signal);
+        outline-offset: 2px;
+    }
+
+    input,
+    textarea,
+    select {
+        caret-color: var(--color-signal);
+    }
+
+    * {
+        scrollbar-color: var(--color-foam-500) var(--color-foam-900);
+        scrollbar-width: thin;
+    }
+
+    a {
+        text-underline-offset: 3px;
+    }
+}
+
+@layer components {
+    /* A pocket cut into the foam: dark lip on top, faint light catch below. */
+    .cut {
+        background: var(--color-foam-900);
+        box-shadow:
+            inset 0 3px 7px rgb(0 0 0 / 0.75),
+            inset 0 -1px 0 rgb(255 255 255 / 0.05);
+    }
+
+    /* Brushed steel: a vertical sheen plus fine horizontal grain. */
+    .plate {
+        color: var(--color-ink);
+        background:
+            repeating-linear-gradient(0deg, rgb(255 255 255 / 0.18) 0 1px, transparent 1px 3px),
+            linear-gradient(180deg, #eeeeec 0%, #d9dadc 55%, #cbcdd0 100%);
+        box-shadow:
+            0 1px 0 rgb(255 255 255 / 0.55) inset,
+            0 -1px 0 rgb(0 0 0 / 0.12) inset,
+            0 2px 3px rgb(0 0 0 / 0.45);
+    }
+
+    .stamp {
+        font-family: var(--font-display);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        font-variant-numeric: tabular-nums;
+    }
+    /* Buttons read like elnovian's: Poppins semibold, sentence case, even
+       where a shop button also carries .stamp. */
+    .sx-btn,
+    .sx-btn.stamp,
+    .a-btn {
+        font-family: var(--font-sans);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        text-transform: none;
+    }
+
+    .num {
+        font-variant-numeric: tabular-nums;
+    }
+
+    .btn-signal {
+        background: var(--color-signal);
+        color: #fff;
+        box-shadow: 0 1px 0 rgb(255 255 255 / 0.2) inset, 0 2px 4px rgb(0 0 0 / 0.45);
+        transition: background-color 120ms, transform 120ms var(--ease-out-expo);
+    }
+    .btn-signal:hover {
+        background: var(--color-signal-600);
+    }
+    .btn-signal:active {
+        transform: translateY(1px);
+    }
+    .btn-signal:disabled {
+        background: var(--color-foam-500);
+        color: var(--color-steel-400);
+        box-shadow: none;
+        cursor: not-allowed;
+    }
+
+    /* The red under-layer showing through where a tool was lifted out. */
+    .taken {
+        box-shadow:
+            inset 0 0 0 2px var(--color-signal),
+            inset 0 3px 7px rgb(0 0 0 / 0.6);
+    }
+
+    .flash-red {
+        animation: flash-red 700ms var(--ease-out-expo);
+    }
+}
+
+/* AnimatedHeading clips each word in a mask for the rise-in. Tight display
+   line-heights would clip descenders, so the mask reaches past the line box
+   without moving the text. */
+.sx-word-mask,
+.sx-char-mask {
+    padding-block: 0.08em 0.2em;
+    margin-block: -0.08em -0.2em;
+}
+
+/* ---------- elnovian component set, LCT adaptations ----------
+   The ported style.css (site.css) is light-first; LCT's chrome stays on the
+   foam ground the shop uses, and headings take the logo's condensed face. */
+.el-site {
+    font-family: var(--font-primary);
+    line-height: 1.5;
+}
+@layer components {
+    .el-site h1,
+    .el-site h2,
+    .el-site h3 {
+        font-family: var(--font-display);
+        font-weight: 900;
+        letter-spacing: -0.025em;
+        line-height: 1.02;
+    }
+    .el-site h2 {
+        font-size: clamp(34px, 4.2vw, 58px);
+    }
+    .el-site h3 {
+        font-size: 22px;
+    }
+    .el-site header#site-header {
+        background: color-mix(in srgb, var(--color-foam-800) 96%, transparent);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 1px 0 var(--color-foam-600);
+        border-bottom: 2px solid var(--color-signal);
+    }
+    .el-site header#site-header .nav {
+        max-width: 1600px;
+    }
+    .el-site header#site-header .nav-links a,
+    .el-site header#site-header .nav-toggle {
+        color: var(--color-steel-200);
+        font-family: var(--font-sans);
+        font-weight: 500;
+        font-size: 15px;
+        letter-spacing: -0.01em;
+    }
+    .el-site header#site-header .nav-links a:hover,
+    .el-site header#site-header .nav-links a[aria-current='page'] {
+        color: #fff;
+    }
+    /* The page you're on gets a red rule under its nav link. */
+    .el-site header#site-header .nav-links > a,
+    .el-site header#site-header .nav-item > a {
+        position: relative;
+    }
+    .el-site header#site-header .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -8px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--color-signal);
+        transform: scaleX(0);
+        transition: transform 0.25s var(--ease-out-expo);
+    }
+    .el-site header#site-header .nav-links a[aria-current='page']::after {
+        transform: scaleX(1);
+    }
+    .el-site header#site-header .nav-links a:not([aria-current='page']):hover::after {
+        transform: scaleX(0.4);
+    }
+    @media (max-width: 1024px) {
+        /* elnovian beat the button utilities on specificity (Tailwind 3);
+           v4 puts utilities in a later layer, so this needs the bang. */
+        .el-site .nav-cta .nav-call {
+            display: none !important;
+        }
+        .el-site .nav-cta .nav-book {
+            height: 38px !important;
+            padding: 0 14px !important;
+            font-size: 13px !important;
+        }
+        .el-site header#site-header .nav .nav-links {
+            background: var(--color-foam-800);
+            border-bottom: 1px solid var(--color-foam-600);
+        }
+    }
+
+    .el-site .eyebrow {
+        font-family: var(--font-cond);
+        letter-spacing: 0.18em;
+    }
+
+    /* ---- Home ---- */
+    /* Photo: Anton Savinov on Unsplash (tool wall). Small file for phones. */
+    .el-site .hero {
+        background-image:
+            linear-gradient(180deg, rgb(17 17 19 / 0.78) 0%, rgb(17 17 19 / 0.55) 40%, rgb(17 17 19 / 0.85) 100%),
+            url('/images/hero-tool-wall-sm.webp');
+        padding-top: 88px;
+    }
+    @media (min-width: 900px) {
+        .el-site .hero {
+            background-image:
+                linear-gradient(180deg, rgb(17 17 19 / 0.78) 0%, rgb(17 17 19 / 0.5) 40%, rgb(17 17 19 / 0.85) 100%),
+                url('/images/hero-tool-wall.webp');
+        }
+    }
+    .el-site .hero h1 {
+        font-size: clamp(34px, 5.4vw, 78px);
+        line-height: 0.98;
+        max-width: 16ch;
+        margin-inline: auto;
+        text-wrap: balance;
+    }
+    /* The search dropdown has to open over the stats card below the hero. */
+    .el-site .hero-content {
+        position: relative;
+        z-index: 10;
+        /* fill the column: centred, it sized to the search input's intrinsic width */
+        width: 100%;
+    }
+    /* Grid items default to min-width:auto, so the hero and about columns
+       grew to their content's width and pushed the page sideways on phones. */
+    .el-site .hero-grid,
+    .el-site .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    @media (min-width: 961px) {
+        .el-site .about-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+    }
+    /* Three stats side by side on a phone: tighter card, labels that fit whole. */
+    @media (max-width: 480px) {
+        .el-site .hero-trust { padding: 18px 12px; }
+        .el-site .sx-stats .sx-stats-label { font-size: 12px; }
+    }
+    /* Two-up brand list needs the full row on phones, or it overflows its half. */
+    @media (max-width: 720px) {
+        .el-site .footer-brands { grid-column: 1 / -1; }
+    }
+    /* Reveal slides in from the side; don't let the offset widen the page. */
+    .el-site section {
+        overflow-x: clip;
+    }
+    .lct-hero-search {
+        position: relative;
+        display: flex;
+        max-width: 620px;
+        margin: 28px auto 0;
+        border-radius: 6px;
+        background: var(--color-foam-900);
+        box-shadow: inset 0 3px 7px rgb(0 0 0 / 0.75), 0 0 0 1px rgb(255 255 255 / 0.12);
+    }
+    .lct-hero-search .lct-hero-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        translate: 0 -50%;
+        font-size: 22px;
+        color: var(--color-steel-500);
+    }
+    .lct-hero-search input {
+        flex: 1;
+        min-width: 0;
+        height: 56px;
+        padding: 0 12px 0 48px;
+        background: transparent;
+        color: #fff;
+        font-size: 17px;
+        outline: none;
+    }
+    .lct-hero-search input::placeholder {
+        color: var(--color-steel-500);
+    }
+    .lct-hero-search button {
+        margin: 6px;
+        padding: 0 22px;
+        border-radius: 4px;
+        font-size: 17px;
+    }
+    .el-site .sx-stats .sx-stats-value {
+        font-family: var(--font-display);
+        font-weight: 800;
+    }
+
+    .lct-brands {
+        padding-top: 96px;
+    }
+    /* Brand logos on react-bits LogoLoop: quiet in grey, full colour on hover. */
+    .lct-brands {
+        padding: 88px 0 40px;
+    }
+    /* LogoLoop doesn't clip itself; clip here and fade the edges with a mask
+       (its own fade paints a colour, which showed as white bands mid-page). */
+    .lct-logoloop {
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .lct-logoloop .logoloop__item img {
+        /* wide wordmarks (Wadfow, Butterfly) would otherwise dwarf the rest */
+        max-width: 150px;
+        object-fit: contain;
+        filter: grayscale(1) contrast(1.1);
+        opacity: 0.6;
+        transition: filter 0.3s, opacity 0.3s, transform 0.3s var(--ease-out-expo);
+    }
+    .lct-logoloop .logoloop__item:hover img,
+    .lct-logoloop .logoloop__item:focus-within img {
+        filter: none;
+        opacity: 1;
+    }
+
+    .el-site .lct-logo-card {
+        display: grid;
+        place-items: center;
+        background: #fff;
+        padding: 32px;
+        /* the logo is portrait; the 3:2 photo frame cropped its base */
+        aspect-ratio: auto;
+    }
+    .el-site .lct-logo-card img {
+        width: min(100%, 300px);
+        height: auto;
+    }
+    .el-site .badge .lct-badge-icon {
+        font-size: 24px;
+        color: var(--color-signal);
+        flex-shrink: 0;
+    }
+    .el-site .badge .bx {
+        font-size: 24px;
+        color: var(--color-signal);
+        flex-shrink: 0;
+    }
+    /* Supplier photos are shot on white: contain them on a light insert. */
+    .el-site .lct-category-photo {
+        background: var(--color-steel-100);
+    }
+    .el-site .lct-category-photo img {
+        object-fit: contain;
+        padding: 18px;
+        mix-blend-mode: multiply;
+    }
+
+    .el-site .lct-slip {
+        justify-self: center;
+        width: min(100%, 380px);
+        padding: 22px 24px 18px;
+        border-radius: 8px;
+        color: var(--color-ink);
+        background: linear-gradient(180deg, #eeeeec 0%, #d9dadc 60%, #cbcdd0 100%);
+        box-shadow: 0 18px 36px rgb(0 0 0 / 0.45);
+        rotate: 2deg;
+    }
+    .lct-slip-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px dashed rgb(27 27 29 / 0.25);
+        font-family: var(--font-cond);
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.04em;
+        font-variant-numeric: tabular-nums;
+    }
+    .lct-slip-foot {
+        margin-top: 12px;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--color-steel-700);
+    }
+    /* How ordering works: staircase cards with a big faded step number. */
+    .el-site .lct-steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: end;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .el-site .lct-step {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
+        padding: 40px 40px 34px;
+        border-radius: 28px;
+        background: var(--color-foam-700);
+        box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05), 0 18px 40px -20px rgb(0 0 0 / 0.7);
+        overflow: hidden;
+    }
+    .el-site .lct-steps > li:nth-child(2) .lct-step {
+        min-height: 470px;
+    }
+    .el-site .lct-steps > li:nth-child(3) .lct-step {
+        min-height: 540px;
+    }
+    .el-site .lct-step h3 {
+        margin: 26px 0 12px;
+        font-size: clamp(26px, 2.4vw, 34px);
+        color: #fff;
+    }
+    .el-site .lct-step p {
+        max-width: 30ch;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.55;
+        color: var(--color-steel-300);
+    }
+    .lct-step-icon {
+        display: grid;
+        place-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        background: var(--color-signal);
+        color: #fff;
+        font-size: 32px;
+    }
+    .lct-step-no {
+        margin-top: auto;
+        align-self: flex-end;
+        padding-top: 40px;
+        font-family: var(--font-display);
+        font-weight: 900;
+        font-size: clamp(44px, 4.6vw, 68px);
+        line-height: 0.8;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: rgb(255 255 255 / 0.1);
+        white-space: nowrap;
+    }
+    @media (max-width: 800px) {
+        .el-site .lct-steps {
+            grid-template-columns: 1fr;
+        }
+        .el-site .lct-step,
+        .el-site .lct-steps > li:nth-child(2) .lct-step,
+        .el-site .lct-steps > li:nth-child(3) .lct-step {
+            min-height: 0;
+            padding: 30px 26px 26px;
+        }
+    }
+    .el-site .contact-row .bx {
+        font-size: 22px;
+        color: var(--color-signal);
+        margin-top: 2px;
+    }
+    /* Contact form card (elnovian .field inputs inside). */
+    .el-site .lct-contact-card {
+        padding: 28px;
+        border-radius: var(--radius-card);
+        background: var(--color-steel-100);
+        box-shadow: var(--shadow-card);
+    }
+    .el-site .lct-contact-card h3 {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+    .el-site .lct-contact-card .form-grid {
+        margin-top: 18px;
+    }
+    .el-site .lct-contact-card .form-actions {
+        justify-content: flex-start;
+        margin: 18px 0 10px;
+    }
+    .el-site .field input:focus + label,
+    .el-site .field input:not(:placeholder-shown) + label,
+    .el-site .field textarea:focus + label,
+    .el-site .field textarea:not(:placeholder-shown) + label {
+        color: var(--color-signal);
+    }
+    .el-site .field input:not(:placeholder-shown):valid {
+        background: #fff;
+    }
+    .el-site .field .lct-field-error {
+        border-color: var(--color-signal);
+    }
+    .el-site .field .error-msg {
+        display: block;
+        margin-top: 4px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--color-signal-600);
+    }
+    /* Floated labels sit on the input border: grey above the line (the
+       card), white below (the input), so no white box shows on the card. */
+    .el-site .lct-contact-card .field input:focus + label,
+    .el-site .lct-contact-card .field input:not(:placeholder-shown) + label,
+    .el-site .lct-contact-card .field textarea:focus + label,
+    .el-site .lct-contact-card .field textarea:not(:placeholder-shown) + label,
+    .el-site .lct-contact-card .field .field-trigger + label {
+        background: linear-gradient(to bottom, var(--color-steel-100) 50%, #fff 50%);
+    }
+    .el-site .lct-contact-card .field .field-trigger + label {
+        color: var(--color-signal);
+    }
+    .el-site .lct-contact-card .field .field-control {
+        height: 52px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .el-site .lct-contact-card .field .field-control .bx {
+        color: var(--color-signal);
+    }
+    .el-site .lct-contact-card .field-trigger {
+        display: block;
+    }
+
+    .el-site .lct-contact-done {
+        display: grid;
+        justify-items: start;
+        gap: 8px;
+    }
+    .el-site .lct-contact-done > .bx {
+        font-size: 44px;
+        color: var(--color-signal);
+    }
+    .el-site .lct-contact-done p {
+        color: var(--text-black-soft);
+        margin-bottom: 8px;
+    }
+
+    .el-site .lct-order-card {
+        padding: 32px;
+        text-align: center;
+        color: var(--text-black-soft);
+    }
+    .el-site .lct-order-card > .bx {
+        font-size: 48px;
+        color: var(--color-signal);
+    }
+    .el-site .lct-order-card strong {
+        font-family: var(--font-display);
+        font-size: 26px;
+        letter-spacing: -0.02em;
+        color: var(--color-ink);
+    }
+}
+
+/* ---------- Menus: one look for Brands, Topic and the shop selects ---------- */
+.el-site .lct-contact-card .field .field-control.is-open {
+    border-color: var(--color-signal);
+    box-shadow: 0 0 0 1px var(--color-signal);
+}
+.el-site header#site-header .nav-item .caret {
+    transition: transform 0.2s ease;
+}
+.el-site header#site-header .nav-item.open .caret {
+    transform: rotate(180deg);
+}
+.nav-dropdown-panel [data-slot='dropdown-menu-item'],
+.field-menu [data-slot='dropdown-menu-item'] {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 14px;
+}
+.nav-dropdown-panel,
+.field-menu {
+    padding: 8px 6px;
+}
+
+/* Brands: a wide panel with the brands in columns instead of one long list. */
+@media (min-width: 1025px) {
+    .nav-dropdown-wide {
+        width: min(760px, calc(100vw - 32px));
+        padding: 12px;
+    }
+    .nav-dropdown-wide > div > .p-2 {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2px 8px;
+    }
+    /* the menu wraps every item; the last wrapper holds "Shop all brands" */
+    .nav-dropdown-wide > div > .p-2 > :last-child {
+        grid-column: 1 / -1;
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 1px solid rgb(255 255 255 / 0.1);
+    }
+}
+
+/* ---------- Skeletons ---------- */
+@layer components {
+    .lct-skel {
+        background: linear-gradient(100deg, var(--color-foam-600) 30%, var(--color-foam-500) 50%, var(--color-foam-600) 70%);
+        background-size: 250% 100%;
+        animation: lct-shimmer 1.3s linear infinite;
+    }
+    .lct-skel-light {
+        background-image: linear-gradient(100deg, #dcdddf 30%, #eeeeec 50%, #dcdddf 70%);
+    }
+}
+@keyframes lct-shimmer {
+    from { background-position: 125% 0; }
+    to { background-position: -125% 0; }
+}
+
+/* ---------- Product description (cleaned supplier HTML) ---------- */
+.lct-fold {
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+    .lct-fold {
+        transition: none;
+    }
+}
+@layer components {
+    .lct-prose {
+        max-width: 78ch;
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--color-steel-300);
+    }
+    .lct-prose > * + * {
+        margin-top: 0.9em;
+    }
+    .lct-prose strong {
+        color: var(--color-steel-50);
+        font-weight: 600;
+    }
+    .lct-prose h3,
+    .lct-prose h4,
+    .lct-prose h5 {
+        margin-top: 1.4em;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: -0.01em;
+        color: var(--color-steel-50);
+    }
+    .lct-prose ul,
+    .lct-prose ol {
+        padding-left: 1.3em;
+    }
+    .lct-prose ul {
+        list-style: none;
+    }
+    .lct-prose ul > li {
+        position: relative;
+    }
+    .lct-prose ul > li::before {
+        content: '';
+        position: absolute;
+        left: -1em;
+        top: 0.7em;
+        width: 6px;
+        height: 6px;
+        border-radius: 1px;
+        background: var(--color-signal);
+    }
+    .lct-prose ol {
+        list-style: decimal;
+    }
+    .lct-prose li + li {
+        margin-top: 0.3em;
+    }
+    .lct-prose hr {
+        border: 0;
+        border-top: 1px solid var(--color-foam-600);
+    }
+    .lct-prose table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        font-size: 14px;
+        font-variant-numeric: tabular-nums;
+    }
+    .lct-prose td,
+    .lct-prose th {
+        padding: 8px 14px;
+        border: 1px solid var(--color-foam-600);
+        text-align: left;
+        vertical-align: top;
+        white-space: nowrap;
+    }
+    .lct-prose tr:first-child td,
+    .lct-prose th {
+        background: var(--color-foam-700);
+        color: var(--color-steel-50);
+        font-weight: 600;
+    }
+}
+
+/* ---------- Admin (Blade). Light work surface, foam chrome. ---------- */
+@layer components {
+    .a-surface {
+        background: var(--color-steel-100);
+        color: var(--color-ink);
+        color-scheme: light;
+    }
+    .a-card {
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0 0 0 1px rgb(27 27 29 / 0.08), 0 2px 6px -2px rgb(27 27 29 / 0.12);
+    }
+    .a-label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-steel-800);
+    }
+    .a-input {
+        width: 100%;
+        height: 2.6rem;
+        padding: 0 0.75rem;
+        border-radius: 4px;
+        background: #fff;
+        color: var(--color-ink);
+        font-size: 15px;
+        box-shadow: inset 0 0 0 1px var(--color-steel-400), inset 0 1px 2px rgb(0 0 0 / 0.06);
+        outline: none;
+    }
+    textarea.a-input {
+        height: auto;
+        padding: 0.6rem 0.75rem;
+    }
+    .a-input:focus-visible {
+        box-shadow: inset 0 0 0 2px var(--color-signal);
+    }
+    .a-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        height: 2.5rem;
+        padding: 0 1rem;
+        border-radius: 4px;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: background-color 120ms;
+    }
+    .a-btn-primary {
+        background: var(--color-signal);
+        color: #fff;
+    }
+    .a-btn-primary:hover {
+        background: var(--color-signal-600);
+    }
+    .a-btn-ghost {
+        color: var(--color-ink);
+        box-shadow: inset 0 0 0 1px var(--color-steel-400);
+        background: #fff;
+    }
+    .a-btn-ghost:hover {
+        background: var(--color-steel-200);
+    }
+    .a-btn-sm {
+        height: 2rem;
+        padding: 0 0.7rem;
+        font-size: 13.5px;
+    }
+    .a-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+    .a-table th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: var(--color-foam-800);
+        color: var(--color-steel-200);
+        font-family: var(--font-cond);
+        font-weight: 700;
+        font-size: 12.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0.6rem 0.75rem;
+        white-space: nowrap;
+    }
+    .a-table td {
+        padding: 0.55rem 0.75rem;
+        border-bottom: 1px solid var(--color-steel-200);
+        vertical-align: middle;
+    }
+    .a-table tr:hover td {
+        background: var(--color-steel-50);
+    }
+    .a-pill {
+        display: inline-block;
+        padding: 0.1rem 0.5rem;
+        border-radius: 3px;
+        font-family: var(--font-cond);
+        font-weight: 700;
+        font-size: 12.5px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+    .a-pill-pending { background: #fde7c2; color: #7a4a00; }
+    .a-pill-confirmed { background: #d6e6ff; color: #173e7a; }
+    .a-pill-completed { background: #d5f0dc; color: #1b5a2c; }
+    .a-pill-cancelled { background: var(--color-steel-200); color: var(--color-steel-800); }
+    .a-pill-low { background: var(--color-signal-soft); color: var(--color-signal-700); }
+    .a-pill-sample { background: var(--color-steel-200); color: var(--color-steel-800); }
+}
+
+@keyframes flash-red {
+    0% {
+        background-color: var(--color-signal);
+    }
+    100% {
+        background-color: var(--color-steel-100);
+    }
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 1ms !important;
+        transition-duration: 1ms !important;
+    }
+}
