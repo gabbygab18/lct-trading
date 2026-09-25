@@ -2,6 +2,17 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { CartCheckIcon } from '@/components/BxIcons';
 import { readStore, writeStore } from './format';
 import { toast } from '@/components/ui/toast';
+import { TrashIcon } from '@/components/Icons';
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 
 const KEY = 'lct-tray-v1';
 const TrayContext = createContext(null);
@@ -14,6 +25,20 @@ export function TrayProvider({ children }) {
     const [items, setItems] = useState(() => (typeof window === 'undefined' ? [] : readStore(KEY, [])));
     const [open, setOpen] = useState(false);
     const [pulse, setPulse] = useState(0);
+    // Item waiting on "remove it?" confirmation.
+    const [pending, setPending] = useState(null);
+    const [removing, setRemoving] = useState(false);
+    // Spin briefly so the removal reads as an action, then close and take it out.
+    const confirmRemove = (e) => {
+        e.preventDefault(); // keep the dialog open while the spinner runs
+        if (removing) return;
+        setRemoving(true);
+        window.setTimeout(() => {
+            setQty(pending.id, 0);
+            setPending(null);
+            setRemoving(false);
+        }, 650);
+    };
     const targets = useRef(new Set());
 
     useEffect(() => writeStore(KEY, items), [items]);
@@ -76,9 +101,13 @@ export function TrayProvider({ children }) {
             setOpen,
             pulse,
             add,
-            setQty,
             refresh,
-            remove: (id) => setQty(id, 0),
+            // Taking an item out (trash button, or qty down to 0) asks first.
+            setQty: (id, qty, product) =>
+                Math.floor(Number(qty) || 0) <= 0 && items.some((i) => i.id === id)
+                    ? setPending(items.find((i) => i.id === id))
+                    : setQty(id, qty, product),
+            remove: (id) => setPending(items.find((i) => i.id === id) ?? null),
             clear: () => setItems([]),
             qtyOf: (id) => items.find((i) => i.id === id)?.qty ?? 0,
             // Elements an added item can fly into; the visible one wins.
@@ -91,7 +120,40 @@ export function TrayProvider({ children }) {
         };
     }, [items, open, pulse, add, setQty, refresh]);
 
-    return <TrayContext.Provider value={value}>{children}</TrayContext.Provider>;
+    return (
+        <TrayContext.Provider value={value}>
+            {children}
+            <AlertDialog open={!!pending} onOpenChange={(o) => !o && !removing && setPending(null)}>
+                {pending && (
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <span className="lct-alert-icon mb-1 grid size-14 place-items-center rounded-full bg-signal/15 text-signal" aria-hidden="true">
+                                <TrashIcon className="size-6" />
+                            </span>
+                            <AlertDialogTitle>Remove {pending.sku}?</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                {pending.qty > 1 ? `All ${pending.qty} pcs of ` : ''}
+                                {pending.name} will come out of your tray.
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                            <AlertDialogCancel disabled={removing}>Keep it</AlertDialogCancel>
+                            <AlertDialogAction onClick={confirmRemove} aria-busy={removing}>
+                                {removing ? (
+                                    <>
+                                        <i className="bx bx-loader-alt bx-spin text-[18px]" aria-hidden="true" />
+                                        Removing…
+                                    </>
+                                ) : (
+                                    'Remove'
+                                )}
+                            </AlertDialogAction>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                )}
+            </AlertDialog>
+        </TrayContext.Provider>
+    );
 }
 
 export const useTray = () => useContext(TrayContext);

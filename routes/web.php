@@ -14,6 +14,8 @@ use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/how-to-order', [HomeController::class, 'howToOrder'])->name('how-to-order');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/shop', [CatalogController::class, 'index'])->name('catalog');
 Route::get('/shop/{product:sku}', [CatalogController::class, 'show'])->where('product', '.+')->name('product');
 Route::get('/search/suggest', [SearchController::class, 'suggest'])->middleware('throttle:120,1')->name('search.suggest');

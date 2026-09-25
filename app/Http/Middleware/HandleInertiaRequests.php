@@ -40,6 +40,8 @@ class HandleInertiaRequests extends Middleware
             'routes' => [
                 'home'     => route('home'),
                 'catalog'  => route('catalog'),
+                'howTo'    => route('how-to-order'),
+                'contact'  => route('contact'),
                 'checkout' => route('checkout'),
                 'orders'   => route('orders.store'),
                 'inquiries' => route('inquiries.store'),

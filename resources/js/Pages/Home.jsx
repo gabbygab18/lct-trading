@@ -5,15 +5,15 @@ import AnimatedHeading from '@/components/AnimatedHeading';
 import Reveal from '@/components/Reveal';
 import SectionHead from '@/components/SectionHead';
 import ContactBlock from '@/components/ContactBlock';
+import OrderSteps from '@/components/OrderSteps';
 import SearchSuggest from '@/components/SearchSuggest';
 import Transition from '@/components/ui/transition';
 import StatsCount from '@/components/ui/statscount';
 import { Card, CardContent } from '@/components/ui/card';
-import LeanCard from '@/components/scrollxui/LeanCard';
 import LogoLoop from '@/components/LogoLoop';
 import Button from '@/components/ui/Button';
 import { number } from '@/lib/format';
-import { BrowseIcon, CartAddIcon, CartIcon, PackageIcon, PayIcon, SkuIcon, StoreIcon } from '@/components/BxIcons';
+import { BrowseIcon, CartIcon, PackageIcon, PayIcon, SkuIcon, StoreIcon } from '@/components/BxIcons';
 
 // Why ordering here is quick. Each line is something the site actually does.
 const REASONS = [
@@ -21,12 +21,6 @@ const REASONS = [
     { Icon: PackageIcon, title: 'Stock on every item', copy: 'In stock, low or out, shown before you add it.' },
     { Icon: PayIcon, title: 'Nothing charged online', copy: 'Pay by cash on delivery or bank deposit once we confirm.' },
     { Icon: StoreIcon, title: 'Deliver or pick up', copy: 'Courier, Lalamove, cargo, or collect it at the store.' },
-];
-
-const STEPS = [
-    { title: 'Find it', copy: 'Search by name or SKU, or browse by brand and category.', Icon: BrowseIcon },
-    { title: 'Add to tray', copy: 'Set the quantity right on the list. Send the tray with your contact and address.', Icon: CartAddIcon },
-    { title: 'We call to confirm', copy: 'LCT checks stock and calls or texts you with the total and delivery fee.', icon: 'bx-phone-call' },
 ];
 
 function HeroSearch() {
@@ -224,22 +218,7 @@ export default function Home({ stats, brands, categories }) {
                     <div className="wrap">
                         <SectionHead title="How ordering works." lede="No account and no online payment. Your order is a request; LCT confirms everything with you first." />
                         {/* Staircase: each step sits higher than the one before. */}
-                        <ol className="lct-steps">
-                            {STEPS.map((step, i) => (
-                                <li key={step.title}>
-                                <LeanCard bare index={i} className="lct-step">
-                                    <span className="lct-step-icon" aria-hidden="true">
-                                        {step.Icon ? <step.Icon /> : <i className={`bx ${step.icon}`} />}
-                                    </span>
-                                    <AnimatedHeading as="h3" text={step.title} />
-                                    <p>{step.copy}</p>
-                                    <span className="lct-step-no" aria-hidden="true">
-                                        Step {String(i + 1).padStart(2, '0')}
-                                    </span>
-                                </LeanCard>
-                                </li>
-                            ))}
-                        </ol>
+                        <OrderSteps />
                         <div className="mt-10 flex justify-center">
                             <Button href={routes.catalog} variant="onBrand" icon={<CartIcon />} size="lg" layered>
                                 Start an order

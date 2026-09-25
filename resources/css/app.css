@@ -294,6 +294,130 @@
         .el-site header#site-header .nav .nav-links {
             background: var(--color-foam-800);
             border-bottom: 1px solid var(--color-foam-600);
+            align-items: stretch;
+            gap: 0;
+            padding: 8px 16px 16px;
+            max-height: calc(100dvh - 72px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+        /* Full-width, left-aligned rows: easy to hit with a thumb. */
+        .el-site header#site-header .nav-links > a,
+        .el-site header#site-header .nav-acc-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 14px 4px 14px 16px;
+            border-bottom: 1px solid var(--color-foam-600);
+            font-size: 16px;
+            text-align: left;
+        }
+        /* Current page: red bar at the left of its row, not an underline. */
+        .el-site header#site-header .nav-links > a::after {
+            left: 0;
+            right: auto;
+            top: 50%;
+            bottom: auto;
+            width: 3px;
+            height: 20px;
+            translate: 0 -50%;
+            transform: scaleY(0);
+        }
+        .el-site header#site-header .nav-links > a[aria-current='page']::after {
+            transform: scaleY(1);
+        }
+        .el-site header#site-header .nav-links > a:not([aria-current='page']):hover::after {
+            transform: scaleY(0);
+        }
+        .el-site .nav-acc-toggle {
+            color: var(--color-steel-200);
+            font-weight: 500;
+        }
+        .el-site .nav-acc-toggle .caret {
+            font-size: 20px;
+            transition: transform 0.2s ease;
+        }
+        .el-site .nav-acc.open .nav-acc-toggle {
+            color: #fff;
+        }
+        .el-site .nav-acc.open .nav-acc-toggle .caret {
+            transform: rotate(180deg);
+        }
+        /* Height animates via grid rows, so the list slides open in place. */
+        .el-site .nav-acc-panel {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.28s var(--ease-out-expo);
+        }
+        .el-site .nav-acc.open .nav-acc-panel {
+            grid-template-rows: 1fr;
+        }
+        .el-site .nav-acc-panel > div {
+            overflow: hidden;
+        }
+        .el-site .nav-acc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2px 12px;
+            padding: 10px 0 6px 16px;
+        }
+        @media (min-width: 600px) {
+            .el-site .nav-acc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        .el-site header#site-header .nav-acc-grid a {
+            padding: 9px 0;
+            font-size: 14.5px;
+            color: var(--color-steel-400);
+        }
+        .el-site header#site-header .nav-acc-grid a[aria-current='page'] {
+            color: #fff;
+        }
+        .el-site header#site-header .nav-acc-grid a::after {
+            content: none;
+        }
+        .el-site header#site-header .nav-acc-all {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0 0 12px 16px;
+            padding: 8px 0;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .el-site header#site-header .nav-acc-all::after {
+            content: none;
+        }
+        .el-site .nav-acc-all .bx {
+            font-size: 20px;
+            color: var(--color-signal);
+        }
+        .el-site .nav-acc {
+            border-bottom: 1px solid var(--color-foam-600);
+        }
+        .el-site header#site-header .nav-acc-toggle {
+            border-bottom: 0;
+        }
+        .el-site header#site-header .nav-links > a.nav-mobile-call {
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 12px 16px;
+            border: 1px solid var(--color-foam-500);
+            border-radius: 6px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .el-site header#site-header .nav-links > a.nav-mobile-call::after {
+            content: none;
+        }
+    }
+    /* Desktop: links sit on the right, beside the call/shop buttons. */
+    @media (min-width: 1025px) {
+        .el-site header#site-header .nav .nav-links {
+            margin-left: auto;
+            margin-right: var(--space-5);
         }
     }
 
@@ -415,10 +539,22 @@
         opacity: 0.6;
         transition: filter 0.3s, opacity 0.3s, transform 0.3s var(--ease-out-expo);
     }
-    .lct-logoloop .logoloop__item:hover img,
     .lct-logoloop .logoloop__item:focus-within img {
         filter: none;
         opacity: 1;
+    }
+    @media (hover: hover) {
+        .lct-logoloop .logoloop__item:hover img {
+            filter: none;
+            opacity: 1;
+        }
+    }
+    /* No hover on touch screens, so logos show in colour and open on the first tap. */
+    @media (hover: none) {
+        .lct-logoloop .logoloop__item img {
+            filter: none;
+            opacity: 1;
+        }
     }
 
     .el-site .lct-logo-card {
@@ -937,4 +1073,324 @@
         animation-duration: 1ms !important;
         transition-duration: 1ms !important;
     }
+}
+
+/* Remove-from-tray alert: the icon pops in and gives one wobble, SweetAlert style. */
+.lct-alert-icon {
+    animation: lct-alert-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.lct-alert-icon svg {
+    animation: lct-alert-wobble 0.6s ease 0.35s both;
+}
+@keyframes lct-alert-pop {
+    from { transform: scale(0.4); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+@keyframes lct-alert-wobble {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-14deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-5deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .lct-alert-icon,
+    .lct-alert-icon svg {
+        animation: none;
+    }
+}
+
+/* ---- Inner pages (How to order, Contact) ---- */
+/* Photos: Karata My (loading a delivery) and Tianlei Wu (stock aisle) on Unsplash. */
+.el-site .hero.lct-hero-order {
+    background-image:
+        linear-gradient(180deg, rgb(17 17 19 / 0.8) 0%, rgb(17 17 19 / 0.6) 45%, rgb(17 17 19 / 0.88) 100%),
+        url('/images/hero-delivery-sm.webp');
+    background-position: center 30%;
+}
+.el-site .hero.lct-hero-contact {
+    background-image:
+        linear-gradient(180deg, rgb(17 17 19 / 0.8) 0%, rgb(17 17 19 / 0.6) 45%, rgb(17 17 19 / 0.88) 100%),
+        url('/images/hero-aisle-sm.webp');
+}
+@media (min-width: 900px) {
+    .el-site .hero.lct-hero-order {
+        background-image:
+            linear-gradient(180deg, rgb(17 17 19 / 0.8) 0%, rgb(17 17 19 / 0.55) 45%, rgb(17 17 19 / 0.88) 100%),
+            url('/images/hero-delivery.webp');
+    }
+    .el-site .hero.lct-hero-contact {
+        background-image:
+            linear-gradient(180deg, rgb(17 17 19 / 0.8) 0%, rgb(17 17 19 / 0.55) 45%, rgb(17 17 19 / 0.88) 100%),
+            url('/images/hero-aisle.webp');
+    }
+}
+.el-site .lct-page-hero {
+    padding-top: 72px;
+    padding-bottom: 80px;
+}
+.el-site .lct-page-hero h1 {
+    font-size: clamp(34px, 4.4vw, 62px);
+    max-width: 18ch;
+}
+.lct-crumbs {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 18px;
+    font-size: 13.5px;
+    color: var(--color-steel-400);
+}
+.lct-crumbs a:hover {
+    color: #fff;
+}
+.lct-crumbs .bx {
+    font-size: 16px;
+}
+.lct-crumbs [aria-current] {
+    color: #fff;
+    font-weight: 600;
+}
+
+.el-site .lct-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+@media (max-width: 900px) {
+    .el-site .lct-info-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.el-site .lct-info-card {
+    padding: 28px;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px rgb(27 27 29 / 0.08), 0 14px 30px -22px rgb(0 0 0 / 0.45);
+}
+.lct-info-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--color-signal);
+    color: #fff;
+    font-size: 26px;
+}
+.el-site .lct-info-card h3 {
+    margin: 18px 0 10px;
+    font-size: 22px;
+}
+.el-site .lct-info-card p {
+    margin: 10px 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-steel-700);
+}
+.el-site .lct-info-card strong {
+    color: var(--color-ink, #1b1b1d);
+}
+.lct-info-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.lct-info-list li {
+    position: relative;
+    padding: 8px 0 8px 18px;
+    border-bottom: 1px dashed rgb(27 27 29 / 0.14);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-ink);
+}
+.lct-info-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--color-signal);
+}
+.el-site .lct-price-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 760px;
+    margin: 28px auto 0;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: var(--color-signal-soft, #fdeceb);
+    color: var(--color-signal-700, #8f1115);
+    font-size: 15px;
+    line-height: 1.55;
+}
+.lct-price-callout .bx {
+    flex-shrink: 0;
+    font-size: 20px;
+    margin-top: 1px;
+}
+
+.el-site .lct-faq-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: 48px;
+    align-items: start;
+}
+@media (max-width: 900px) {
+    .el-site .lct-faq-wrap { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+}
+.lct-faq {
+    border-bottom: 1px solid rgb(27 27 29 / 0.12);
+}
+.lct-faq:first-child {
+    border-top: 1px solid rgb(27 27 29 / 0.12);
+}
+.lct-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 4px;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: #1b1b1d;
+}
+.lct-faq summary::-webkit-details-marker {
+    display: none;
+}
+.lct-faq summary .bx {
+    flex-shrink: 0;
+    font-size: 22px;
+    color: var(--color-signal);
+    transition: transform 0.25s var(--ease-out-expo);
+}
+.lct-faq[open] summary .bx {
+    transform: rotate(45deg);
+}
+.lct-faq summary:hover {
+    color: var(--color-signal-600, #b3141a);
+}
+.lct-faq-body {
+    padding: 0 4px 22px;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--color-steel-700);
+}
+.lct-faq[open] .lct-faq-body {
+    animation: lct-faq-in 0.3s var(--ease-out-expo);
+}
+@keyframes lct-faq-in {
+    from { opacity: 0; transform: translateY(-6px); }
+}
+
+/* ---- CTA before the footer ---- */
+/* Photos on Unsplash: Jelleke Vanooteghem (store wall), Guilherme Mendes (boxes),
+   Oxana Melis (fittings shelf). Photo and tint are set per page. */
+.el-site .lct-cta {
+    padding: 72px 16px;
+    background: #fff;
+}
+.el-site .lct-cta-card {
+    position: relative;
+    isolation: isolate;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: clamp(56px, 8vw, 110px) clamp(20px, 5vw, 64px);
+    border-radius: clamp(20px, 3vw, 36px);
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    --cta-photo: url('/images/cta-store-sm.webp');
+    --cta-wash: linear-gradient(180deg, rgb(150 12 17 / 0.85), rgb(110 8 12 / 0.92));
+    background: var(--cta-wash), var(--cta-photo) center / cover;
+}
+.el-site .lct-cta--boxes { --cta-photo: url('/images/cta-boxes-sm.webp'); }
+.el-site .lct-cta--shelf { --cta-photo: url('/images/cta-shelf-sm.webp'); }
+@media (min-width: 900px) {
+    .el-site .lct-cta--store { --cta-photo: url('/images/cta-store.webp'); }
+    .el-site .lct-cta--boxes { --cta-photo: url('/images/cta-boxes.webp'); }
+    .el-site .lct-cta--shelf { --cta-photo: url('/images/cta-shelf.webp'); }
+}
+/* Dark tint: charcoal wash with the brand red kept in the rule and buttons. */
+.el-site .lct-cta--dark {
+    --cta-wash: linear-gradient(115deg, rgb(20 20 22 / 0.94) 35%, rgb(20 20 22 / 0.72));
+    box-shadow: inset 0 -4px 0 var(--color-signal);
+}
+.el-site .lct-cta--dark .lct-cta-eyebrow {
+    color: #ff6b70;
+}
+/* the logo's chevron, big and faint in the corner */
+.el-site .lct-cta-card::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: -60px;
+    bottom: -120px;
+    width: 360px;
+    height: 360px;
+    background: rgb(255 255 255 / 0.07);
+    clip-path: polygon(50% 0, 100% 30%, 100% 50%, 50% 20%, 0 50%, 0 30%);
+}
+.lct-cta-eyebrow {
+    margin: 0 0 18px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.75);
+}
+.el-site .lct-cta-card h2 {
+    max-width: 17ch;
+    margin: 0 auto;
+    font-size: clamp(32px, 4.6vw, 64px);
+    line-height: 1.02;
+    color: #fff;
+    text-wrap: balance;
+}
+.el-site .lct-cta-lede {
+    max-width: 58ch;
+    margin: 22px auto 0;
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 1.7;
+    color: rgb(255 255 255 / 0.85);
+}
+.el-site .lct-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 36px;
+}
+/* Split tint: text on solid red at the left, the photo showing through on the right. */
+.el-site .lct-cta--split {
+    --cta-wash: linear-gradient(90deg, rgb(150 12 17 / 0.97) 0%, rgb(150 12 17 / 0.9) 45%, rgb(150 12 17 / 0.25) 100%);
+    text-align: left;
+    padding-inline: clamp(24px, 6vw, 96px);
+}
+.el-site .lct-cta--split h2,
+.el-site .lct-cta--split .lct-cta-lede {
+    margin-inline: 0;
+}
+.el-site .lct-cta--split .lct-cta-actions {
+    justify-content: flex-start;
+}
+@media (max-width: 700px) {
+    .el-site .lct-cta--split {
+        --cta-wash: linear-gradient(180deg, rgb(150 12 17 / 0.94), rgb(150 12 17 / 0.8));
+    }
+}
+
+/* Arriving on a shop page (e.g. "Browse the shop" from the tray): a short fade-up
+   instead of a hard cut. Filter changes keep the page mounted, so they don't replay it. */
+.lct-page-in {
+    animation: lct-page-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes lct-page-in {
+    from { opacity: 0; transform: translateY(10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .lct-page-in { animation: none; }
 }

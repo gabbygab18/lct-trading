@@ -102,7 +102,7 @@ class CatalogController extends Controller
      *
      * @return list<array{key: string, label: string, html: string}>
      */
-    private static function tabs(): array
+    public static function tabs(): array
     {
         $shipping = '<p>Choose at checkout: '.e(implode('; ', Order::SHIPPING)).'.</p>'
             .'<p>The delivery fee depends on weight and distance. LCT confirms it with you by phone before anything ships. Store pickup is free.</p>';

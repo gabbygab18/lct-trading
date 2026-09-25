@@ -151,7 +151,7 @@ export default function Shell({ children, dock = true }) {
                 </div>
             </div>
             <div className="mx-auto w-full max-w-[1600px] flex-1">
-                <main id="main" className="min-w-0">{children}</main>
+                <main id="main" className="lct-page-in min-w-0">{children}</main>
             </div>
             <div className="el-site contents">
                 <Footer />

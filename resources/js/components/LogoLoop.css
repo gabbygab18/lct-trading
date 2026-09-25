@@ -87,10 +87,13 @@
   overflow: visible;
 }
 
-.logoloop--scale-hover .logoloop__item:hover img,
-.logoloop--scale-hover .logoloop__item:hover .logoloop__node {
-  transform: scale(1.2);
-  transform-origin: center center;
+/* Touch screens: a hover effect makes the first tap only "hover", so the link needs a second tap. */
+@media (hover: hover) {
+  .logoloop--scale-hover .logoloop__item:hover img,
+  .logoloop--scale-hover .logoloop__item:hover .logoloop__node {
+    transform: scale(1.2);
+    transform-origin: center center;
+  }
 }
 
 .logoloop--scale-hover .logoloop__node {
@@ -105,8 +108,10 @@
   transition: opacity 0.2s ease;
 }
 
-.logoloop__link:hover {
-  opacity: 0.8;
+@media (hover: hover) {
+  .logoloop__link:hover {
+    opacity: 0.8;
+  }
 }
 
 .logoloop__link:focus-visible {

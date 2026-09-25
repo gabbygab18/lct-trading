@@ -11,8 +11,7 @@ function Bx({ name, className = '' }) {
 }
 
 export default function Footer() {
-    const { settings = {}, navBrands = [], routes, isHome, store = {} } = usePage().props;
-    const homeUrl = isHome ? '' : routes.home;
+    const { settings = {}, navBrands = [], routes, store = {} } = usePage().props;
 
     return (
         <footer>
@@ -74,9 +73,9 @@ export default function Footer() {
                     <div className="footer-col">
                         <h3>Order</h3>
                         <Link href={routes.catalog}>Shop all items</Link>
-                        <a href={`${homeUrl}#how`}>How to order</a>
+                        <Link href={routes.howTo}>How to order</Link>
                         <Link href={routes.checkout}>Your tray</Link>
-                        <a href={`${homeUrl}#contact`}>Contact us</a>
+                        <Link href={routes.contact}>Contact us</Link>
                     </div>
                 </div>
 

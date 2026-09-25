@@ -90,7 +90,9 @@ export default function Pocket({ product, priority = false }) {
                     <Price price={product.price} listPrice={product.listPrice} discount={product.discount} size="md" />
                     <StockNote stock={product.stock} className="whitespace-nowrap text-[11.5px] leading-none" quiet="text-steel-700" />
                 </div>
-                <div className="mt-2.5">
+                {/* mt-auto: the button sits on the card's bottom edge, so a row of cards
+                    lines up even when one has a discount line and the next doesn't. */}
+                <div className="mt-auto pt-2.5">
                     {qty > 0 ? (
                         <QtyStepper value={qty} onChange={(n) => tray.setQty(product.id, n, product)} label={product.sku} />
                     ) : (

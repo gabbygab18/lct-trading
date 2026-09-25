@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -33,14 +35,37 @@ class HomeController extends Controller
                 return [
                     'name'  => $row->category,
                     'count' => (int) $row->total,
-                    'image' => $pick?->image_url,
+                    'image' => $pick?->image,
                 ];
             })->all());
+
+        // Cache the file name, not the URL: a URL built for one host (127.0.0.1)
+        // breaks when the site is opened through another (a tunnel, the live domain).
+        $categories = array_map(
+            fn ($c) => ['image' => $c['image'] ? (new Product(['image' => $c['image']]))->image_url : null] + $c,
+            $categories,
+        );
 
         return Inertia::render('Home', [
             'stats'      => $stats,
             'brands'     => CatalogController::brands(),
             'categories' => $categories,
         ]);
+    }
+
+    /** Ordering, delivery and payment spelled out, with LCT's policies from Settings. */
+    public function howToOrder(): Response
+    {
+        return Inertia::render('HowToOrder', [
+            'shipping'   => Order::SHIPPING,
+            'payment'    => Order::PAYMENT,
+            'pickupNote' => Setting::get('pickup_note'),
+            'policies'   => CatalogController::tabs(),
+        ]);
+    }
+
+    public function contact(): Response
+    {
+        return Inertia::render('Contact');
     }
 }
