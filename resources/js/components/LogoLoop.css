@@ -88,6 +88,15 @@
 }
 
 /* Touch screens: a hover effect makes the first tap only "hover", so the link needs a second tap. */
+/* Touch screens get the same lift on tap: the tapped (focused) item, not :hover. */
+.logoloop--scale-hover .logoloop__item:focus-within img,
+.logoloop--scale-hover .logoloop__item:focus-within .logoloop__node {
+  transform: scale(1.2);
+  transform-origin: center center;
+}
+.logoloop__item:focus {
+  outline: none;
+}
 @media (hover: hover) {
   .logoloop--scale-hover .logoloop__item:hover img,
   .logoloop--scale-hover .logoloop__item:hover .logoloop__node {

@@ -549,13 +549,6 @@
             opacity: 1;
         }
     }
-    /* No hover on touch screens, so logos show in colour and open on the first tap. */
-    @media (hover: none) {
-        .lct-logoloop .logoloop__item img {
-            filter: none;
-            opacity: 1;
-        }
-    }
 
     .el-site .lct-logo-card {
         display: grid;

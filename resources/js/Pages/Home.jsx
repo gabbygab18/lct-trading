@@ -61,6 +61,15 @@ export default function Home({ stats, brands, categories }) {
 
     const shop = (params) => `${routes.catalog}?${new URLSearchParams(params)}`;
 
+    const touchQuery = '(hover: none), (max-width: 1024px)';
+    const [touch, setTouch] = useState(() => window.matchMedia(touchQuery).matches);
+    useEffect(() => {
+        const mq = window.matchMedia(touchQuery);
+        const onChange = () => setTouch(mq.matches);
+        mq.addEventListener('change', onChange);
+        return () => mq.removeEventListener('change', onChange);
+    }, []);
+
     return (
         <SiteLayout
             title="LCT Trading · Tools & Hardware Supply"
@@ -117,7 +126,8 @@ export default function Home({ stats, brands, categories }) {
                             src: `/images/brands/${b.name.toLowerCase().replace(/[^a-z0-9]/g, '')}.webp?v=2`,
                             alt: b.name,
                             title: `Shop ${b.name}`,
-                            href: shop({ brand: b.name }),
+                            // Phones and tablets: logos only light up on tap, no link.
+                            href: touch ? undefined : shop({ brand: b.name }),
                         }))}
                         speed={60}
                         logoHeight={40}

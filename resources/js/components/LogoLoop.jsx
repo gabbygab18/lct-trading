@@ -267,8 +267,9 @@ export const LogoLoop = memo(({
     ) : (
       content
     );
+    // Without a link, a tap still focuses the item, which lights it (see :focus-within).
     return (
-      <li className="logoloop__item" key={key} role="listitem">
+      <li className="logoloop__item" key={key} role="listitem" tabIndex={item.href ? undefined : -1}>
         {itemContent}
       </li>
     );
