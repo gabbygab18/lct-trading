@@ -45,5 +45,13 @@ class DatabaseSeeder extends Seeder
             $importer = (new ItemImporter(placeholder: true))->import($csv);
             $this->command?->info("Items: {$importer->created} added, {$importer->updated} updated, ".count($importer->errors).' skipped.');
         }
+
+        // The client's own supplier lists (Wixim, Setsu, boards), priced by
+        // scripts/supplier_import.py. Real items, so not flagged as placeholders.
+        $supplier = base_path('scripts/data/supplier_items.csv');
+        if (is_file($supplier)) {
+            $importer = (new ItemImporter)->import($supplier);
+            $this->command?->info("Supplier items: {$importer->created} added, {$importer->updated} updated, ".count($importer->errors).' skipped.');
+        }
     }
 }

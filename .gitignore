@@ -27,10 +27,9 @@ Thumbs.db
 /*.zip
 /*.pdf
 
-# Placeholder seed (khmtools feed): regenerate with `python scripts/fetch_khm_feed.py`
+# Raw khmtools feed; the seed CSV and product photos built from it are committed
+# so a fresh deploy (e.g. Laravel Cloud staging) has a full catalog.
 /scripts/data/raw
-/scripts/data/seed_items.csv
-/public/images/products
 
 # Impeccable review captures
 /.impeccable/review
