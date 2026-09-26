@@ -48,7 +48,11 @@ class HomeController extends Controller
 
         return Inertia::render('Home', [
             'stats'      => $stats,
-            'brands'     => CatalogController::brands(),
+            // Only brands with a logo file go in the logo strip (the rest would 404).
+            'brands'     => collect(CatalogController::brands())
+                ->map(fn ($b) => $b + ['logo' => CatalogController::brandLogo($b['name'])])
+                ->filter(fn ($b) => $b['logo'])
+                ->values(),
             'categories' => $categories,
         ]);
     }

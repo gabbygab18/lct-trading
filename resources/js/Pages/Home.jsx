@@ -123,7 +123,7 @@ export default function Home({ stats, brands, categories }) {
                     <LogoLoop
                         className="lct-logoloop"
                         logos={brands.map((b) => ({
-                            src: `/images/brands/${b.name.toLowerCase().replace(/[^a-z0-9]/g, '')}.webp?v=2`,
+                            src: b.logo,
                             alt: b.name,
                             title: `Shop ${b.name}`,
                             // Phones and tablets: logos only light up on tap, no link.

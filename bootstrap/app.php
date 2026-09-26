@@ -14,10 +14,12 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectGuestsTo(fn () => route('admin.login'));
         $middleware->redirectUsersTo(fn () => route('admin.dashboard'));
 
-        // A tunnel on this machine (cloudflared) forwards https visits from
-        // localhost; honour its X-Forwarded-* so links and assets stay https.
-        // Only localhost is trusted, so nobody can spoof their IP from outside.
-        $middleware->trustProxies(at: ['127.0.0.1', '::1']);
+        // Honour X-Forwarded-* from the proxy in front of the app, so links and
+        // assets are built as https (http links on an https page are blocked).
+        // Laravel Cloud: its load balancer, the only way in, so trust any
+        // address (what Laravel does by default there). Elsewhere: a local
+        // tunnel (cloudflared) on localhost only.
+        $middleware->trustProxies(at: laravel_cloud() ? '*' : ['127.0.0.1', '::1']);
 
         // Inertia powers the public catalog; the admin stays server-rendered Blade.
         $middleware->web(append: [
