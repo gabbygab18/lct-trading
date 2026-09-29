@@ -53,5 +53,12 @@ class DatabaseSeeder extends Seeder
             $importer = (new ItemImporter)->import($supplier);
             $this->command?->info("Supplier items: {$importer->created} added, {$importer->updated} updated, ".count($importer->errors).' skipped.');
         }
+
+        // Items the client asked for one by one (prices as they gave them).
+        $extra = base_path('scripts/data/extra_items.csv');
+        if (is_file($extra)) {
+            $importer = (new ItemImporter)->import($extra);
+            $this->command?->info("Extra items: {$importer->created} added, {$importer->updated} updated, ".count($importer->errors).' skipped.');
+        }
     }
 }
