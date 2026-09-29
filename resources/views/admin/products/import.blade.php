@@ -18,7 +18,7 @@
         <form action="{{ route('admin.products.import.store') }}" method="POST" enctype="multipart/form-data" class="a-card space-y-4 p-5">
             @csrf
             <h2 class="stamp text-[20px]">Upload a sheet</h2>
-            <input type="file" name="file" accept=".xlsx,.csv" required class="block w-full text-[14px]">
+            <input type="file" name="file" accept=".xlsx,.csv" required class="a-file">
             @error('file')<p class="text-[13px] font-medium text-signal-600">{{ $message }}</p>@enderror
             <button class="a-btn a-btn-primary">Upload and apply</button>
             <p class="text-[13px] text-steel-700">.xlsx or .csv, first sheet only, up to 20 MB.</p>

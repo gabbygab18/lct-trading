@@ -77,7 +77,7 @@
                 <span class="text-[13px] text-steel-700">No photo</span>
             @endif
         </div>
-        <input type="file" name="photo" accept="image/*" class="block w-full text-[14px]">
+        <input type="file" name="photo" accept="image/*" class="a-file">
         <p class="text-[12.5px] text-steel-700">JPG, PNG or WebP up to 4 MB. A plain white background looks best.</p>
         @if ($product?->image)
             <label class="flex items-center gap-2 text-[14px]"><input type="checkbox" name="remove_photo" value="1" class="size-4"> Remove current photo</label>

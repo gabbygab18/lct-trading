@@ -998,6 +998,43 @@
         padding: 0 0.7rem;
         font-size: 13.5px;
     }
+    /* File inputs: the browser's "Choose File" styled as a ghost button, the
+       chosen file name beside it in a dashed drop box. */
+    .a-file {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1.5px dashed var(--color-steel-400);
+        border-radius: 6px;
+        background: #fff;
+        color: var(--color-steel-700);
+        font-size: 14px;
+        cursor: pointer;
+        transition: border-color 0.15s, background 0.15s;
+    }
+    .a-file:hover,
+    .a-file:focus-visible {
+        border-color: var(--color-signal);
+        background: var(--color-steel-100);
+        outline: none;
+    }
+    .a-file::file-selector-button {
+        height: 2.25rem;
+        margin-right: 12px;
+        padding: 0 1rem;
+        border: 0;
+        border-radius: 4px;
+        background: var(--color-ink);
+        color: #fff;
+        font-family: var(--font-sans);
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+    .a-file:hover::file-selector-button {
+        background: var(--color-signal);
+    }
     .a-table {
         width: 100%;
         border-collapse: collapse;
