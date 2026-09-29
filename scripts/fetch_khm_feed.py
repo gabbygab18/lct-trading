@@ -120,10 +120,15 @@ BRAND_KEYS = {b.lower() for b in BRANDS}
 # First match wins. Placeholder taxonomy only: the client's own categories
 # replace these through the admin import.
 CATEGORIES = [
+    # Unmistakably electrical, even when the name also says "battery" or "charger".
+    ("Electrical & Lighting", r"\boutlet|receptacle|\bbulb|door ?bell|sealed lead acid|universal adapter"),
     ("Bits, Blades & Accessories", r"\bbits?\b|disc|blade|hole ?saw|sandpaper|sanding|carbon brush|batter(y|ies)|charger|chuck|spare part|abrasive|cutting wheel|wire (cup )?brush|core bit|chisel bit"),
-    ("Power Tools", r"cordless|brushless|\d+ ?v\b|rotary hammer|demolition|hammer drill|impact (driver|wrench)|grinder|drill|polisher|sander|planer|router|jigsaw|circular saw|miter saw|reciprocating|chain ?saw|heat gun|blower|vacuum|power tool|cut[- ]off|trimmer|multi[- ]tool|nibbler|shear"),
+    # Tool words only: a voltage alone ("250V", "12V") also marks bulbs and
+    # outlets, so it is checked after Electrical (below) as a fallback.
+    ("Power Tools", r"cordless|brushless|rotary hammer|demolition|hammer drill|impact (driver|wrench)|grinder|drill|polisher|sander|planer|router|jigsaw|circular saw|miter saw|reciprocating|chain ?saw|heat gun|blower|vacuum|power tool|cut[- ]off|trimmer|multi[- ]tool|nibbler|shear"),
     ("Generators, Pumps & Welding", r"generator|compressor|weld|engine|\bpump|pressure washer|inverter"),
-    ("Electrical & Lighting", r"wire|cable|breaker|panel|outlet|switch|bulb|lamp|light|\bled\b|fluorescent|extension cord|plug|conduit|electrical|junction|socket outlet|convenience|fan\b|tester|multimeter"),
+    ("Electrical & Lighting", r"wire|cable|breaker|panel|outlet|receptacle|switch|bulb|lamp|light|\bled\b|fluorescent|extension cord|plug|\busb\b|conduit|\b(110|220|230|240|250) ?v(ac)?\b|electrical|junction|socket outlet|lamp ?holder|keyless|\be(14|27)\b|convenience|fan\b|tester|multimeter"),
+    ("Power Tools", r"\d+ ?v\b"),
     ("Plumbing", r"pipe|faucet|valve|fitting|coupling|elbow|\btee\b|shower|sink|water|toilet|drain|bidet|lavatory|plumb|pvc|ppr|hose"),
     ("Measuring & Layout", r"tape rule|measuring|measure|\blevel\b|laser|caliper|square|gauge|meter|stud finder"),
     ("Hand Tools", r"wrench|screwdriver|plier|hammer|spanner|socket|hex key|allen|cutter|knife|chisel|file\b|saw|clamp|vise|crowbar|bar\b|snip|punch|tool set|mallet|trowel|scraper"),
