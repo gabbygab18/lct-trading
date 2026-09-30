@@ -28,6 +28,11 @@ class GalleryCache
     /** @return list<string> public URLs, main photo first */
     public static function urls(Product $product): array
     {
+        // Photos the client added: the list photo first, then the extras.
+        if ($own = $product->ownGallery()) {
+            return array_values(array_filter([$product->image_url, ...array_map(Product::photoUrl(...), $own)]));
+        }
+
         $sources = array_slice(array_values(array_filter((array) $product->gallery, 'is_string')), 0, self::MAX);
         $local = [];
         $missing = [];

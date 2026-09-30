@@ -83,6 +83,24 @@
             <label class="flex items-center gap-2 text-[14px]"><input type="checkbox" name="remove_photo" value="1" class="size-4"> Remove current photo</label>
         @endif
         @error('photo')<p class="text-[13px] text-signal-600">{{ $message }}</p>@enderror
+
+        <span class="a-label pt-3">More photos <span class="font-normal text-steel-700">(optional, shown on the item page)</span></span>
+        @if ($product && $product->ownGallery())
+            <div class="grid grid-cols-3 gap-2">
+                @foreach ($product->ownGallery() as $g)
+                    <label class="block space-y-1 text-[12.5px]">
+                        <span class="grid aspect-square place-items-center overflow-hidden rounded-[4px] bg-steel-100">
+                            <img src="{{ \App\Models\Product::photoUrl($g) }}" alt="" class="size-full object-contain p-1.5 mix-blend-multiply">
+                        </span>
+                        <span class="flex items-center gap-1.5"><input type="checkbox" name="remove_gallery[]" value="{{ $g }}" class="size-3.5"> Remove</span>
+                    </label>
+                @endforeach
+            </div>
+        @endif
+        <input type="file" name="photos[]" accept="image/*" multiple class="a-file">
+        <p class="text-[12.5px] text-steel-700">Pick several at once, up to 8 per save.</p>
+        @error('photos')<p class="text-[13px] text-signal-600">{{ $message }}</p>@enderror
+        @error('photos.*')<p class="text-[13px] text-signal-600">{{ $message }}</p>@enderror
     </div>
 </div>
 

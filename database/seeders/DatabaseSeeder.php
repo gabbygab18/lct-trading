@@ -54,6 +54,13 @@ class DatabaseSeeder extends Seeder
             $this->command?->info("Supplier items: {$importer->created} added, {$importer->updated} updated, ".count($importer->errors).' skipped.');
         }
 
+        // Champ price list (2025), prices as printed.
+        $champ = base_path('scripts/data/champ_items.csv');
+        if (is_file($champ)) {
+            $importer = (new ItemImporter)->import($champ);
+            $this->command?->info("Champ items: {$importer->created} added, {$importer->updated} updated, ".count($importer->errors).' skipped.');
+        }
+
         // Items the client asked for one by one (prices as they gave them).
         $extra = base_path('scripts/data/extra_items.csv');
         if (is_file($extra)) {

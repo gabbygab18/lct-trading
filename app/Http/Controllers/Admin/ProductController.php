@@ -171,6 +171,10 @@ class ProductController extends Controller
             'description' => ['nullable', 'string', 'max:5000'],
             'photo'       => ['nullable', 'image', 'max:4096'],
             'remove_photo'=> ['nullable', 'boolean'],
+            'photos'      => ['nullable', 'array', 'max:8'],
+            'photos.*'    => ['image', 'max:4096'],
+            'remove_gallery'   => ['nullable', 'array'],
+            'remove_gallery.*' => ['string'],
         ]);
 
         $ranks = array_flip(array_map('strtolower', config('catalog.priority_brands')));
@@ -187,7 +191,25 @@ class ProductController extends Controller
                 ? $request->file('photo')->store('uploads/products', 'public')
                 : null;
         }
-        unset($data['photo'], $data['remove_photo']);
+        // Extra photos: keep the ones not ticked for removal, then add new uploads.
+        if ($request->hasFile('photos') || $request->filled('remove_gallery')) {
+            $remove = (array) $request->input('remove_gallery', []);
+            $keep = [];
+            foreach ((array) $product?->gallery as $g) {
+                if (in_array($g, $remove, true)) {
+                    if (is_string($g) && str_starts_with($g, 'uploads/')) {
+                        Storage::disk('public')->delete($g);
+                    }
+                    continue;
+                }
+                $keep[] = $g;
+            }
+            foreach ((array) $request->file('photos', []) as $file) {
+                $keep[] = $file->store('uploads/products', 'public');
+            }
+            $data['gallery'] = $keep ?: null;
+        }
+        unset($data['photo'], $data['remove_photo'], $data['photos'], $data['remove_gallery']);
 
         return $data;
     }

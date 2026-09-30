@@ -1,0 +1,246 @@
+sku,name,brand,category,type,price,stock,image,tags,description,active
+CH-PAINT-BRUSH-1-2,"Champ Paint Brush 1/2""",Champ,Paint & Adhesives,Paint Brush,14.00,20,champ-paint-brush.webp,,,yes
+CH-PAINT-BRUSH-3-4,"Champ Paint Brush 3/4""",Champ,Paint & Adhesives,Paint Brush,19.00,20,champ-paint-brush.webp,,,yes
+CH-PAINT-BRUSH-1,"Champ Paint Brush 1""",Champ,Paint & Adhesives,Paint Brush,22.00,20,champ-paint-brush.webp,,,yes
+CH-PAINT-BRUSH-1-1-2,"Champ Paint Brush 1 1/2""",Champ,Paint & Adhesives,Paint Brush,25.84,20,champ-paint-brush.webp,,,yes
+CH-PAINT-BRUSH-2,"Champ Paint Brush 2""",Champ,Paint & Adhesives,Paint Brush,38.34,20,champ-paint-brush.webp,,,yes
+CH-PAINT-BRUSH-2-1-2,"Champ Paint Brush 2 1/2""",Champ,Paint & Adhesives,Paint Brush,47.50,20,champ-paint-brush.webp,,,yes
+CH-PAINT-BRUSH-3,"Champ Paint Brush 3""",Champ,Paint & Adhesives,Paint Brush,75.84,20,champ-paint-brush.webp,,,yes
+CH-PAINT-BRUSH-4,"Champ Paint Brush 4""",Champ,Paint & Adhesives,Paint Brush,130.00,20,champ-paint-brush.webp,,,yes
+CH-PRO-FINISH-POLYESTER-PET-PAINT-BRUSH-1,"Champ Pro Finish Polyester (PET) Paint Brush 1""",Champ,Paint & Adhesives,Paint Brush,19.00,20,champ-pet-brush.webp,,,yes
+CH-PRO-FINISH-POLYESTER-PET-PAINT-BRUSH-1-1-2,"Champ Pro Finish Polyester (PET) Paint Brush 1 1/2""",Champ,Paint & Adhesives,Paint Brush,25.00,20,champ-pet-brush.webp,,,yes
+CH-PRO-FINISH-POLYESTER-PET-PAINT-BRUSH-2,"Champ Pro Finish Polyester (PET) Paint Brush 2""",Champ,Paint & Adhesives,Paint Brush,32.00,20,champ-pet-brush.webp,,,yes
+CH-PRO-FINISH-POLYESTER-PET-PAINT-BRUSH-3,"Champ Pro Finish Polyester (PET) Paint Brush 3""",Champ,Paint & Adhesives,Paint Brush,55.00,20,champ-pet-brush.webp,,,yes
+CH-PRO-FINISH-POLYESTER-PET-PAINT-BRUSH-4,"Champ Pro Finish Polyester (PET) Paint Brush 4""",Champ,Paint & Adhesives,Paint Brush,75.00,20,champ-pet-brush.webp,,,yes
+CH-PRO-WATERPROOFING-BRUSH,Champ Pro Waterproofing Brush,Champ,Paint & Adhesives,Waterproofing Brush,120.00,20,champ-waterproofing-brush.webp,,,yes
+CH-PRO-FIN-FOAM-PAINT-ROLLER-REFILL-4-SINGLE-PACK,"Champ Pro-Fin Foam Paint Roller Refill 4"" (Single Pack)",Champ,Paint & Adhesives,Paint Roller,20.00,20,champ-foam-roller.webp,,,yes
+CH-PRO-FIN-FOAM-PAINT-ROLLER-4-WITH-HANDLE,"Champ Pro-Fin Foam Paint Roller 4"" with Handle",Champ,Paint & Adhesives,Paint Roller,45.00,20,champ-foam-roller.webp,,,yes
+CH-PRO-FIN-FOAM-PAINT-ROLLER-REFILL-6-SINGLE,"Champ Pro-Fin Foam Paint Roller Refill 6"" (Single)",Champ,Paint & Adhesives,Paint Roller,40.00,20,champ-foam-roller.webp,,,yes
+CH-PRO-FIN-FOAM-PAINT-ROLLER-6-WITH-HANDLE,"Champ Pro-Fin Foam Paint Roller 6"" with Handle",Champ,Paint & Adhesives,Paint Roller,65.00,20,champ-foam-roller.webp,,,yes
+CH-PRO-FIN-ACRYLON-PAINT-ROLLER-4-WITH-HANDLE,"Champ Pro-Fin Acrylon Paint Roller 4"" with Handle",Champ,Paint & Adhesives,Paint Roller,47.00,20,champ-acrylon-roller.webp,,,yes
+CH-PRO-FIN-ACRYLON-PAINT-ROLLER-REFILL-4-5-PACK,"Champ Pro-Fin Acrylon Paint Roller Refill 4"" (5 Pack)",Champ,Paint & Adhesives,Paint Roller,67.00,20,champ-acrylon-roller.webp,,,yes
+CH-PRO-FIN-ACRYLON-PAINT-ROLLER-7-WITH-HANDLE,"Champ Pro-Fin Acrylon Paint Roller 7"" with Handle",Champ,Paint & Adhesives,Paint Roller,72.00,20,champ-acrylon-roller.webp,,,yes
+CH-PRO-FIN-ACRYLON-PAINT-ROLLER-REFILL-7,"Champ Pro-Fin Acrylon Paint Roller Refill 7""",Champ,Paint & Adhesives,Paint Roller,37.00,20,champ-acrylon-roller.webp,,,yes
+CH-PRO-FIN-ACRYLON-PAINT-ROLLER-9-WITH-HANDLE,"Champ Pro-Fin Acrylon Paint Roller 9"" with Handle",Champ,Paint & Adhesives,Paint Roller,82.00,20,champ-acrylon-roller.webp,,,yes
+CH-PRO-FIN-ACRYLON-PAINT-ROLLER-REFILL-9,"Champ Pro-Fin Acrylon Paint Roller Refill 9""",Champ,Paint & Adhesives,Paint Roller,44.00,20,champ-acrylon-roller.webp,,,yes
+CH-PRO-FIN-WOOL-PAINT-ROLLER-7-WITH-HANDLE,"Champ Pro-Fin Wool Paint Roller 7"" with Handle",Champ,Paint & Adhesives,Paint Roller,90.00,20,champ-wool-roller.webp,,,yes
+CH-PRO-FIN-WOOL-PAINT-ROLLER-REFILL-7,"Champ Pro-Fin Wool Paint Roller Refill 7""",Champ,Paint & Adhesives,Paint Roller,55.00,20,champ-wool-roller.webp,,,yes
+CH-PRO-FIN-MICROFIBER-PAINT-ROLLER-4-WITH-HANDLE,"Champ Pro-Fin Microfiber Paint Roller 4"" with Handle",Champ,Paint & Adhesives,Paint Roller,50.00,20,champ-microfiber-roller.webp,,,yes
+CH-PRO-FIN-MICROFIBER-PAINT-ROLLER-REFILL-4-SINGLE,"Champ Pro-Fin Microfiber Paint Roller Refill 4"" (Single)",Champ,Paint & Adhesives,Paint Roller,25.00,20,champ-microfiber-roller.webp,,,yes
+CH-TEXTURED-VERSATEX-ROLLER-7,"Champ Textured (Versatex) Roller 7""",Champ,Paint & Adhesives,Paint Roller,160.00,20,champ-textured-roller.webp,,,yes
+CH-TEXTURED-VERSATEX-ROLLER-9,"Champ Textured (Versatex) Roller 9""",Champ,Paint & Adhesives,Paint Roller,175.00,20,champ-textured-roller.webp,,,yes
+CH-PRO-FIN-EXTENSION-POLE-MAX-1-6M,Champ Pro-Fin Extension Pole (Max 1.6m),Champ,Paint & Adhesives,Extension Pole,100.00,20,champ-extension-pole.webp,,,yes
+CH-PRO-FIN-ALUMINUM-EXTENSION-POLE-MAX-3M,Champ Pro-Fin Aluminum Extension Pole (Max 3m),Champ,Paint & Adhesives,Extension Pole,250.00,20,champ-extension-pole.webp,,,yes
+CH-PAINT-TRAY-9,"Champ Paint Tray 9""",Champ,Paint & Adhesives,Paint Tray,60.00,20,champ-paint-tray.webp,,,yes
+CH-STAINLESS-STEEL-PUTTY-KNIFE-4-WITH-WOODEN-HANDLE,"Champ Stainless Steel Putty Knife 4"" with Wooden Handle",Champ,Hand Tools,Putty Knife,50.00,20,champ-putty-knife.webp,,,yes
+CH-WALL-SCRAPER-6,"Champ Wall Scraper 6""",Champ,Hand Tools,Wall Scraper,80.00,20,champ-wall-scraper.webp,,,yes
+CH-WALL-SCRAPER-8,"Champ Wall Scraper 8""",Champ,Hand Tools,Wall Scraper,100.00,20,champ-wall-scraper.webp,,,yes
+CH-STAINLESS-STEEL-PAINT-SCRAPER-1,"Champ Stainless Steel Paint Scraper 1""",Champ,Hand Tools,Paint Scraper,50.00,20,champ-ss-paint-scraper.webp,,,yes
+CH-STAINLESS-STEEL-PAINT-SCRAPER-2,"Champ Stainless Steel Paint Scraper 2""",Champ,Hand Tools,Paint Scraper,60.00,20,champ-ss-paint-scraper.webp,,,yes
+CH-STAINLESS-STEEL-PAINT-SCRAPER-3,"Champ Stainless Steel Paint Scraper 3""",Champ,Hand Tools,Paint Scraper,80.00,20,champ-ss-paint-scraper.webp,,,yes
+CH-STAINLESS-STEEL-PAINT-SCRAPER-4,"Champ Stainless Steel Paint Scraper 4""",Champ,Hand Tools,Paint Scraper,100.00,20,champ-ss-paint-scraper.webp,,,yes
+CH-PREMIUM-PLASTIC-SCRAPER-2,"Champ Premium Plastic Scraper 2""",Champ,Hand Tools,Plastic Scraper,20.00,20,champ-plastic-scraper.webp,,,yes
+CH-PREMIUM-PLASTIC-SCRAPER-3,"Champ Premium Plastic Scraper 3""",Champ,Hand Tools,Plastic Scraper,25.00,20,champ-plastic-scraper.webp,,,yes
+CH-PREMIUM-PLASTIC-SCRAPER-4,"Champ Premium Plastic Scraper 4""",Champ,Hand Tools,Plastic Scraper,30.00,20,champ-plastic-scraper.webp,,,yes
+CH-FIBERGLASS-MESH-TAPE-2-X-30M-100-FT,"Champ Fiberglass Mesh Tape 2"" x 30m (100 ft)",Champ,Paint & Adhesives,Mesh Tape,45.00,20,champ-fiberglass-mesh-tape.webp,,,yes
+CH-FIBERGLASS-MESH-TAPE-2-X-75M-250-FT,"Champ Fiberglass Mesh Tape 2"" x 75m (250 ft)",Champ,Paint & Adhesives,Mesh Tape,100.00,20,champ-fiberglass-mesh-tape.webp,,,yes
+CH-MASKING-TAPE-1-2-X-21M,"Champ Masking Tape 1/2"" x 21m",Champ,Paint & Adhesives,Masking Tape,14.00,20,champ-masking-tape.webp,,,yes
+CH-MASKING-TAPE-3-4-X-21M,"Champ Masking Tape 3/4"" x 21m",Champ,Paint & Adhesives,Masking Tape,19.00,20,champ-masking-tape.webp,,,yes
+CH-MASKING-TAPE-1-X-21M,"Champ Masking Tape 1"" x 21m",Champ,Paint & Adhesives,Masking Tape,25.00,20,champ-masking-tape.webp,,,yes
+CH-MASKING-TAPE-1-1-2-X-21M,"Champ Masking Tape 1 1/2"" x 21m",Champ,Paint & Adhesives,Masking Tape,38.00,20,champ-masking-tape.webp,,,yes
+CH-MASKING-TAPE-2-X-21M,"Champ Masking Tape 2"" x 21m",Champ,Paint & Adhesives,Masking Tape,50.00,20,champ-masking-tape.webp,,,yes
+CH-CLOTH-DUCT-TAPE-48MM-X-10M-BLACK,Champ Cloth Duct Tape 48mm x 10m Black,Champ,Paint & Adhesives,Duct Tape,60.00,20,champ-cloth-duct-tape.webp,,,yes
+CH-CLOTH-DUCT-TAPE-48MM-X-10M-SILVER,Champ Cloth Duct Tape 48mm x 10m Silver,Champ,Paint & Adhesives,Duct Tape,60.00,20,champ-cloth-duct-tape.webp,,,yes
+CH-CLOTH-DUCT-TAPE-48MM-X-10M-BROWN,Champ Cloth Duct Tape 48mm x 10m Brown,Champ,Paint & Adhesives,Duct Tape,60.00,20,champ-cloth-duct-tape.webp,,,yes
+CH-CLOTH-DUCT-TAPE-48MM-X-10M-GREEN,Champ Cloth Duct Tape 48mm x 10m Green,Champ,Paint & Adhesives,Duct Tape,60.00,20,champ-cloth-duct-tape.webp,,,yes
+CH-CLOTH-DUCT-TAPE-48MM-X-10M-NAVY-BLUE,Champ Cloth Duct Tape 48mm x 10m Navy Blue,Champ,Paint & Adhesives,Duct Tape,60.00,20,champ-cloth-duct-tape.webp,,,yes
+CH-CLOTH-DUCT-TAPE-48MM-X-10M-RED,Champ Cloth Duct Tape 48mm x 10m Red,Champ,Paint & Adhesives,Duct Tape,60.00,20,champ-cloth-duct-tape.webp,,,yes
+CH-CLOTH-DUCT-TAPE-48MM-X-10M-YELLOW,Champ Cloth Duct Tape 48mm x 10m Yellow,Champ,Paint & Adhesives,Duct Tape,60.00,20,champ-cloth-duct-tape.webp,,,yes
+CH-HEAVY-DUTY-CLOTH-DUCT-TAPE-48MM-X-25M-BLACK,Champ Heavy Duty Cloth Duct Tape 48mm x 25m Black,Champ,Paint & Adhesives,Duct Tape,140.00,20,champ-hd-cloth-duct-tape.webp,,,yes
+CH-HEAVY-DUTY-CLOTH-DUCT-TAPE-48MM-X-25M-SILVER,Champ Heavy Duty Cloth Duct Tape 48mm x 25m Silver,Champ,Paint & Adhesives,Duct Tape,140.00,20,champ-hd-cloth-duct-tape.webp,,,yes
+CH-DROP-TAPE-PRE-TAPED-MASKING-FILM-550MM-X-20M,Champ Drop Tape Pre-Taped Masking Film 550mm x 20m,Champ,Paint & Adhesives,Drop Tape,105.00,20,champ-drop-tape.webp,,,yes
+CH-DROP-TAPE-PRE-TAPED-MASKING-FILM-2100MM-X-20M,Champ Drop Tape Pre-Taped Masking Film 2100mm x 20m,Champ,Paint & Adhesives,Drop Tape,200.00,20,champ-drop-tape.webp,,,yes
+CH-DROP-TAPE-PRE-TAPED-MASKING-FILM-2700MM-X-20M,Champ Drop Tape Pre-Taped Masking Film 2700mm x 20m,Champ,Paint & Adhesives,Drop Tape,240.00,20,champ-drop-tape.webp,,,yes
+CH-SANDPAPER-P60,Champ Sandpaper P60,Champ,"Bits, Blades & Accessories",Sandpaper,11.00,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P80,Champ Sandpaper P80,Champ,"Bits, Blades & Accessories",Sandpaper,11.00,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P100,Champ Sandpaper P100,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P120,Champ Sandpaper P120,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P150,Champ Sandpaper P150,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P180,Champ Sandpaper P180,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P220,Champ Sandpaper P220,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P240,Champ Sandpaper P240,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P280,Champ Sandpaper P280,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P320,Champ Sandpaper P320,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P360,Champ Sandpaper P360,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P400,Champ Sandpaper P400,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P600,Champ Sandpaper P600,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P800,Champ Sandpaper P800,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P1000,Champ Sandpaper P1000,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P1200,Champ Sandpaper P1200,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P1500,Champ Sandpaper P1500,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-SANDPAPER-P2000,Champ Sandpaper P2000,Champ,"Bits, Blades & Accessories",Sandpaper,8.50,20,champ-sandpaper.webp,,,yes
+CH-H425-HEAVY-DUTY-FLOOR-SANDING-ROLL-P36-305MM-X-30M,Champ H425 Heavy Duty Floor Sanding Roll P36 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,6550.00,20,champ-sanding-roll-h425.webp,,,yes
+CH-H425-HEAVY-DUTY-FLOOR-SANDING-ROLL-P60-305MM-X-30M,Champ H425 Heavy Duty Floor Sanding Roll P60 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,6050.00,20,champ-sanding-roll-h425.webp,,,yes
+CH-H425-HEAVY-DUTY-FLOOR-SANDING-ROLL-P80-305MM-X-30M,Champ H425 Heavy Duty Floor Sanding Roll P80 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,5250.00,20,champ-sanding-roll-h425.webp,,,yes
+CH-H425-HEAVY-DUTY-FLOOR-SANDING-ROLL-P100-305MM-X-30M,Champ H425 Heavy Duty Floor Sanding Roll P100 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,5050.00,20,champ-sanding-roll-h425.webp,,,yes
+CH-H425-D-FLOOR-SANDING-ROLL-P60-305MM-X-30M,Champ H425-D Floor Sanding Roll P60 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,3500.00,20,champ-sanding-roll-h425d.webp,,,yes
+CH-H425-D-FLOOR-SANDING-ROLL-P80-305MM-X-30M,Champ H425-D Floor Sanding Roll P80 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,3200.00,20,champ-sanding-roll-h425d.webp,,,yes
+CH-H425-D-FLOOR-SANDING-ROLL-P100-305MM-X-30M,Champ H425-D Floor Sanding Roll P100 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,2800.00,20,champ-sanding-roll-h425d.webp,,,yes
+CH-H231-HEAVY-DUTY-FLOOR-SANDING-ROLL-P60-305MM-X-30M,Champ H231 Heavy Duty Floor Sanding Roll P60 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,4400.00,20,champ-sanding-roll-h231.webp,,,yes
+CH-H231-HEAVY-DUTY-FLOOR-SANDING-ROLL-P80-305MM-X-30M,Champ H231 Heavy Duty Floor Sanding Roll P80 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,4200.00,20,champ-sanding-roll-h231.webp,,,yes
+CH-H231-HEAVY-DUTY-FLOOR-SANDING-ROLL-P100-305MM-X-30M,Champ H231 Heavy Duty Floor Sanding Roll P100 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,3800.00,20,champ-sanding-roll-h231.webp,,,yes
+CH-H231-HEAVY-DUTY-FLOOR-SANDING-ROLL-P120-305MM-X-30M,Champ H231 Heavy Duty Floor Sanding Roll P120 305mm x 30m,Champ,"Bits, Blades & Accessories",Sanding Roll,3800.00,20,champ-sanding-roll-h231.webp,,,yes
+CH-DIAMOND-GLASS-CUTTING-DISC-4,"Champ Diamond Glass Cutting Disc 4""",Champ,"Bits, Blades & Accessories",Cutting Disc,200.00,20,champ-glass-cutting-disc.webp,,,yes
+CH-CUTTING-DISC-4,"Champ Cutting Disc 4""",Champ,"Bits, Blades & Accessories",Cutting Disc,20.00,20,champ-cutting-disc.webp,,,yes
+CH-CUTTING-DISC-14,"Champ Cutting Disc 14""",Champ,"Bits, Blades & Accessories",Cutting Disc,140.00,20,champ-cutting-disc.webp,,,yes
+CH-4-IN-1-SUPER-THIN-CUTTING-DISC-4,"Champ 4-in-1 Super Thin Cutting Disc 4""",Champ,"Bits, Blades & Accessories",Cutting Disc,12.50,20,champ-cutting-disc-4in1.webp,,,yes
+CH-FLEXIBLE-GRINDING-DISC-4-MARBLE-GLASS,"Champ Flexible Grinding Disc 4"" Marble & Glass",Champ,"Bits, Blades & Accessories",Grinding Disc,30.00,20,champ-flexible-grinding-disc.webp,,,yes
+CH-FLEXIBLE-GRINDING-DISC-4-STAINLESS-STEEL-METAL,"Champ Flexible Grinding Disc 4"" Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Grinding Disc,30.00,20,champ-flexible-grinding-disc.webp,,,yes
+CH-GRINDING-DISC-4,"Champ Grinding Disc 4""",Champ,"Bits, Blades & Accessories",Grinding Disc,25.00,20,,,,yes
+CH-TCT-SAW-BLADE-4-40T-FOR-WOOD,"Champ TCT Saw Blade 4"" 40T for Wood",Champ,"Bits, Blades & Accessories",Saw Blade,165.00,20,champ-tct-saw-blade.webp,,,yes
+CH-TCT-SAW-BLADE-7-40T-FOR-WOOD,"Champ TCT Saw Blade 7"" 40T for Wood",Champ,"Bits, Blades & Accessories",Saw Blade,295.00,20,champ-tct-saw-blade.webp,,,yes
+CH-TCT-SAW-BLADE-4-40T-MULTIPURPOSE,"Champ TCT Saw Blade 4"" 40T Multipurpose",Champ,"Bits, Blades & Accessories",Saw Blade,185.00,20,champ-tct-saw-blade.webp,,,yes
+CH-TCT-HOLE-SAW-1-2-14MM-FOR-STAINLESS-STEEL-METAL,"Champ TCT Hole Saw 1/2"" (14mm) for Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Hole Saw,250.00,20,champ-tct-hole-saw.webp,,,yes
+CH-TCT-HOLE-SAW-3-4-20MM-FOR-STAINLESS-STEEL-METAL,"Champ TCT Hole Saw 3/4"" (20mm) for Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Hole Saw,300.00,20,champ-tct-hole-saw.webp,,,yes
+CH-TCT-HOLE-SAW-7-8-22MM-FOR-STAINLESS-STEEL-METAL,"Champ TCT Hole Saw 7/8"" (22mm) for Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Hole Saw,320.00,20,champ-tct-hole-saw.webp,,,yes
+CH-TCT-HOLE-SAW-1-25MM-FOR-STAINLESS-STEEL-METAL,"Champ TCT Hole Saw 1"" (25mm) for Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Hole Saw,360.00,20,champ-tct-hole-saw.webp,,,yes
+CH-TCT-HOLE-SAW-1-1-8-28MM-FOR-STAINLESS-STEEL-METAL,"Champ TCT Hole Saw 1 1/8"" (28mm) for Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Hole Saw,400.00,20,champ-tct-hole-saw.webp,,,yes
+CH-TCT-HOLE-SAW-1-1-4-32MM-FOR-STAINLESS-STEEL-METAL,"Champ TCT Hole Saw 1 1/4"" (32mm) for Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Hole Saw,460.00,20,champ-tct-hole-saw.webp,,,yes
+CH-TCT-HOLE-SAW-1-3-4-45MM-FOR-STAINLESS-STEEL-METAL,"Champ TCT Hole Saw 1 3/4"" (45mm) for Stainless Steel & Metal",Champ,"Bits, Blades & Accessories",Hole Saw,700.00,20,champ-tct-hole-saw.webp,,,yes
+CH-FIBRE-DISC-4-100-X-16MM-GRIT-60,"Champ Fibre Disc 4"" (100 x 16mm) Grit 60",Champ,"Bits, Blades & Accessories",Fibre Disc,20.00,20,champ-fibre-disc.webp,,,yes
+CH-FIBRE-DISC-4-100-X-16MM-GRIT-80,"Champ Fibre Disc 4"" (100 x 16mm) Grit 80",Champ,"Bits, Blades & Accessories",Fibre Disc,20.00,20,champ-fibre-disc.webp,,,yes
+CH-FIBRE-DISC-4-100-X-16MM-GRIT-100,"Champ Fibre Disc 4"" (100 x 16mm) Grit 100",Champ,"Bits, Blades & Accessories",Fibre Disc,20.00,20,champ-fibre-disc.webp,,,yes
+CH-FIBRE-DISC-4-100-X-16MM-GRIT-120,"Champ Fibre Disc 4"" (100 x 16mm) Grit 120",Champ,"Bits, Blades & Accessories",Fibre Disc,20.00,20,champ-fibre-disc.webp,,,yes
+CH-4-FLAP-DISC-GRIT-60,"Champ 4"" Flap Disc Grit 60",Champ,"Bits, Blades & Accessories",Flap Disc,30.00,20,champ-flap-disc.webp,,,yes
+CH-4-FLAP-DISC-GRIT-80,"Champ 4"" Flap Disc Grit 80",Champ,"Bits, Blades & Accessories",Flap Disc,30.00,20,champ-flap-disc.webp,,,yes
+CH-4-FLAP-DISC-GRIT-100,"Champ 4"" Flap Disc Grit 100",Champ,"Bits, Blades & Accessories",Flap Disc,30.00,20,champ-flap-disc.webp,,,yes
+CH-4-FLAP-DISC-GRIT-120,"Champ 4"" Flap Disc Grit 120",Champ,"Bits, Blades & Accessories",Flap Disc,30.00,20,champ-flap-disc.webp,,,yes
+CH-4-FLEXIBLE-FLAP-DISC-GRIT-60,"Champ 4"" Flexible Flap Disc Grit 60",Champ,"Bits, Blades & Accessories",Flexible Flap Disc,45.00,20,champ-flexible-flap-disc.webp,,,yes
+CH-4-FLEXIBLE-FLAP-DISC-GRIT-80,"Champ 4"" Flexible Flap Disc Grit 80",Champ,"Bits, Blades & Accessories",Flexible Flap Disc,45.00,20,champ-flexible-flap-disc.webp,,,yes
+CH-4-FLEXIBLE-FLAP-DISC-GRIT-100,"Champ 4"" Flexible Flap Disc Grit 100",Champ,"Bits, Blades & Accessories",Flexible Flap Disc,45.00,20,champ-flexible-flap-disc.webp,,,yes
+CH-4-FLEXIBLE-FLAP-DISC-GRIT-120,"Champ 4"" Flexible Flap Disc Grit 120",Champ,"Bits, Blades & Accessories",Flexible Flap Disc,45.00,20,champ-flexible-flap-disc.webp,,,yes
+CH-3-TWISTED-KNOT-WIRE-CUP-BRUSH-M10-X-1-25,"Champ 3"" Twisted Knot Wire Cup Brush M10 x 1.25",Champ,"Bits, Blades & Accessories",Wire Cup Brush,120.00,20,champ-wire-cup-brush-twisted.webp,,,yes
+CH-3-TWISTED-KNOT-WIRE-CUP-BRUSH-M10-X-1-50,"Champ 3"" Twisted Knot Wire Cup Brush M10 x 1.50",Champ,"Bits, Blades & Accessories",Wire Cup Brush,120.00,20,champ-wire-cup-brush-twisted.webp,,,yes
+CH-3-CRIMPED-WIRE-CUP-BRUSH-M10-X-1-25,"Champ 3"" Crimped Wire Cup Brush M10 x 1.25",Champ,"Bits, Blades & Accessories",Wire Cup Brush,85.00,20,champ-wire-cup-brush-crimped.webp,,,yes
+CH-3-CRIMPED-WIRE-CUP-BRUSH-M10-X-1-50,"Champ 3"" Crimped Wire Cup Brush M10 x 1.50",Champ,"Bits, Blades & Accessories",Wire Cup Brush,85.00,20,champ-wire-cup-brush-crimped.webp,,,yes
+CH-4-SUPER-THIN-TURBO-DIAMOND-BLADE,"Champ 4"" Super Thin Turbo Diamond Blade",Champ,"Bits, Blades & Accessories",Diamond Blade,165.00,20,champ-diamond-blade.webp,,,yes
+CH-4-TURBO-DIAMOND-BLADE,"Champ 4"" Turbo Diamond Blade",Champ,"Bits, Blades & Accessories",Diamond Blade,125.00,20,champ-diamond-blade.webp,,,yes
+CH-4-SEGMENTED-DIAMOND-BLADE,"Champ 4"" Segmented Diamond Blade",Champ,"Bits, Blades & Accessories",Diamond Blade,125.00,20,champ-diamond-blade.webp,,,yes
+CH-4-CONTINUOUS-DIAMOND-BLADE,"Champ 4"" Continuous Diamond Blade",Champ,"Bits, Blades & Accessories",Diamond Blade,125.00,20,champ-diamond-blade.webp,,,yes
+CH-4-DOUBLE-ROW-DIAMOND-CUP-WHEEL,"Champ 4"" Double Row Diamond Cup Wheel",Champ,"Bits, Blades & Accessories",Diamond Cup Wheel,300.00,20,champ-diamond-cup-wheel.webp,,,yes
+CH-4-TURBO-DIAMOND-CUP-WHEEL,"Champ 4"" Turbo Diamond Cup Wheel",Champ,"Bits, Blades & Accessories",Diamond Cup Wheel,245.00,20,champ-diamond-cup-wheel.webp,,,yes
+CH-4-SPIRAL-DIAMOND-CUP-WHEEL,"Champ 4"" Spiral Diamond Cup Wheel",Champ,"Bits, Blades & Accessories",Diamond Cup Wheel,245.00,20,champ-diamond-cup-wheel.webp,,,yes
+CH-HSS-M35-COBALT-DRILL-BIT-1-8-3-20MM-P-10,"Champ HSS M35 Cobalt Drill Bit 1/8"" 3.20mm (P-10)",Champ,"Bits, Blades & Accessories",HSS Cobalt Drill Bit,30.00,20,champ-hss-cobalt-drill-bit.webp,,,yes
+CH-HSS-M35-COBALT-DRILL-BIT-5-32-4-00MM-P-10,"Champ HSS M35 Cobalt Drill Bit 5/32"" 4.00mm (P-10)",Champ,"Bits, Blades & Accessories",HSS Cobalt Drill Bit,40.00,20,champ-hss-cobalt-drill-bit.webp,,,yes
+CH-HSS-M35-COBALT-DRILL-BIT-3-16-5-00MM-P-10,"Champ HSS M35 Cobalt Drill Bit 3/16"" 5.00mm (P-10)",Champ,"Bits, Blades & Accessories",HSS Cobalt Drill Bit,60.00,20,champ-hss-cobalt-drill-bit.webp,,,yes
+CH-HSS-M35-COBALT-DRILL-BIT-1-4-6-30MM-P-10,"Champ HSS M35 Cobalt Drill Bit 1/4"" 6.30mm (P-10)",Champ,"Bits, Blades & Accessories",HSS Cobalt Drill Bit,100.00,20,champ-hss-cobalt-drill-bit.webp,,,yes
+CH-HSS-M35-COBALT-DRILL-BIT-5-16-8-00MM-P-10,"Champ HSS M35 Cobalt Drill Bit 5/16"" 8.00mm (P-10)",Champ,"Bits, Blades & Accessories",HSS Cobalt Drill Bit,160.00,20,champ-hss-cobalt-drill-bit.webp,,,yes
+CH-HSS-M35-COBALT-DRILL-BIT-3-8-9-5MM-P-5,"Champ HSS M35 Cobalt Drill Bit 3/8"" 9.5mm (P-5)",Champ,"Bits, Blades & Accessories",HSS Cobalt Drill Bit,210.00,20,champ-hss-cobalt-drill-bit.webp,,,yes
+CH-HSS-M35-COBALT-DRILL-BIT-1-2-13-00MM-P-5,"Champ HSS M35 Cobalt Drill Bit 1/2"" 13.00mm (P-5)",Champ,"Bits, Blades & Accessories",HSS Cobalt Drill Bit,450.00,20,champ-hss-cobalt-drill-bit.webp,,,yes
+CH-MASONRY-DRILL-BIT-1-8-3-2MM-X-70MM,"Champ Masonry Drill Bit 1/8"" 3.2mm x 70mm",Champ,"Bits, Blades & Accessories",Masonry Drill Bit,20.00,20,champ-masonry-drill-bit.webp,,,yes
+CH-MASONRY-DRILL-BIT-5-32-4-0MM-X-75MM,"Champ Masonry Drill Bit 5/32"" 4.0mm x 75mm",Champ,"Bits, Blades & Accessories",Masonry Drill Bit,22.00,20,champ-masonry-drill-bit.webp,,,yes
+CH-MASONRY-DRILL-BIT-3-16-5-0MM-X-90MM,"Champ Masonry Drill Bit 3/16"" 5.0mm x 90mm",Champ,"Bits, Blades & Accessories",Masonry Drill Bit,24.00,20,champ-masonry-drill-bit.webp,,,yes
+CH-MASONRY-DRILL-BIT-1-4-6-5MM-X-100MM,"Champ Masonry Drill Bit 1/4"" 6.5mm x 100mm",Champ,"Bits, Blades & Accessories",Masonry Drill Bit,34.00,20,champ-masonry-drill-bit.webp,,,yes
+CH-MASONRY-DRILL-BIT-5-16-8-0MM-X-120MM,"Champ Masonry Drill Bit 5/16"" 8.0mm x 120mm",Champ,"Bits, Blades & Accessories",Masonry Drill Bit,45.00,20,champ-masonry-drill-bit.webp,,,yes
+CH-MASONRY-DRILL-BIT-3-8-9-5MM-X-120MM,"Champ Masonry Drill Bit 3/8"" 9.5mm x 120mm",Champ,"Bits, Blades & Accessories",Masonry Drill Bit,55.00,20,champ-masonry-drill-bit.webp,,,yes
+CH-MASONRY-DRILL-BIT-1-2-13-0MM-X-150MM,"Champ Masonry Drill Bit 1/2"" 13.0mm x 150mm",Champ,"Bits, Blades & Accessories",Masonry Drill Bit,95.00,20,champ-masonry-drill-bit.webp,,,yes
+CH-GLASS-TILE-DRILL-BIT-4-CUTTER-3-16-5-0MM,"Champ Glass & Tile Drill Bit 4 Cutter 3/16"" 5.0mm",Champ,"Bits, Blades & Accessories",Glass & Tile Drill Bit,140.00,20,champ-glass-tile-drill-bit.webp,,,yes
+CH-GLASS-TILE-DRILL-BIT-4-CUTTER-1-4-6-0MM,"Champ Glass & Tile Drill Bit 4 Cutter 1/4"" 6.0mm",Champ,"Bits, Blades & Accessories",Glass & Tile Drill Bit,160.00,20,champ-glass-tile-drill-bit.webp,,,yes
+CH-GLASS-TILE-DRILL-BIT-4-CUTTER-5-16-8-0MM,"Champ Glass & Tile Drill Bit 4 Cutter 5/16"" 8.0mm",Champ,"Bits, Blades & Accessories",Glass & Tile Drill Bit,210.00,20,champ-glass-tile-drill-bit.webp,,,yes
+CH-GLASS-TILE-DRILL-BIT-4-CUTTER-3-8-10-0MM,"Champ Glass & Tile Drill Bit 4 Cutter 3/8"" 10.0mm",Champ,"Bits, Blades & Accessories",Glass & Tile Drill Bit,260.00,20,champ-glass-tile-drill-bit.webp,,,yes
+CH-GLASS-TILE-DRILL-BIT-4-CUTTER-1-2-13-0MM,"Champ Glass & Tile Drill Bit 4 Cutter 1/2"" 13.0mm",Champ,"Bits, Blades & Accessories",Glass & Tile Drill Bit,350.00,20,champ-glass-tile-drill-bit.webp,,,yes
+CH-NEUTRAL-SILICONE-SEALANT-CLEAR-300ML,Champ Neutral Silicone Sealant Clear 300ml,Champ,Paint & Adhesives,Silicone Sealant,165.00,20,champ-neutral-silicone-sealant.webp,,,yes
+CH-NEUTRAL-SILICONE-SEALANT-WHITE-300ML,Champ Neutral Silicone Sealant White 300ml,Champ,Paint & Adhesives,Silicone Sealant,165.00,20,champ-neutral-silicone-sealant.webp,,,yes
+CH-NEUTRAL-SILICONE-SEALANT-BLACK-300ML,Champ Neutral Silicone Sealant Black 300ml,Champ,Paint & Adhesives,Silicone Sealant,165.00,20,champ-neutral-silicone-sealant.webp,,,yes
+CH-NEUTRAL-SILICONE-SEALANT-BRONZE-300ML,Champ Neutral Silicone Sealant Bronze 300ml,Champ,Paint & Adhesives,Silicone Sealant,165.00,20,champ-neutral-silicone-sealant.webp,,,yes
+CH-NEUTRAL-SILICONE-SEALANT-GRAY-300ML,Champ Neutral Silicone Sealant Gray 300ml,Champ,Paint & Adhesives,Silicone Sealant,165.00,20,champ-neutral-silicone-sealant.webp,,,yes
+CH-NEUTRAL-SILICONE-SEALANT-CLEAR-85G,Champ Neutral Silicone Sealant Clear 85g,Champ,Paint & Adhesives,Silicone Sealant,70.00,20,champ-neutral-silicone-sealant.webp,,,yes
+CH-ACETIC-SILICONE-SEALANT-CLEAR-300ML,Champ Acetic Silicone Sealant Clear 300ml,Champ,Paint & Adhesives,Silicone Sealant,145.00,20,champ-acetic-silicone-sealant.webp,,,yes
+CH-ACETIC-SILICONE-SEALANT-WHITE-300ML,Champ Acetic Silicone Sealant White 300ml,Champ,Paint & Adhesives,Silicone Sealant,145.00,20,champ-acetic-silicone-sealant.webp,,,yes
+CH-ACETIC-SILICONE-SEALANT-BLACK-300ML,Champ Acetic Silicone Sealant Black 300ml,Champ,Paint & Adhesives,Silicone Sealant,145.00,20,champ-acetic-silicone-sealant.webp,,,yes
+CH-ACRYLIC-GAP-SEALANT-WHITE-300ML,Champ Acrylic Gap Sealant White 300ml,Champ,Paint & Adhesives,Gap Sealant,80.00,20,champ-acrylic-gap-sealant.webp,,,yes
+CH-ACRYLIC-GAP-SEALANT-WHITE-85G,Champ Acrylic Gap Sealant White 85g,Champ,Paint & Adhesives,Gap Sealant,55.00,20,champ-acrylic-gap-sealant.webp,,,yes
+CH-HYBRID-2-IN-1-SILICONE-SEALANT-WHITE-300ML,Champ Hybrid 2-in-1 Silicone Sealant White 300ml,Champ,Paint & Adhesives,Hybrid Sealant,185.00,20,champ-hybrid-sealant.webp,,,yes
+CH-HEAVY-DUTY-CAULKING-GUN-305,Champ Heavy Duty Caulking Gun 305,Champ,Hand Tools,Caulking Gun,180.00,20,champ-caulking-gun.webp,,,yes
+CH-CAULKING-GUN-301,Champ Caulking Gun 301,Champ,Hand Tools,Caulking Gun,95.00,20,champ-caulking-gun.webp,,,yes
+CH-WATERPROOF-BITUMEN-FLASHING-TAPE-2-X-5M,"Champ Waterproof Bitumen Flashing Tape 2"" x 5m",Champ,Paint & Adhesives,Flashing Tape,110.00,20,champ-flashing-tape.webp,,,yes
+CH-WATERPROOF-BITUMEN-FLASHING-TAPE-4-X-5M,"Champ Waterproof Bitumen Flashing Tape 4"" x 5m",Champ,Paint & Adhesives,Flashing Tape,200.00,20,champ-flashing-tape.webp,,,yes
+CH-SUPER-NAIL-CONSTRUCTION-ADHESIVE-TUBE-100G,Champ Super Nail Construction Adhesive Tube 100g,Champ,Paint & Adhesives,Construction Adhesive,55.00,20,champ-super-nail.webp,,,yes
+CH-SUPER-NAIL-CONSTRUCTION-ADHESIVE-CARTRIDGE-350G,Champ Super Nail Construction Adhesive Cartridge 350g,Champ,Paint & Adhesives,Construction Adhesive,130.00,20,champ-super-nail.webp,,,yes
+CH-WOOD-GLUE-PROFESSIONAL-BOTTLE-500G,Champ Wood Glue Professional Bottle 500g,Champ,Paint & Adhesives,Wood Glue,150.00,20,champ-wood-glue.webp,,,yes
+CH-RTV-SILICONE-GASKET-MAKER-BLACK-30G,Champ RTV Silicone Gasket Maker Black 30g,Champ,Paint & Adhesives,RTV Gasket Maker,60.00,20,champ-rtv-gasket-maker-black.webp,,,yes
+CH-RTV-SILICONE-GASKET-MAKER-BLACK-85G,Champ RTV Silicone Gasket Maker Black 85g,Champ,Paint & Adhesives,RTV Gasket Maker,100.00,20,champ-rtv-gasket-maker-black.webp,,,yes
+CH-RTV-SILICONE-GASKET-MAKER-HIGH-TEMP-RED-30G,Champ RTV Silicone Gasket Maker High Temp Red 30g,Champ,Paint & Adhesives,RTV Gasket Maker,70.00,20,champ-rtv-gasket-maker-red.webp,,,yes
+CH-RTV-SILICONE-GASKET-MAKER-HIGH-TEMP-RED-85G,Champ RTV Silicone Gasket Maker High Temp Red 85g,Champ,Paint & Adhesives,RTV Gasket Maker,110.00,20,champ-rtv-gasket-maker-red.webp,,,yes
+CH-SUPER-CLEAR-GLOSS-VARNISH-1-4-LITER,Champ Super Clear Gloss Varnish 1/4 Liter,Champ,Paint & Adhesives,Varnish,125.00,20,champ-super-clear-gloss-varnish.webp,,,yes
+CH-SUPER-CLEAR-GLOSS-VARNISH-1-2-LITER,Champ Super Clear Gloss Varnish 1/2 Liter,Champ,Paint & Adhesives,Varnish,200.00,20,champ-super-clear-gloss-varnish.webp,,,yes
+CH-SUPER-CLEAR-GLOSS-VARNISH-1-LITER,Champ Super Clear Gloss Varnish 1 Liter,Champ,Paint & Adhesives,Varnish,370.00,20,champ-super-clear-gloss-varnish.webp,,,yes
+CH-SUPER-CLEAR-GLOSS-VARNISH-1-GALLON,Champ Super Clear Gloss Varnish 1 Gallon,Champ,Paint & Adhesives,Varnish,1200.00,20,champ-super-clear-gloss-varnish.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C101-WHITE,Champ Acrylic Spray Paint C101 White,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C102-POLISHED-BLACK,Champ Acrylic Spray Paint C102 Polished Black,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C103-MATTE-BLACK,Champ Acrylic Spray Paint C103 Matte Black,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C104-CLEAR-ACRYLIC,Champ Acrylic Spray Paint C104 Clear Acrylic,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C105-DEEP-RED,Champ Acrylic Spray Paint C105 Deep Red,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C106-SILVER,Champ Acrylic Spray Paint C106 Silver,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C107-RED,Champ Acrylic Spray Paint C107 Red,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C108-YELLOW,Champ Acrylic Spray Paint C108 Yellow,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C109-ELECTRIC-BLUE,Champ Acrylic Spray Paint C109 Electric Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C110-DIM-GRAY,Champ Acrylic Spray Paint C110 Dim Gray,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C111-ORANGE,Champ Acrylic Spray Paint C111 Orange,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C112-GRAY,Champ Acrylic Spray Paint C112 Gray,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C113-BRIGHT-RED,Champ Acrylic Spray Paint C113 Bright Red,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C114-GREEN,Champ Acrylic Spray Paint C114 Green,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C115-BRIGHT-GREEN,Champ Acrylic Spray Paint C115 Bright Green,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C116-DARK-RED,Champ Acrylic Spray Paint C116 Dark Red,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C117-SPRING-GREEN,Champ Acrylic Spray Paint C117 Spring Green,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C118-STEEL-BLUE,Champ Acrylic Spray Paint C118 Steel Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C119-SAPPHIRE-BLUE,Champ Acrylic Spray Paint C119 Sapphire Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C120-MATTE-WHITE,Champ Acrylic Spray Paint C120 Matte White,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C121-SKY-BLUE,Champ Acrylic Spray Paint C121 Sky Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C122-BRICK-RED,Champ Acrylic Spray Paint C122 Brick Red,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C123-CHOCOLATE-BROWN,Champ Acrylic Spray Paint C123 Chocolate Brown,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C124-ROYAL-BLUE,Champ Acrylic Spray Paint C124 Royal Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C125-LAVENDER,Champ Acrylic Spray Paint C125 Lavender,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C126-SEAL-BROWN,Champ Acrylic Spray Paint C126 Seal Brown,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C127-PINK,Champ Acrylic Spray Paint C127 Pink,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C128-YELLOW,Champ Acrylic Spray Paint C128 Yellow,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C129-BROWN,Champ Acrylic Spray Paint C129 Brown,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C130-DUKE-BLUE,Champ Acrylic Spray Paint C130 Duke Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C131-BABY-BLUE,Champ Acrylic Spray Paint C131 Baby Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C132-SUN-YELLOW,Champ Acrylic Spray Paint C132 Sun Yellow,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C133-NAVY-BLUE,Champ Acrylic Spray Paint C133 Navy Blue,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C134-BEIGE,Champ Acrylic Spray Paint C134 Beige,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C135-FOREST-GREEN,Champ Acrylic Spray Paint C135 Forest Green,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C140-DEEP-VIOLET,Champ Acrylic Spray Paint C140 Deep Violet,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C141-LIGHT-PINK,Champ Acrylic Spray Paint C141 Light Pink,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C142-DARK-GRAY,Champ Acrylic Spray Paint C142 Dark Gray,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C143-APPLE-GREEN,Champ Acrylic Spray Paint C143 Apple Green,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-ACRYLIC-SPRAY-PAINT-C144-LIGHT-VIOLET,Champ Acrylic Spray Paint C144 Light Violet,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-acrylic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C137-CHROME,Champ Metallic Spray Paint C137 Chrome,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C138-GOLD,Champ Metallic Spray Paint C138 Gold,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C136-SILVER,Champ Metallic Spray Paint C136 Silver,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C139-BLACK,Champ Metallic Spray Paint C139 Black,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C201-BLUE,Champ Metallic Spray Paint C201 Blue,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C202-GREEN,Champ Metallic Spray Paint C202 Green,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C203-VIOLET,Champ Metallic Spray Paint C203 Violet,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C204-AQUA-BLUE,Champ Metallic Spray Paint C204 Aqua Blue,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-METALLIC-SPRAY-PAINT-C205-GOLD,Champ Metallic Spray Paint C205 Gold,Champ,Paint & Adhesives,Spray Paint,89.00,20,champ-metallic-spray-paint.webp,,,yes
+CH-HIGH-HEAT-SPRAY-PAINT-C302-EC-BLACK,Champ High Heat Spray Paint C302-EC Black,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-high-heat-spray-paint.webp,,,yes
+CH-HIGH-HEAT-SPRAY-PAINT-C303-EC-SILVER,Champ High Heat Spray Paint C303-EC Silver,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-high-heat-spray-paint.webp,,,yes
+CH-PRIMER-SPRAY-PAINT-C145-BROWN,Champ Primer Spray Paint C145 Brown,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-primer-spray-paint.webp,,,yes
+CH-PRIMER-SPRAY-PAINT-C146-GRAY,Champ Primer Spray Paint C146 Gray,Champ,Paint & Adhesives,Spray Paint,66.00,20,champ-primer-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C401-RED,Champ Fluorescent Spray Paint C401 Red,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C402-PINK,Champ Fluorescent Spray Paint C402 Pink,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C403-GREEN,Champ Fluorescent Spray Paint C403 Green,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C404-BLUE,Champ Fluorescent Spray Paint C404 Blue,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C405-YELLOW,Champ Fluorescent Spray Paint C405 Yellow,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C406-ORANGE,Champ Fluorescent Spray Paint C406 Orange,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C410-WHITE,Champ Fluorescent Spray Paint C410 White,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C411-ORANGE-YELLOW,Champ Fluorescent Spray Paint C411 Orange Yellow,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C412-MAGENTA,Champ Fluorescent Spray Paint C412 Magenta,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-FLUORESCENT-SPRAY-PAINT-C413-VIOLET,Champ Fluorescent Spray Paint C413 Violet,Champ,Paint & Adhesives,Spray Paint,124.00,20,champ-fluorescent-spray-paint.webp,,,yes
+CH-COTTON-GLOVES-85G-RUBBER-PALM,Champ Cotton Gloves 85g (Rubber Palm),Champ,Safety & Workwear,Work Gloves,35.00,20,champ-cotton-gloves.webp,,,yes
+CH-LEATHER-WELDING-GLOVES-18,"Champ Leather Welding Gloves 18""",Champ,Safety & Workwear,Welding Gloves,238.00,20,champ-welding-gloves.webp,,,yes
+CH-TEFLON-TAPE-1-2,"Champ Teflon Tape 1/2""",Champ,Plumbing,Teflon Tape,4.35,20,champ-teflon-tape.webp,,,yes
+CH-TEFLON-TAPE-3-4,"Champ Teflon Tape 3/4""",Champ,Plumbing,Teflon Tape,8.50,20,champ-teflon-tape.webp,,,yes
+CH-TEFLON-TAPE-1,"Champ Teflon Tape 1""",Champ,Plumbing,Teflon Tape,10.50,20,champ-teflon-tape.webp,,,yes

@@ -31,21 +31,30 @@ class Product extends Model
      */
     public function getImageUrlAttribute(): ?string
     {
-        if (blank($this->image)) {
-            return null;
+        return blank($this->image) ? null : static::photoUrl($this->image);
+    }
+
+    /** Public URL for a stored photo reference (same forms as `image`); extra gallery photos use it too. */
+    public static function photoUrl(string $photo): string
+    {
+        if (str_starts_with($photo, 'http')) {
+            return $photo;
         }
-        if (str_starts_with($this->image, 'http')) {
-            return $this->image;
-        }
-        if (str_starts_with($this->image, 'uploads/')) {
-            return asset('storage/'.$this->image);
+        if (str_starts_with($photo, 'uploads/')) {
+            return asset('storage/'.$photo);
         }
 
         // ?v=<modified time>: a photo replaced under the same name shows at once, not from cache.
-        $file = 'images/products/'.$this->image;
+        $file = 'images/products/'.$photo;
         $mtime = @filemtime(public_path($file));
 
         return asset($file).($mtime ? '?v='.$mtime : '');
+    }
+
+    /** Extra photos added by the client (admin uploads or file names in the sheet), not feed URLs. */
+    public function ownGallery(): array
+    {
+        return array_values(array_filter((array) $this->gallery, fn ($g) => is_string($g) && ! str_starts_with($g, 'http')));
     }
 
     /**
