@@ -10,11 +10,7 @@ export default function Contact() {
     const tel = (settings.phone || '').replace(/[^0-9+]/g, '');
 
     return (
-        <SiteLayout
-            cta="contact"
-            title="Contact · LCT Trading"
-            description="Call, email or message LCT Trading about an item, a bulk order or delivery. Send the SKU or a photo and we’ll check stock and give you the total."
-        >
+        <SiteLayout cta="contact">
             <PageHero
                 className="lct-hero-contact"
                 crumb="Contact"

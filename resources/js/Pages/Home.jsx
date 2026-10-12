@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { brandUrl, categoryUrl } from '@/lib/urls';
 import { Link, router, usePage } from '@inertiajs/react';
 import SiteLayout from '@/Layouts/SiteLayout';
 import AnimatedHeading from '@/components/AnimatedHeading';
@@ -71,10 +72,7 @@ export default function Home({ stats, brands, categories }) {
     }, []);
 
     return (
-        <SiteLayout
-            title="LCT Trading · Tools & Hardware Supply"
-            description="Power tools, hand tools, electrical and plumbing hardware from Makita, Bosch, DeWalt, Stanley, Ingco, Royu and more. Search by SKU, see price and stock, and send your order."
-        >
+        <SiteLayout>
             <Transition
                 skip={skipIntro}
                 introDuration={1.2}
@@ -127,7 +125,7 @@ export default function Home({ stats, brands, categories }) {
                             alt: b.name,
                             title: `Shop ${b.name}`,
                             // Phones and tablets: logos only light up on tap, no link.
-                            href: touch ? undefined : shop({ brand: b.name }),
+                            href: touch ? undefined : brandUrl(routes, b.name),
                         }))}
                         speed={60}
                         logoHeight={40}
@@ -184,7 +182,7 @@ export default function Home({ stats, brands, categories }) {
                                         <div className="service-body">
                                             <AnimatedHeading as="h3" text={c.name} />
                                             <p>{number(c.count)} items</p>
-                                            <Button href={shop({ category: c.name })} variant="secondary" size="sm" icon={<BrowseIcon />} orb>
+                                            <Button href={categoryUrl(routes, c.name)} variant="secondary" size="sm" icon={<BrowseIcon />} orb>
                                                 Browse items
                                             </Button>
                                         </div>

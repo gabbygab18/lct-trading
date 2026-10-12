@@ -7,6 +7,8 @@ use Illuminate\Http\Client\Pool;
 use Illuminate\Support\Facades\Http;
 use Throwable;
 
+use function Illuminate\Support\defer;
+
 /**
  * Product photos for the detail page.
  *
@@ -16,8 +18,7 @@ use Throwable;
  * gallery, and served locally from then on. Items the client adds have no
  * gallery URLs, so this never reaches out for them.
  *
- * ponytail: fetch happens inside the page request (a few seconds, once per
- * item); move to a queued job if first views ever feel slow.
+ * The fetch runs after the response (defer), so no visitor waits on it.
  */
 class GalleryCache
 {
@@ -48,8 +49,10 @@ class GalleryCache
             }
         }
 
+        // Fetched after the response is sent: this visitor gets the list photo
+        // (or what's cached), the next one gets the full gallery.
         if ($missing && $product->is_placeholder) {
-            self::download($missing, $local);
+            defer(fn () => self::download($missing, $local));
         }
 
         $urls = [];

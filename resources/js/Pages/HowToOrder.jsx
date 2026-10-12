@@ -33,15 +33,11 @@ function Faq({ q, children }) {
     );
 }
 
-export default function HowToOrder({ shipping, payment, pickupNote, policies = [] }) {
+export default function HowToOrder({ shipping, payment, pickupNote, policies = [], faqs = [] }) {
     const { routes, store = {} } = usePage().props;
 
     return (
-        <SiteLayout
-            cta="order"
-            title="How to order · LCT Trading"
-            description="Order tools and hardware from LCT Trading in three steps. No account, nothing charged online: LCT confirms stock, total and delivery by phone."
-        >
+        <SiteLayout cta="order">
             <PageHero
                 className="lct-hero-order"
                 crumb="How to order"
@@ -100,21 +96,12 @@ export default function HowToOrder({ shipping, payment, pickupNote, policies = [
                 <div className="wrap lct-faq-wrap">
                     <SectionHead title="Common questions." center={false} />
                     <div>
-                        <Faq q="Do I need an account?">
-                            <p>No. Add items to your tray, then give your name, phone and address at checkout. That’s it.</p>
-                        </Faq>
-                        <Faq q="Is the price on the site final?">
-                            <p>{store.priceNote} The delivery fee is confirmed on the same call.</p>
-                        </Faq>
-                        <Faq q="Can I order in bulk?">
-                            <p>Yes. Use list view in the shop to type quantities row by row. Larger orders may get a bulk discount when we call to confirm.</p>
-                        </Faq>
-                        <Faq q="What if an item is out of stock?">
-                            <p>Stock is shown on every item. Out-of-stock items can’t be sent. If you ask for more than we have on hand, we’ll tell you when we call.</p>
-                        </Faq>
-                        <Faq q="How do I follow up on my order?">
-                            <p>Right after you send it, you get a reference number (it starts with LCT-). Quote it when you call or message us.</p>
-                        </Faq>
+                        {/* Same questions as the FAQ structured data (App\Support\Seo::orderingFaq). */}
+                        {faqs.map((f) => (
+                            <Faq key={f.q} q={f.q}>
+                                <p>{f.a}</p>
+                            </Faq>
+                        ))}
                         {policies.map((p) => (
                             <Faq key={p.key} q={p.label}>
                                 <div className="lct-prose" dangerouslySetInnerHTML={{ __html: p.html }} />

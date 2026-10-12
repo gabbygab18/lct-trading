@@ -31,11 +31,7 @@ These rows are **placeholders**, marked "Sample" in the admin. The quotation com
 - **Excel / CSV upload**: `.xlsx` or `.csv`, matched by `sku`. Only the columns present are written, so `sku,price` is a price update. Template and full export are on the same page.
 - **Settings**: order email, phone, address, hours, bank deposit details. The seeded values are visible placeholders.
 
-## Deploy (cPanel, same as elnovian)
+## Deploy (Z.com cPanel, same layout as elnovian)
 
-1. Upload the app outside `public_html`, the contents of `public/` inside it; point `public_html/index.php` at the app folder.
-2. `.env`: `APP_ENV=production`, `APP_DEBUG=false`, `APP_URL`, MySQL `DB_*`, SMTP `MAIL_*`, `ORDER_MAIL_TO` (fallback when Settings email is blank).
-3. `php artisan migrate --force && php artisan db:seed --force && php artisan storage:link`
-4. Cron, every minute: `php /home/USER/lct-trading/artisan schedule:run >> /dev/null 2>&1` (sends queued order emails).
-5. Node isn't needed on the server; ship `public/build/`.
+`python scripts/make_deploy.py` builds the upload zips in `deploy/`. Step by step in [DEPLOY.md](DEPLOY.md).
 # lct-trading

@@ -70,4 +70,42 @@
             <button class="a-btn a-btn-primary">Save settings</button>
         </div>
     </form>
+
+    {{-- Email check: what the server sends with, and whether mail is going out. --}}
+    <section class="a-card mt-6 max-w-3xl space-y-4 p-5" aria-labelledby="mail-check">
+        <h2 id="mail-check" class="stamp text-[20px]">Email</h2>
+        <dl class="grid grid-cols-[150px_1fr] gap-x-4 gap-y-1.5 text-[14px]">
+            <dt class="text-steel-700">Sending through</dt><dd>{{ $mail['mailer'] === 'smtp' ? $mail['host'] : $mail['mailer'].' (not sending real email)' }}</dd>
+            <dt class="text-steel-700">Login</dt><dd>{{ $mail['username'] ?: '—' }}</dd>
+            <dt class="text-steel-700">From</dt><dd>{{ $mail['from'] }}</dd>
+            <dt class="text-steel-700">Orders go to</dt><dd>{{ $mail['recipient'] ?: 'Nobody yet: fill in the order notification email above' }}</dd>
+            <dt class="text-steel-700">Waiting to send</dt>
+            <dd>
+                {{ $mail['pending'] }}
+                @if ($mail['stuck'])<span class="font-semibold text-signal-600"> · stuck for over 3 minutes: the cron job isn't running</span>@endif
+            </dd>
+            <dt class="text-steel-700">Failed</dt><dd>{{ $mail['failed'] }}</dd>
+        </dl>
+        @if ($mail['lastError'])
+            <p class="rounded-[4px] bg-signal-soft px-3 py-2 text-[13px] text-signal-700"><strong>Last error:</strong> {{ $mail['lastError'] }}</p>
+        @endif
+
+        <div class="flex flex-wrap items-end gap-3 border-t border-steel-300 pt-4">
+            <form action="{{ route('admin.settings.test-email') }}" method="POST" class="flex flex-wrap items-end gap-2">
+                @csrf
+                <div>
+                    <label for="to" class="a-label">Send a test email to</label>
+                    <input id="to" name="to" type="email" required value="{{ old('to', $mail['recipient']) }}" class="a-input w-72">
+                </div>
+                <button class="a-btn a-btn-primary">Send test email</button>
+            </form>
+            @if ($mail['pending'] || $mail['failed'])
+                <form action="{{ route('admin.settings.run-queue') }}" method="POST">
+                    @csrf
+                    <button class="a-btn a-btn-ghost">Send waiting emails now</button>
+                </form>
+            @endif
+        </div>
+        <p class="text-[12.5px] text-steel-700">The test is sent straight away, so if the mail settings in <code>.env</code> are wrong, the error shows here. Order emails are sent by the cron job every minute.</p>
+    </section>
 @endsection

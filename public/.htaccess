@@ -23,3 +23,20 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# Browser caching. /build files carry a content hash in their name and product
+# photos a ?v=<mtime> query, so a changed file always gets a new URL: they can
+# be cached for a year. Other images and fonts: 30 days.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|woff2?|ttf|eot|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(webp|png|jpe?g|gif|ico|avif)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
+
+# Compress text responses (HTML, JSON, CSS, JS, SVG).
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json image/svg+xml
+</IfModule>

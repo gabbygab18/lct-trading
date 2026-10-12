@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
+import { brandUrl, categoryUrl } from '@/lib/urls';
 import Price from '@/components/Price';
-import { Head, Link, usePage } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 import Shell from '@/components/Shell';
 import Pocket from '@/components/Pocket';
 import QtyStepper from '@/components/QtyStepper';
 import StockNote from '@/components/StockNote';
 import Button from '@/components/ui/Button';
 import { flyToTray, useTray } from '@/lib/tray';
-import { money, readStore, writeStore } from '@/lib/format';
+import { readStore, writeStore } from '@/lib/format';
 import { CartAddIcon, CartCheckIcon, PayIcon, StoreIcon } from '@/components/BxIcons';
 
 function Crumbs({ product }) {
     const { routes } = usePage().props;
-    const brandUrl = `${routes.catalog}?brand=${encodeURIComponent(product.brand)}`;
+    const brandHref = brandUrl(routes, product.brand);
     return (
         <nav aria-label="Breadcrumb" className="text-[14px] text-steel-400">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -20,7 +21,7 @@ function Crumbs({ product }) {
                 <li aria-hidden="true"><i className="bx bx-chevron-right" /></li>
                 <li><Link href={routes.catalog} className="hover:text-white">Shop</Link></li>
                 <li aria-hidden="true"><i className="bx bx-chevron-right" /></li>
-                <li><Link href={brandUrl} className="hover:text-white">{product.brand}</Link></li>
+                <li><Link href={brandHref} className="hover:text-white">{product.brand}</Link></li>
                 <li aria-hidden="true"><i className="bx bx-chevron-right" /></li>
                 <li aria-current="page" className="line-clamp-1 max-w-[46ch] text-steel-300">{product.name}</li>
             </ol>
@@ -229,9 +230,6 @@ export default function Product({ product, related, tabs = [], pickupNote }) {
 
     return (
         <>
-            <Head title={`${product.name} (${product.sku})`}>
-                <meta name="description" content={`${product.name}. ${product.brand}, SKU ${product.sku}, ${money(product.price)}. Order from LCT Trading.`} />
-            </Head>
 
             <div className="mx-auto max-w-[1280px] px-3 pb-20 pt-5 sm:px-6">
                 <Crumbs product={product} />
@@ -300,7 +298,7 @@ export default function Product({ product, related, tabs = [], pickupNote }) {
                         <dl className="mt-7 space-y-2 border-t border-foam-600 pt-5 text-[14px]">
                             <div className="flex gap-2">
                                 <dt className="text-steel-400">Brand:</dt>
-                                <dd><Link href={shop({ brand: product.brand })} className="text-steel-100 hover:underline">{product.brand}</Link></dd>
+                                <dd><Link href={brandUrl(routes, product.brand)} className="text-steel-100 hover:underline">{product.brand}</Link></dd>
                             </div>
                             {product.type && (
                                 <div className="flex gap-2">
@@ -315,7 +313,7 @@ export default function Product({ product, related, tabs = [], pickupNote }) {
                             {product.category && (
                                 <div className="flex gap-2">
                                     <dt className="text-steel-400">Category:</dt>
-                                    <dd><Link href={shop({ category: product.category })} className="text-steel-100 hover:underline">{product.category}</Link></dd>
+                                    <dd><Link href={categoryUrl(routes, product.category)} className="text-steel-100 hover:underline">{product.category}</Link></dd>
                                 </div>
                             )}
                             {product.tags?.length > 0 && (

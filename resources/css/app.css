@@ -2,7 +2,7 @@
 @import '@fontsource/poppins/latin-500.css';
 @import '@fontsource/poppins/latin-600.css';
 @import './fonts.css';
-@import 'boxicons/css/boxicons.min.css';
+@import './boxicons-subset.css';
 @import 'tailwindcss';
 @import './site.css';
 
@@ -1423,4 +1423,48 @@
 }
 @media (prefers-reduced-motion: reduce) {
     .lct-page-in { animation: none; }
+}
+
+/* Server-rendered page text (resources/views/seo/fallback.blade.php): what
+   crawlers read, and what a visitor sees for the moment before the app loads. */
+.lct-fallback {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px 64px;
+    color: var(--color-steel-300);
+    font-size: 15px;
+    line-height: 1.6;
+}
+.lct-fallback h1 {
+    margin: 24px 0 8px;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.05;
+    color: #fff;
+}
+.lct-fallback h2 {
+    margin: 28px 0 8px;
+    font-size: 20px;
+    color: #fff;
+}
+.lct-fallback a {
+    color: var(--color-steel-100);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.lct-fallback ul,
+.lct-fallback ol {
+    padding-left: 1.2em;
+    list-style: revert;
+}
+.lct-fallback img {
+    max-width: 240px;
+    height: auto;
+    background: #fff;
+}
+.lct-fallback dt {
+    float: left;
+    clear: left;
+    width: 110px;
+    color: var(--color-steel-500);
 }

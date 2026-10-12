@@ -13,3 +13,7 @@ Artisan::command('inspire', function () {
 Schedule::command('queue:work --stop-when-empty --tries=3 --max-time=50')
     ->everyMinute()
     ->withoutOverlapping();
+
+// Catalog caches are versioned, so old entries are never read again; clear
+// them nightly so the cache store doesn't keep growing.
+Schedule::command('cache:clear')->dailyAt('03:00');

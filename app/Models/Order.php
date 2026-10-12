@@ -116,6 +116,9 @@ class Order extends Model
             }
 
             $order->status = $status;
+            if ($deduct || $restore) {
+                Product::flushCatalogCache(); // cached listings show stock
+            }
             $order->save();
             $this->setRawAttributes($order->getAttributes(), true);
         });

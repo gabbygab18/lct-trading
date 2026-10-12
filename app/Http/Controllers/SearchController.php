@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 /**
@@ -20,18 +21,25 @@ class SearchController extends Controller
             return response()->json(['suggestions' => [], 'products' => [], 'total' => 0]);
         }
 
-        $base = Product::active()->search($q);
-        $total = (clone $base)->count();
+        // Everyone types the same first letters ("dri", "roy"): cache each query
+        // for 10 minutes. Raw rows, so URLs follow the host asking.
+        // ponytail: 300-row LIKE pool per new query; move to FULLTEXT/Scout if the list grows past ~50k.
+        [$suggestions, $rows, $total] = Cache::remember(Product::cacheKey('suggest:'.Str::lower($q)), 600, function () use ($q) {
+            $base = Product::active()->search($q);
+            // Rank a slice of the matches in PHP: SQL LIKE has no notion of relevance.
+            $pool = (clone $base)->orderBy('brand_rank')->limit(300)
+                ->get(['id', 'sku', 'name', 'brand', 'price', 'discount_percent', 'stock', 'image', 'type']);
 
-        // Rank a slice of the matches in PHP: SQL LIKE has no notion of relevance.
-        // ponytail: 300-row pool per keystroke; move to FULLTEXT/Scout if the list grows past ~50k.
-        $pool = (clone $base)->orderBy('brand_rank')->limit(300)
-            ->get(['id', 'sku', 'name', 'brand', 'price', 'discount_percent', 'stock', 'image', 'type']);
-        $products = $pool->sortByDesc(fn (Product $p) => self::score($q, $p))->take(5);
+            return [
+                self::completions($q, $pool->pluck('name')->all()),
+                $pool->sortByDesc(fn (Product $p) => self::score($q, $p))->take(5)->map->getAttributes()->values()->all(),
+                (clone $base)->count(),
+            ];
+        });
 
         return response()->json([
-            'suggestions' => self::completions($q, $pool->pluck('name')->all()),
-            'products'    => $products->map(fn (Product $p) => CatalogController::card($p))->values(),
+            'suggestions' => $suggestions,
+            'products'    => Product::hydrate($rows)->map(fn (Product $p) => CatalogController::card($p))->values(),
             'total'       => $total,
         ]);
     }

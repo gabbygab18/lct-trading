@@ -11,12 +11,18 @@ use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\Admin\InquiryController as AdminInquiryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/how-to-order', [HomeController::class, 'howToOrder'])->name('how-to-order');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/shop', [CatalogController::class, 'index'])->name('catalog');
+Route::get('/brands/{slug}', [CatalogController::class, 'brand'])->name('brand');
+Route::get('/categories/{slug}', [CatalogController::class, 'category'])->name('category');
+Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
+Route::get('/robots.txt', [SeoController::class, 'robots']);
+Route::get('/llms.txt', [SeoController::class, 'llms']);
 Route::get('/shop/{product:sku}', [CatalogController::class, 'show'])->where('product', '.+')->name('product');
 Route::get('/search/suggest', [SearchController::class, 'suggest'])->middleware('throttle:120,1')->name('search.suggest');
 Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
@@ -56,5 +62,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::get('/settings', [SettingController::class, 'edit'])->name('settings.edit');
         Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
+        Route::post('/settings/test-email', [SettingController::class, 'testEmail'])->name('settings.test-email');
+        Route::post('/settings/run-queue', [SettingController::class, 'runQueue'])->name('settings.run-queue');
     });
 });

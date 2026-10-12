@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Head } from '@inertiajs/react';
+import SeoHead from '@/components/SeoHead';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CtaBand from '@/components/CtaBand';
@@ -10,7 +10,7 @@ import ScrollTop from '@/components/ScrollTop';
  * elnovian's page wrapper. `.el-site` scopes the ported stylesheet; it is
  * display: contents so the sticky header still sticks to the page.
  */
-export default function SiteLayout({ title, description, cta = 'home', children }) {
+export default function SiteLayout({ cta = 'home', children }) {
     // Inertia visits don't fire the browser's own hash scroll.
     useEffect(() => {
         if (!window.location.hash) return;
@@ -20,10 +20,7 @@ export default function SiteLayout({ title, description, cta = 'home', children 
 
     return (
         <div className="el-site contents">
-            <Head>
-                {title && <title>{title}</title>}
-                {description && <meta name="description" content={description} />}
-            </Head>
+            <SeoHead />
             <Header />
             {children}
             <CtaBand variant={cta} />

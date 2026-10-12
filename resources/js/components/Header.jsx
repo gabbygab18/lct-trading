@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { brandUrl } from '@/lib/urls';
 import { CartIcon } from '@/components/BxIcons';
 import { Link, usePage } from '@inertiajs/react';
 import Button from '@/components/ui/Button';
@@ -109,7 +110,7 @@ export default function Header({ actions }) {
 
     const closeAll = () => setMenuOpen(false);
     const desktop = useDesktop();
-    const brandHref = (brand) => `${routes.catalog}?brand=${encodeURIComponent(brand)}`;
+    const brandHref = (brand) => brandUrl(routes, brand);
 
     return (
         <header id="site-header" className={menuOpen ? 'open' : ''}>

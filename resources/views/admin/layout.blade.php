@@ -7,6 +7,8 @@
     <meta name="robots" content="noindex">
     <title>@yield('title', 'Admin') · LCT Trading</title>
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+    {{-- Icons are a 3 KB font: fetch it with the page, not after the CSS. --}}
+    <link rel="preload" href="{{ Vite::asset('resources/fonts/boxicons-subset.woff2') }}" as="font" type="font/woff2" crossorigin>
     @vite(['resources/css/app.css'])
 </head>
 

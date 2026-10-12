@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderConfirmation;
 use App\Mail\OrderReceived;
 use App\Models\Order;
 use App\Models\Product;
@@ -36,7 +37,7 @@ class OrderController extends Controller
             'shipping' => Order::SHIPPING,
             'payment'  => Order::PAYMENT,
             'regions'  => self::REGIONS,
-        ]);
+        ])->withViewData('seo', new \App\Support\Seo('Send order | LCT Trading', 'Your order request to LCT Trading.', route('checkout'), index: false));
     }
 
     /**
@@ -166,11 +167,20 @@ class OrderController extends Controller
                     'line_total' => (float) $i->line_total,
                 ]),
             ],
-        ]);
+        ])->withViewData('seo', new \App\Support\Seo('Order sent | LCT Trading', 'Your order request was sent to LCT Trading.', index: false));
     }
 
     private function notifyStore(Order $order): void
     {
+        // The customer's copy, when they left an email.
+        if (filled($order->email)) {
+            try {
+                Mail::to($order->email, $order->customer_name)->queue(new OrderConfirmation($order));
+            } catch (Throwable $e) {
+                Log::error('Order confirmation failed to queue', ['order' => $order->reference, 'error' => $e->getMessage()]);
+            }
+        }
+
         $recipient = Setting::get('email') ?: config('mail.orders_to');
         if (blank($recipient)) {
             return;

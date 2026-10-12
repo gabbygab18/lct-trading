@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { router, usePage } from '@inertiajs/react';
 import Header from './Header';
+import SeoHead from './SeoHead';
 import Footer from './Footer';
 import ScrollTop from './ScrollTop';
 import { useTray } from '@/lib/tray';
@@ -138,6 +139,7 @@ function ShopScrollTop() {
 export default function Shell({ children, dock = true }) {
     return (
         <div className="flex min-h-dvh flex-col">
+            <SeoHead />
             <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:bg-signal focus:px-3 focus:py-2 focus:text-white">
                 Skip to items
             </a>

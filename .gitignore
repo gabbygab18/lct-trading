@@ -34,3 +34,9 @@ Thumbs.db
 # Impeccable review captures
 /.impeccable/review
 /public/images/products/gallery
+
+# Built upload zips and SQL dump (scripts/make_deploy.py)
+/deploy
+
+# Python bytecode from scripts/
+__pycache__/

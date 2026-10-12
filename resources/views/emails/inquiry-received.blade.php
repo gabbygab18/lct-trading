@@ -1,26 +1,25 @@
-@php $q = $inquiry; @endphp
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-<body style="margin:0;background:#1b1b1d;font-family:Arial,Helvetica,sans-serif;color:#1b1b1d;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#1b1b1d;padding:24px 12px;">
-<tr><td align="center">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#f4f4f2;">
-    <tr><td style="background:#1b1b1d;border-bottom:4px solid #d7141a;padding:20px 24px;">
-        <div style="color:#c7c9cc;font-size:12px;letter-spacing:3px;text-transform:uppercase;">LCT Trading · New inquiry</div>
-        <div style="color:#ffffff;font-size:22px;font-weight:bold;margin-top:6px;">{{ $q->topicLabel() }}</div>
-        <div style="color:#c7c9cc;font-size:13px;margin-top:4px;">{{ $q->created_at->timezone('Asia/Manila')->format('M j, Y g:i A') }}</div>
+{{-- To LCT, for every message from the contact form. --}}
+@extends('emails.layout')
+@php $tel = preg_replace('/[^0-9+]/', '', $inquiry->phone); @endphp
+
+@section('preheader', "{$inquiry->name}: ".\Illuminate\Support\Str::limit($inquiry->message, 90))
+@section('eyebrow', 'New inquiry')
+@section('title', $inquiry->topicLabel())
+
+@section('content')
+    <tr><td style="padding:12px 28px 26px;background:#fbf6f5;">
+        <div style="font-size:20px;font-weight:800;">{{ $inquiry->name }}</div>
+        <div style="margin-top:4px;font-size:15px;color:#3d3f42;">
+            {{ $inquiry->phone }}@if ($inquiry->email) · <a href="mailto:{{ $inquiry->email }}" style="color:#1b1b1d;">{{ $inquiry->email }}</a>@endif
+            · {{ $inquiry->created_at->timezone('Asia/Manila')->format('M j, Y · g:i A') }}
+        </div>
+        <a href="tel:{{ $tel }}" style="display:inline-block;margin-top:18px;background:#d7141a;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:999px;">Call {{ $inquiry->phone }}</a>
+        <a href="{{ route('admin.inquiries.show', $inquiry) }}" style="display:inline-block;margin-top:18px;margin-left:6px;background:#1b1b1d;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:13px 24px;border-radius:999px;">Open in admin</a>
     </td></tr>
-    <tr><td style="padding:20px 24px 8px;">
-        <div style="font-size:18px;font-weight:bold;">{{ $q->name }}</div>
-        <div style="font-size:15px;margin-top:4px;"><a href="tel:{{ preg_replace('/[^0-9+]/', '', $q->phone) }}" style="color:#d7141a;font-weight:bold;">{{ $q->phone }}</a>@if ($q->email) · <a href="mailto:{{ $q->email }}" style="color:#1b1b1d;">{{ $q->email }}</a>@endif</div>
+    <tr><td style="padding:24px 28px 30px;">
+        <div style="font-size:16px;font-weight:800;">Message</div>
+        <div style="margin-top:10px;background:#f6f6f4;border-left:4px solid #d7141a;border-radius:8px;padding:16px 18px;font-size:15px;line-height:1.65;white-space:pre-line;">{{ $inquiry->message }}</div>
     </td></tr>
-    <tr><td style="padding:8px 24px 24px;font-size:15px;line-height:1.6;white-space:pre-line;">{{ $q->message }}</td></tr>
-    <tr><td style="padding:0 24px 24px;">
-        <a href="{{ route('admin.inquiries.show', $q) }}" style="display:inline-block;background:#d7141a;color:#ffffff;font-weight:bold;text-decoration:none;padding:12px 20px;font-size:14px;">Open in admin</a>
-    </td></tr>
-</table>
-</td></tr>
-</table>
-</body>
-</html>
+@endsection
+
+@section('footnote', 'Sent to the store email set in Admin → Settings.')

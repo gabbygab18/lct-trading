@@ -1,4 +1,5 @@
 import React from 'react';
+import { brandUrl } from '@/lib/urls';
 import { Link, usePage } from '@inertiajs/react';
 import { FacebookIcon } from '@/components/SiteIcons';
 
@@ -63,7 +64,7 @@ export default function Footer() {
                         <h3>Brands</h3>
                         <div className="grid grid-cols-2 gap-x-8 gap-y-2.5">
                             {navBrands.map((brand) => (
-                                <Link key={brand} href={`${routes.catalog}?brand=${encodeURIComponent(brand)}`}>
+                                <Link key={brand} href={brandUrl(routes, brand)}>
                                     {brand}
                                 </Link>
                             ))}

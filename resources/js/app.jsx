@@ -8,10 +8,12 @@ import { ToastContainer } from './components/ui/toast';
 const appName = import.meta.env.VITE_APP_NAME || 'LCT Trading';
 
 createInertiaApp({
-    title: (title) => (title ? `${title} · ${appName}` : `${appName} · Tools & Hardware Supply`),
+    // Pages send their full title from the server (App\Support\Seo).
+    title: (title) => title || appName,
+    // One chunk per page: a visitor downloads the page they open, not all of them.
     resolve: (name) => {
-        const pages = import.meta.glob('./Pages/**/*.jsx', { eager: true });
-        return pages[`./Pages/${name}.jsx`];
+        const pages = import.meta.glob('./Pages/**/*.jsx');
+        return pages[`./Pages/${name}.jsx`]();
     },
     setup({ el, App, props }) {
         // The tray sits above every page so it survives navigation.

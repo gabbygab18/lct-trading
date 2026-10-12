@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\InquiryConfirmation;
 use App\Mail\InquiryReceived;
 use App\Models\Inquiry;
 use App\Models\Setting;
@@ -37,6 +38,15 @@ class InquiryController extends Controller
         ]);
 
         $inquiry = Inquiry::create($data);
+
+        // The visitor's copy, when they left an email.
+        if (filled($inquiry->email)) {
+            try {
+                Mail::to($inquiry->email, $inquiry->name)->queue(new InquiryConfirmation($inquiry));
+            } catch (Throwable $e) {
+                Log::error('Inquiry confirmation failed to queue', ['inquiry' => $inquiry->id, 'error' => $e->getMessage()]);
+            }
+        }
 
         $recipient = Setting::get('email') ?: config('mail.orders_to');
         if (filled($recipient)) {

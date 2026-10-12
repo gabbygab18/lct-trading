@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Head, Link, router, usePage } from '@inertiajs/react';
+import { Link, router, usePage } from '@inertiajs/react';
 import Shell from '@/components/Shell';
 import Pocket from '@/components/Pocket';
 import ListRow from '@/components/ListRow';
@@ -10,7 +10,7 @@ import Button from '@/components/ui/Button';
 import { CatalogSkeleton } from '@/components/Skeletons';
 import { number, readStore, writeStore } from '@/lib/format';
 
-const PARTIAL = { preserveState: true, preserveScroll: true, only: ['products', 'filters', 'categories'] };
+const PARTIAL = { preserveState: true, preserveScroll: true, only: ['products', 'filters', 'categories', 'seo', 'intro'] };
 
 function query(filters, patch) {
     const next = { ...filters, ...patch };
@@ -115,7 +115,7 @@ function Empty({ filters }) {
     );
 }
 
-export default function Catalog({ products, filters, brands, categories }) {
+export default function Catalog({ products, filters, brands, categories, intro }) {
     const { routes } = usePage().props;
     const [view, setView] = useState('case');
     useEffect(() => setView(readStore('lct-view', 'case')), []);
@@ -140,12 +140,10 @@ export default function Catalog({ products, filters, brands, categories }) {
 
     const update = (patch) => router.get(routes.catalog, query(filters, { ...patch, page: undefined }), { ...PARTIAL, replace: true });
 
-    const heading = filters.q ? `“${filters.q}”` : filters.brand || 'Tools & hardware';
-    const title = filters.q ? `Search: ${filters.q}` : filters.brand ? `${filters.brand} tools and hardware` : 'Catalog';
+    const heading = filters.q ? `“${filters.q}”` : intro?.heading || filters.brand || 'Tools & hardware';
 
     return (
         <>
-            <Head title={title} />
             <div className="px-3 pt-4 sm:px-6 sm:pt-5">
                 <BrandRail brands={brands} filters={filters} />
 
@@ -159,7 +157,9 @@ export default function Catalog({ products, filters, brands, categories }) {
                             {filters.q && filters.brand && <> in {filters.brand}</>}
                             {filters.category && <> · {filters.category}</>}
                             {products.last_page > 1 && <> · page {number(products.current_page)} of {number(products.last_page)}</>}
+                            {intro && <> · updated {intro.updated}</>}
                         </p>
+                        {intro && products.current_page === 1 && <p className="mt-3 max-w-[72ch] text-[14.5px] leading-relaxed text-steel-300">{intro.text}</p>}
                     </div>
                     <div className="grid w-full grid-cols-[1fr_1fr_auto] gap-2 sm:w-auto sm:grid-cols-[220px_190px_auto]">
                         <MenuSelect
@@ -213,6 +213,24 @@ export default function Catalog({ products, filters, brands, categories }) {
                         </div>
                     )}
                     <Pagination products={products} filters={filters} />
+
+                    {/* Same questions as this page's FAQ structured data. */}
+                    {intro && products.current_page === 1 && (
+                        <section className="mt-12 max-w-[820px] border-t border-foam-600 pt-8" aria-labelledby="listing-faq">
+                            <h2 id="listing-faq" className="font-display text-[24px] font-black tracking-[-0.02em] text-steel-50">Questions about {filters.brand || filters.category}</h2>
+                            <div className="mt-4 divide-y divide-foam-600">
+                                {intro.faqs.map((f) => (
+                                    <details key={f.q} className="group py-4">
+                                        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold text-steel-100 [&::-webkit-details-marker]:hidden">
+                                            {f.q}
+                                            <i className="bx bx-plus text-[20px] text-signal transition-transform group-open:rotate-45" aria-hidden="true" />
+                                        </summary>
+                                        <p className="mt-2 text-[14.5px] leading-relaxed text-steel-300">{f.a}</p>
+                                    </details>
+                                ))}
+                            </div>
+                        </section>
+                    )}
                 </div>
             </div>
         </>
