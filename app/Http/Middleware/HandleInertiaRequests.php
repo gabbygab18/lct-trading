@@ -50,6 +50,7 @@ class HandleInertiaRequests extends Middleware
             'maxQuantity' => config('catalog.max_quantity'),
             'flash' => ['inquirySent' => fn () => $request->session()->get('inquiry_sent')],
             'inquiryTopics' => \App\Models\Inquiry::TOPICS,
+            'turnstileSiteKey' => config('services.turnstile.site_key'),
             'lowStock'    => fn () => Product::lowStockThreshold(),
         ]);
     }

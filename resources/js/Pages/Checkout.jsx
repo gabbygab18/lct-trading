@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Head, Link, useForm, usePage } from '@inertiajs/react';
+import Turnstile from '@/components/Turnstile';
 import Shell from '@/components/Shell';
 import Button from '@/components/ui/Button';
 import MenuSelect from '@/components/ui/menu-select';
@@ -143,7 +144,7 @@ function Slip({ tray, changed, priceNote }) {
 
 export default function Checkout({ fresh, shipping, payment, regions }) {
     const tray = useTray();
-    const { routes, store } = usePage().props;
+    const { routes, store, turnstileSiteKey } = usePage().props;
     const [changed, setChanged] = useState([]);
     const [remember, setRemember] = useState(true);
 
@@ -170,7 +171,9 @@ export default function Checkout({ fresh, shipping, payment, regions }) {
         payment_preference: 'cod',
         notes: '',
         company_website: '',
+        'cf-turnstile-response': '',
     });
+    const robotCheck = useRef(null);
 
     useEffect(() => {
         const saved = readStore(SAVED, null);
@@ -188,6 +191,8 @@ export default function Checkout({ fresh, shipping, payment, regions }) {
         form.post(routes.orders, {
             preserveScroll: 'errors',
             onSuccess: () => tray.clear(),
+            // A Turnstile token works once: get a fresh one for the next try.
+            onFinish: () => robotCheck.current?.reset(),
             // The send button sits below the form on phones; bring the first
             // problem into view. Runs after React has painted the errors.
             onError: (errors) =>
@@ -328,6 +333,12 @@ export default function Checkout({ fresh, shipping, payment, regions }) {
                                 <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} className="size-4 accent-[#d7141a]" />
                                 Remember my details on this device
                             </label>
+                            {turnstileSiteKey && (
+                                <div id="f-turnstile" className="mt-4">
+                                    <Turnstile ref={robotCheck} siteKey={turnstileSiteKey} theme="dark" onToken={(t) => form.setData('cf-turnstile-response', t)} />
+                                    {form.errors.turnstile && <p className="mt-2 text-[13px] font-semibold text-[#ff7a7e]" role="alert">{form.errors.turnstile}</p>}
+                                </div>
+                            )}
                         </Section>
                     </div>
 

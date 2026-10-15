@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\InquiryConfirmation;
 use App\Mail\InquiryReceived;
 use App\Models\Inquiry;
+use App\Support\Turnstile;
 use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -36,6 +37,10 @@ class InquiryController extends Controller
             'message.required' => 'Tell us what you need.',
             'message.min'      => 'Tell us a little more so we can help.',
         ]);
+
+        if (! Turnstile::passes($request->string('cf-turnstile-response')->toString(), $request->ip())) {
+            return back()->withErrors(['turnstile' => 'We couldn’t confirm you’re not a robot. Please send again.'])->withInput();
+        }
 
         $inquiry = Inquiry::create($data);
 

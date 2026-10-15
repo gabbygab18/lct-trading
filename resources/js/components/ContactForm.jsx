@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm, usePage } from '@inertiajs/react';
 import Button from '@/components/ui/Button';
 import Loader from '@/components/scrollxui/Loader';
+import Turnstile from '@/components/Turnstile';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -34,10 +35,11 @@ function Field({ form, name, label, full, as = 'input', ...rest }) {
 
 /** Contact form on the homepage. Saves to Admin → Inquiries and emails the store. */
 export default function ContactForm() {
-    const { routes, inquiryTopics = {}, flash = {} } = usePage().props;
+    const { routes, inquiryTopics = {}, flash = {}, turnstileSiteKey } = usePage().props;
+    const robotCheck = useRef(null);
     const [sentTo, setSentTo] = useState(null);
     const [topicOpen, setTopicOpen] = useState(false);
-    const form = useForm({ name: '', phone: '', email: '', topic: 'product', message: '', company_website: '' });
+    const form = useForm({ name: '', phone: '', email: '', topic: 'product', message: '', company_website: '', 'cf-turnstile-response': '' });
 
     useEffect(() => {
         if (flash.inquirySent) setSentTo(flash.inquirySent);
@@ -48,6 +50,8 @@ export default function ContactForm() {
         form.post(routes.inquiries, {
             preserveScroll: true,
             onSuccess: () => form.reset(),
+            // A Turnstile token works once: get a fresh one for the next try.
+            onFinish: () => robotCheck.current?.reset(),
         });
     };
 
@@ -97,6 +101,13 @@ export default function ContactForm() {
             </div>
             {/* bots fill this; people never see it */}
             <input type="text" name="company_website" tabIndex={-1} autoComplete="off" className="hidden" value={form.data.company_website} onChange={(e) => form.setData('company_website', e.target.value)} />
+
+            {turnstileSiteKey && (
+                <div className="mt-4">
+                    <Turnstile ref={robotCheck} siteKey={turnstileSiteKey} onToken={(t) => form.setData('cf-turnstile-response', t)} />
+                    {form.errors.turnstile && <span className="error-msg" role="alert">{form.errors.turnstile}</span>}
+                </div>
+            )}
 
             <div className="form-actions">
                 <Button type="submit" variant="primary" disabled={form.processing} layered>

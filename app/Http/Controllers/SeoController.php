@@ -13,7 +13,7 @@ class SeoController extends Controller
 {
     public function sitemap(): Response
     {
-        $xml = Cache::remember(Product::cacheKey('sitemap:'.url('/')), 86400, function () {
+        $xml = Cache::remember(Product::cacheKey('sitemap:'.config('app.url')), 86400, function () {
             $urls = [
                 [route('home'), 'daily'], [route('catalog'), 'daily'],
                 [route('how-to-order'), 'monthly'], [route('contact'), 'monthly'],

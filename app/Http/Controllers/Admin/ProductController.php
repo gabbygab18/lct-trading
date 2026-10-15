@@ -62,7 +62,7 @@ class ProductController extends Controller
 
         // Back to the filtered list the edit came from, but only ever on this site.
         $back = (string) $request->input('back');
-        $back = str_starts_with($back, url('/admin')) ? $back : route('admin.products.index');
+        $back = str_starts_with($back, url('/admin').'/') ? $back : route('admin.products.index');
 
         return redirect()->to($back)
             ->with('success', "{$product->sku} saved.");
@@ -151,7 +151,9 @@ class ProductController extends Controller
             fputcsv($out, ItemImporter::COLUMNS);
             Product::orderBy('brand_rank')->orderBy('name')->chunk(1000, function ($chunk) use ($out) {
                 foreach ($chunk as $p) {
-                    fputcsv($out, [$p->sku, $p->name, $p->brand, $p->category, $p->price, $p->discount_percent ?: '', $p->stock, $p->image, $p->description, $p->is_active ? 'yes' : 'no']);
+                    // A leading = + - @ makes Excel run the cell as a formula: prefix with '.
+                    $safe = fn ($v) => is_string($v) && preg_match('/^[=+\-@\t\r]/', $v) ? "'".$v : $v;
+                    fputcsv($out, array_map($safe, [$p->sku, $p->name, $p->brand, $p->category, $p->price, $p->discount_percent ?: '', $p->stock, $p->image, $p->description, $p->is_active ? 'yes' : 'no']));
                 }
             });
             fclose($out);

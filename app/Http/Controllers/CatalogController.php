@@ -22,11 +22,20 @@ class CatalogController extends Controller
     public function index(Request $request): Response
     {
         $filters = [
-            'q'        => trim((string) $request->query('q', '')),
+            'q'        => Str::limit(trim((string) $request->query('q', '')), 100, ''),
             'brand'    => (string) $request->query('brand', ''),
             'category' => (string) $request->query('category', ''),
             'sort'     => in_array($request->query('sort'), self::SORTS, true) ? $request->query('sort') : 'featured',
         ];
+
+        // Only real brands and categories: anything else would just be another
+        // empty listing to cache.
+        if ($filters['brand'] !== '' && ! in_array($filters['brand'], array_column(self::brands(), 'name'), true)) {
+            $filters['brand'] = '';
+        }
+        if ($filters['category'] !== '' && ! in_array($filters['category'], self::categoryNames(), true)) {
+            $filters['category'] = '';
+        }
 
         $query = Product::active()
             ->search($filters['q'])
@@ -52,13 +61,17 @@ class CatalogController extends Controller
         // are cached, not cards, so URLs are built for whichever host is asking.
         $page = max(1, (int) $request->query('page', 1));
         $perPage = (int) config('catalog.per_page');
-        [$rows, $total] = Cache::remember(Product::cacheKey('shop:'.json_encode($filters).':'.$page), 600, function () use ($query, $page, $perPage) {
+        // Searches aren't cached: anyone can type endless different ones.
+        $fetch = function () use ($query, $page, $perPage) {
             $found = $query
                 ->select(['id', 'sku', 'name', 'brand', 'category', 'price', 'discount_percent', 'stock', 'image'])
                 ->paginate($perPage, page: $page);
 
             return [$found->getCollection()->map->getAttributes()->all(), $found->total()];
-        });
+        };
+        [$rows, $total] = $filters['q'] !== '' || $page > 200
+            ? $fetch()
+            : Cache::remember(Product::cacheKey('shop:'.json_encode($filters).':'.$page), 600, $fetch);
         $products = new LengthAwarePaginator(
             Product::hydrate($rows)->map(fn (Product $p) => self::card($p)),
             $total, $perPage, $page,

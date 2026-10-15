@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    // Cloudflare Turnstile on the contact form. No keys = no check (local, tests).
+    'turnstile' => [
+        'site_key'   => env('TURNSTILE_SITE_KEY'),
+        'secret_key' => env('TURNSTILE_SECRET_KEY'),
+    ],
+
 ];

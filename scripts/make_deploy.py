@@ -71,7 +71,7 @@ STORAGE_LINK_PHP = f"""<?php
 /*
 | One-time helper: creates public_html/storage -> ../{APP}/storage/app/public
 | (admin photo uploads). Open https://your-domain/_storage-link.php once,
-| check it says OK, then DELETE THIS FILE.
+| check it says OK. Once the link exists it deletes itself.
 */
 
 header('Content-Type: text/plain; charset=utf-8');
@@ -83,13 +83,15 @@ if (! is_dir($target)) {{
     exit("FAILED: target folder not found:\\n  {{$target}}\\n\\nExtract the app zip in the home directory (one level above public_html).\\n");
 }}
 if (is_link($link)) {{
-    exit("Already linked:\\n  {{$link}}\\n  -> ".readlink($link)."\\n\\nNothing to do. Delete this file.\\n");
+    @unlink(__FILE__); // it shows server paths: don't leave it public
+    exit("Already linked. This helper has deleted itself.\\n");
 }}
 if (file_exists($link)) {{
     exit("FAILED: something already exists at\\n  {{$link}}\\n\\nRemove it first, then reload this page.\\n");
 }}
 if (function_exists('symlink') && @symlink($target, $link)) {{
-    exit("OK: symlink created\\n  {{$link}}\\n  -> {{$target}}\\n\\nNow DELETE _storage-link.php from public_html.\\n");
+    @unlink(__FILE__);
+    exit("OK: symlink created. This helper has deleted itself.\\n");
 }}
 echo "FAILED: symlink() is disabled or returned false.\\n\\nRun this in cPanel Terminal instead:\\n  ln -s {{$target}} {{$link}}\\n";
 """

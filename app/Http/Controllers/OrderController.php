@@ -7,6 +7,7 @@ use App\Mail\OrderReceived;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Setting;
+use App\Support\Turnstile;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -78,6 +79,12 @@ class OrderController extends Controller
             '*.required_if'        => 'Needed for delivery.',
             'items.required'       => 'Your tray is empty.',
         ]);
+
+        // Cloudflare Turnstile: the customer's copy goes to whatever email is typed,
+        // so bots must not be able to send orders (and emails) at will.
+        if (! Turnstile::passes($request->string('cf-turnstile-response')->toString(), $request->ip())) {
+            return back()->withErrors(['turnstile' => 'We couldn’t confirm you’re not a robot. Please send again.'])->withInput();
+        }
 
         $quantities = collect($data['items'])->groupBy('id')->map(fn ($lines) => $lines->sum('quantity'));
         $products = Product::active()->whereIn('id', $quantities->keys())->get()->keyBy('id');

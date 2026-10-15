@@ -106,5 +106,7 @@
 
 <div class="mt-6 flex flex-wrap gap-2">
     <button class="a-btn a-btn-primary">{{ $product ? 'Save item' : 'Add item' }}</button>
-    <a href="{{ request('back', route('admin.products.index')) }}" class="a-btn a-btn-ghost">Cancel</a>
+    {{-- only our own admin pages: a ?back=javascript:… link would run on click --}}
+    @php($back = (string) request('back'))
+    <a href="{{ str_starts_with($back, url('/admin').'/') ? $back : route('admin.products.index') }}" class="a-btn a-btn-ghost">Cancel</a>
 </div>

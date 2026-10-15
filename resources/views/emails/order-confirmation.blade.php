@@ -25,7 +25,7 @@
         @endif
     </td></tr>
 
-    @include('emails.partials.order-summary')
+    @include('emails.partials.order-summary', ['customer' => true])
 
     @include('emails.partials.steps', ['steps' => [
         ['Step 1', 'We check stock', 'LCT checks every item in your tray against what is on the shelf.'],

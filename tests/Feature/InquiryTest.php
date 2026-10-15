@@ -7,6 +7,7 @@ use App\Models\Inquiry;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
@@ -39,5 +40,19 @@ class InquiryTest extends TestCase
             ->assertSessionHasErrors(['name', 'phone', 'topic', 'message']);
 
         $this->assertSame(0, Inquiry::count());
+    }
+
+    public function test_turnstile_blocks_messages_without_a_valid_robot_check(): void
+    {
+        config(['services.turnstile.secret_key' => 'secret']);
+        Http::fake(['challenges.cloudflare.com/*' => fn ($req) => Http::response(['success' => $req['response'] === 'good-token'])]);
+        $msg = ['name' => 'Ana', 'phone' => '0917 123 4567', 'topic' => 'other', 'message' => 'Do you deliver to Cavite?'];
+
+        $this->post('/inquiries', $msg)->assertSessionHasErrors('turnstile');
+        $this->post('/inquiries', $msg + ['cf-turnstile-response' => 'bot-token'])->assertSessionHasErrors('turnstile');
+        $this->assertSame(0, Inquiry::count());
+
+        $this->post('/inquiries', $msg + ['cf-turnstile-response' => 'good-token'])->assertSessionHasNoErrors();
+        $this->assertSame(1, Inquiry::count());
     }
 }

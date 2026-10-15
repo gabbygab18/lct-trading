@@ -14,7 +14,7 @@
             <tr><td style="{{ $label }}">Delivery</td><td style="{{ $row }}">{{ \App\Models\Order::SHIPPING[$order->shipping_preference] ?? $order->shipping_preference }}</td></tr>
         @endif
         <tr><td style="{{ $label }}">Payment</td><td style="{{ $row }}">{{ $order->fulfilment === 'pickup' && $order->payment_preference === 'cod' ? 'Cash at pickup' : (\App\Models\Order::PAYMENT[$order->payment_preference] ?? $order->payment_preference) }}</td></tr>
-        @if ($order->notes)
+        @if ($order->notes && empty($customer))
             <tr><td style="{{ $label }}">Notes</td><td style="{{ $row }}white-space:pre-line;">{{ $order->notes }}</td></tr>
         @endif
     </table>

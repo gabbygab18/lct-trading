@@ -13,7 +13,7 @@
     </form>
 
     <form action="{{ route('admin.products.destroy', $product) }}" method="POST" class="mt-10 border-t border-steel-300 pt-6"
-        onsubmit="return confirm('Delete {{ $product->sku }}? Past orders keep their copy of it.');">
+        onsubmit="return confirm({{ Js::from('Delete '.$product->sku.'? Past orders keep their copy of it.') }});">
         @csrf
         @method('DELETE')
         <button class="a-btn a-btn-ghost !text-signal-600">Delete this item</button>
