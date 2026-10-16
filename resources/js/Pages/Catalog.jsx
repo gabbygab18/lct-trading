@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, router, usePage } from '@inertiajs/react';
 import Shell from '@/components/Shell';
+import BrandFinder from '@/components/BrandFinder';
 import Pocket from '@/components/Pocket';
 import ListRow from '@/components/ListRow';
 import { GridIcon, ListIcon } from '@/components/Icons';
@@ -18,37 +19,121 @@ function query(filters, patch) {
     return next;
 }
 
+/**
+ * One row of brands: all, the popular ones and the current one, then "More
+ * brands" for the searchable list of every brand (a wall of 90 chips was
+ * unreadable).
+ */
 function BrandRail({ brands, filters }) {
     const { routes } = usePage().props;
     const total = brands.reduce((n, b) => n + b.count, 0);
-    const tabs = [{ name: '', label: 'All brands', count: total }, ...brands.map((b) => ({ ...b, label: b.name }))];
+    const shown = brands.filter((b) => b.top || b.name === filters.brand);
+    const tabs = [{ name: '', label: 'All brands', count: total }, ...shown.map((b) => ({ ...b, label: b.name }))];
 
     // The fill moves the moment you click; the list follows when the visit lands.
     const [brand, setBrand] = useState(filters.brand || '');
     useEffect(() => setBrand(filters.brand || ''), [filters.brand]);
     const choose = (name) => {
+        setMore(false);
         setBrand(name);
         router.get(routes.catalog, query(filters, { brand: name, category: '', page: undefined }), { ...PARTIAL, preserveScroll: false });
     };
 
+    const [more, setMore] = useState(false);
+    const wrap = useRef(null);
+    useEffect(() => {
+        if (!more) return undefined;
+        const away = (e) => !wrap.current?.contains(e.target) && setMore(false);
+        const esc = (e) => e.key === 'Escape' && setMore(false);
+        document.addEventListener('pointerdown', away);
+        document.addEventListener('keydown', esc);
+        return () => {
+            document.removeEventListener('pointerdown', away);
+            document.removeEventListener('keydown', esc);
+        };
+    }, [more]);
+
     return (
-        <nav aria-label="Brands" className="-mx-3 overflow-x-auto px-3 sm:-mx-6 sm:px-6 [scrollbar-width:none] lg:overflow-visible">
-            <Tabs value={brand} onValueChange={choose}>
-                <TabsList aria-label="Brands" className="flex min-w-max gap-1.5 border-0 py-1 lg:min-w-0 lg:flex-wrap">
-                    {tabs.map((b) => (
-                        <TabsTrigger
-                            key={b.label}
-                            value={b.name}
-                            fillClassName="rounded-[4px] bg-steel-100 dark:bg-steel-100" activeClassName="text-ink dark:text-ink"
-                            className="h-10 rounded-[4px] px-3.5 text-[15px] font-semibold ring-1 ring-inset ring-foam-600 hover:bg-foam-700"
-                        >
-                            {b.label}
-                            <span className={`text-[12px] font-normal ${brand === b.name ? 'text-steel-700' : 'text-steel-500'}`}>{number(b.count)}</span>
-                        </TabsTrigger>
-                    ))}
-                </TabsList>
-            </Tabs>
-        </nav>
+        <div ref={wrap} className="relative">
+            <div className="flex items-center gap-1.5">
+                <nav aria-label="Popular brands" className="min-w-0 flex-1 overflow-x-auto [mask-image:linear-gradient(to_right,#000_92%,transparent)] [scrollbar-width:none]">
+                    <Tabs value={brand} onValueChange={choose}>
+                        <TabsList aria-label="Popular brands" className="flex min-w-max gap-1.5 border-0 py-1 pr-8">
+                            {tabs.map((b) => (
+                                <TabsTrigger
+                                    key={b.label}
+                                    value={b.name}
+                                    fillClassName="rounded-[4px] bg-steel-100 dark:bg-steel-100" activeClassName="text-ink dark:text-ink"
+                                    className="h-10 rounded-[4px] px-3.5 text-[15px] font-semibold ring-1 ring-inset ring-foam-600 hover:bg-foam-700"
+                                >
+                                    {b.label}
+                                    <span className={`text-[12px] font-normal ${brand === b.name ? 'text-steel-700' : 'text-steel-500'}`}>{number(b.count)}</span>
+                                </TabsTrigger>
+                            ))}
+                        </TabsList>
+                    </Tabs>
+                </nav>
+                <button
+                    type="button"
+                    onClick={() => setMore((v) => !v)}
+                    aria-expanded={more}
+                    aria-haspopup="dialog"
+                    className={`flex h-10 shrink-0 items-center gap-1.5 rounded-[4px] px-3.5 text-[15px] font-semibold ring-1 ring-inset transition-colors ${
+                        more ? 'bg-foam-600 text-white ring-signal' : 'text-steel-100 ring-foam-500 hover:bg-foam-700'
+                    }`}
+                >
+                    <i className="bx bx-search text-[18px]" aria-hidden="true" />
+                    <span className="hidden sm:inline">All {brands.length} brands</span>
+                    <span className="sm:hidden">Brands</span>
+                    <i className={`bx bx-chevron-down text-[18px] text-steel-400 transition-transform ${more ? 'rotate-180' : ''}`} aria-hidden="true" />
+                </button>
+            </div>
+            {more && (
+                <div
+                    role="dialog"
+                    aria-label="All brands"
+                    className="absolute inset-x-0 top-[calc(100%+6px)] z-30 flex max-h-[min(560px,calc(100dvh-var(--hdr)-140px))] flex-col rounded-[8px] bg-foam-800 p-4 shadow-[0_24px_60px_-12px_rgb(0_0_0/0.7)] ring-1 ring-foam-500"
+                >
+                    <BrandFinder brands={brands} current={filters.brand} onPick={choose} autoFocus />
+                </div>
+            )}
+        </div>
+    );
+}
+
+/** What's narrowing the list, each removable on its own. */
+function ActiveFilters({ filters }) {
+    const { routes } = usePage().props;
+    const chips = [
+        filters.q && ['Search', `“${filters.q}”`, { q: '' }],
+        filters.brand && ['Brand', filters.brand, { brand: '' }],
+        filters.category && ['Category', filters.category, { category: '' }],
+    ].filter(Boolean);
+    if (!chips.length) return null;
+
+    const drop = (patch) => router.get(routes.catalog, query(filters, { ...patch, page: undefined }), { ...PARTIAL, preserveScroll: false });
+
+    return (
+        <div className="mt-3 flex flex-wrap items-center gap-1.5" aria-label="Active filters">
+            {chips.map(([label, value, patch]) => (
+                <button
+                    key={label}
+                    type="button"
+                    onClick={() => drop(patch)}
+                    className="group flex h-8 items-center gap-1.5 rounded-full bg-foam-700 pl-3 pr-2 text-[13.5px] ring-1 ring-inset ring-foam-500 hover:ring-signal"
+                    aria-label={`Remove ${label.toLowerCase()} ${value}`}
+                >
+                    <span className="text-steel-400">{label}:</span>
+                    <span className="max-w-[24ch] truncate font-semibold text-steel-50">{value}</span>
+                    <i className="bx bx-x text-[18px] text-steel-400 group-hover:text-signal" aria-hidden="true" />
+                </button>
+            ))}
+            {chips.length > 1 && (
+                <button type="button" onClick={() => drop({ q: '', brand: '', category: '' })} className="h-8 px-2 text-[13.5px] font-semibold text-steel-300 underline-offset-4 hover:text-white hover:underline">
+                    Clear all
+                </button>
+            )}
+        </div>
     );
 }
 
@@ -160,6 +245,7 @@ export default function Catalog({ products, filters, brands, categories, intro }
                             {intro && <> · updated {intro.updated}</>}
                         </p>
                         {intro && products.current_page === 1 && <p className="mt-3 max-w-[72ch] text-[14.5px] leading-relaxed text-steel-300">{intro.text}</p>}
+                        <ActiveFilters filters={filters} />
                     </div>
                     <div className="grid w-full grid-cols-[1fr_1fr_auto] gap-2 sm:w-auto sm:grid-cols-[220px_190px_auto]">
                         <MenuSelect
@@ -170,6 +256,7 @@ export default function Catalog({ products, filters, brands, categories, intro }
                         />
                         <MenuSelect
                             label="Sort"
+                            prefix="Sort:"
                             value={filters.sort}
                             onChange={(sort) => update({ sort })}
                             options={[

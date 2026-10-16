@@ -35,7 +35,7 @@ class HandleInertiaRequests extends Middleware
                 'address'      => $settings['address'] ?? null,
                 'facebook_url' => $settings['facebook_url'] ?? null,
             ],
-            'navBrands' => fn () => array_column(\App\Http\Controllers\CatalogController::brands(), 'name'),
+            'navBrands' => fn () => \App\Http\Controllers\CatalogController::brands(),
             'isHome'    => $request->routeIs('home'),
             'routes' => [
                 'home'     => route('home'),

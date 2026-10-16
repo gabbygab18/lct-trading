@@ -802,6 +802,16 @@
     padding: 8px 6px;
 }
 
+/* The brand finder sits inside the phone menu: keep the nav's link underline
+   and type off it (its own classes set those). */
+.el-site header#site-header .brand-finder a {
+    font-size: inherit;
+    font-weight: inherit;
+}
+.el-site header#site-header .brand-finder a::after {
+    content: none;
+}
+
 /* Brands: a wide panel with the brands in columns instead of one long list. */
 @media (min-width: 1025px) {
     .nav-dropdown-wide {

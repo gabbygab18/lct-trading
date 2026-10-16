@@ -14,7 +14,7 @@ import {
  *
  * options: [{ value, label }]
  */
-export default function MenuSelect({ label, value, onChange, options, className, id, invalid }) {
+export default function MenuSelect({ label, value, onChange, options, className, id, invalid, prefix }) {
     const [open, setOpen] = useState(false);
     const current = options.find((o) => o.value === value) ?? options[0];
 
@@ -32,7 +32,10 @@ export default function MenuSelect({ label, value, onChange, options, className,
                         className,
                     )}
                 >
-                    <span className="truncate">{current?.label}</span>
+                    <span className="truncate">
+                        {prefix && <span className="text-steel-400">{prefix} </span>}
+                        {current?.label}
+                    </span>
                     <i className={cn('bx bx-chevron-down shrink-0 text-[18px] text-steel-400 transition-transform', open && 'rotate-180')} aria-hidden="true" />
                 </button>
             </DropdownMenuTrigger>

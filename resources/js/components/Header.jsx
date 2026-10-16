@@ -1,64 +1,82 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { brandUrl } from '@/lib/urls';
 import { CartIcon } from '@/components/BxIcons';
 import { Link, usePage } from '@inertiajs/react';
 import Button from '@/components/ui/Button';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import BrandFinder from '@/components/BrandFinder';
 
 const Caret = () => <i className="bx bx-chevron-down caret" aria-hidden="true" />;
 
-/** One desktop nav dropdown (elnovian), opened on hover. Phones get MobileSection. */
-function NavDropdown({ label, href, onNavigate, wide = false, footer, children }) {
+/**
+ * Desktop Brands menu: opens on hover or click and holds a searchable list
+ * (90+ brands no longer fit a dropdown). The panel sits under the header in a
+ * portal, so the nav's link styles don't reach it.
+ */
+function BrandsMenu({ brands, current, hrefFor, allHref }) {
     const [open, setOpen] = useState(false);
-    const closeTimer = useRef(null);
+    const timer = useRef(null);
+    const trigger = useRef(null);
+    const panel = useRef(null);
     const openNow = () => {
-        window.clearTimeout(closeTimer.current);
+        window.clearTimeout(timer.current);
         setOpen(true);
     };
-
     const closeSoon = () => {
-        window.clearTimeout(closeTimer.current);
-        closeTimer.current = window.setTimeout(() => setOpen(false), 180);
+        window.clearTimeout(timer.current);
+        timer.current = window.setTimeout(() => setOpen(false), 200);
     };
 
-    useEffect(() => () => window.clearTimeout(closeTimer.current), []);
+    useEffect(() => {
+        if (!open) return undefined;
+        const away = (e) => {
+            if (!panel.current?.contains(e.target) && !trigger.current?.contains(e.target)) setOpen(false);
+        };
+        const esc = (e) => {
+            if (e.key !== 'Escape') return;
+            setOpen(false);
+            trigger.current?.focus();
+        };
+        document.addEventListener('pointerdown', away);
+        document.addEventListener('keydown', esc);
+        return () => {
+            document.removeEventListener('pointerdown', away);
+            document.removeEventListener('keydown', esc);
+        };
+    }, [open]);
+    useEffect(() => () => window.clearTimeout(timer.current), []);
 
     return (
-        <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
-            <div className={`nav-item ${open ? 'open' : ''}`} onMouseEnter={openNow} onMouseLeave={closeSoon}>
-                <DropdownMenuTrigger className="rounded-none hover:shadow-none">
-                    <a
-                        href={href}
-                        onClick={() => {
-                            setOpen(false);
-                            onNavigate?.();
-                        }}
+        <div className={`nav-item ${open ? 'open' : ''}`} onMouseEnter={openNow} onMouseLeave={closeSoon}>
+            <a
+                ref={trigger}
+                href={allHref}
+                role="button"
+                aria-expanded={open}
+                aria-haspopup="dialog"
+                onClick={(e) => {
+                    e.preventDefault();
+                    setOpen((v) => !v);
+                }}
+            >
+                Brands
+                <Caret />
+            </a>
+            {open &&
+                createPortal(
+                    <div
+                        ref={panel}
+                        role="dialog"
+                        aria-label="Brands"
+                        onMouseEnter={openNow}
+                        onMouseLeave={closeSoon}
+                        className="fixed right-4 top-[calc(var(--hdr)+6px)] z-[60] flex max-h-[min(640px,calc(100dvh-var(--hdr)-24px))] w-[min(860px,calc(100vw-32px))] flex-col rounded-[8px] bg-foam-800 p-4 shadow-[0_24px_60px_-12px_rgb(0_0_0/0.7)] ring-1 ring-foam-500"
                     >
-                        {label}
-                        <Caret />
-                    </a>
-                </DropdownMenuTrigger>
-
-                <DropdownMenuContent
-                    align={wide ? 'center' : 'start'}
-                    collisionPadding={16}
-                    sideOffset={10}
-                    maxHeight="none"
-                    className={`nav-dropdown-panel ${wide ? 'nav-dropdown-wide' : ''}`}
-                    onMouseEnter={openNow}
-                    onMouseLeave={closeSoon}
-                    onCloseAutoFocus={(e) => e.preventDefault()}
-                >
-                    {children(() => setOpen(false))}
-                    {footer?.(() => setOpen(false))}
-                </DropdownMenuContent>
-            </div>
-        </DropdownMenu>
+                        <BrandFinder brands={brands} current={current} hrefFor={hrefFor} onPick={() => setOpen(false)} allHref={allHref} />
+                    </div>,
+                    document.body,
+                )}
+        </div>
     );
 }
 
@@ -133,54 +151,17 @@ export default function Header({ actions }) {
                         Shop
                     </Link>
                     {desktop ? (
-                        <NavDropdown
-                            label="Brands"
-                            href={routes.catalog}
-                            onNavigate={closeAll}
-                            wide
-                            footer={(close) => (
-                                <DropdownMenuItem onSelect={close} className="nav-dropdown-all">
-                                    <Link href={routes.catalog} onClick={closeAll} className="flex w-full items-center justify-between gap-3">
-                                        <span>Shop all brands</span>
-                                        <i className="bx bx-right-arrow-alt text-[20px] text-signal" aria-hidden="true" />
-                                    </Link>
-                                </DropdownMenuItem>
-                            )}
-                        >
-                            {(close) =>
-                                navBrands.map((brand) => (
-                                    <DropdownMenuItem key={brand} onSelect={close}>
-                                        <Link
-                                            href={brandHref(brand)}
-                                            onClick={closeAll}
-                                            className="flex w-full items-center justify-between gap-3"
-                                            aria-current={props.filters?.brand === brand ? 'page' : undefined}
-                                        >
-                                            <span className={props.filters?.brand === brand ? 'text-white' : ''}>{brand}</span>
-                                            {props.filters?.brand === brand && <i className="bx bx-check text-[18px] text-signal" aria-hidden="true" />}
-                                        </Link>
-                                    </DropdownMenuItem>
-                                ))
-                            }
-                        </NavDropdown>
+                        <BrandsMenu brands={navBrands} current={props.filters?.brand} hrefFor={brandHref} allHref={routes.catalog} />
                     ) : (
                         <MobileSection label="Brands">
-                            <div className="nav-acc-grid">
-                                {navBrands.map((brand) => (
-                                    <Link
-                                        key={brand}
-                                        href={brandHref(brand)}
-                                        onClick={closeAll}
-                                        aria-current={props.filters?.brand === brand ? 'page' : undefined}
-                                    >
-                                        {brand}
-                                    </Link>
-                                ))}
-                            </div>
-                            <Link href={routes.catalog} onClick={closeAll} className="nav-acc-all">
-                                Shop all brands
-                                <i className="bx bx-right-arrow-alt" aria-hidden="true" />
-                            </Link>
+                            <BrandFinder
+                                brands={navBrands}
+                                current={props.filters?.brand}
+                                hrefFor={brandHref}
+                                onPick={closeAll}
+                                allHref={routes.catalog}
+                                className="max-h-[60dvh] px-1 pb-4 pt-2"
+                            />
                         </MobileSection>
                     )}
                     <Link href={routes.howTo} onClick={closeAll} aria-current={component === 'HowToOrder' ? 'page' : undefined}>

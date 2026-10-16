@@ -333,16 +333,18 @@ class CatalogController extends Controller
         return is_file(public_path($file)) ? asset($file).'?v=2' : null;
     }
 
-    /** @return list<array{name: string, count: int}> */
+    /** @return list<array{name: string, count: int, top: bool}> top: the shop's popular brands (config). */
     public static function brands(): array
     {
-        return Cache::remember(Product::cacheKey('brands'), 600, fn () => Product::active()
+        $top = array_map('strtolower', config('catalog.priority_brands'));
+
+        return Cache::remember(Product::cacheKey('brands-v2'), 600, fn () => Product::active()
             ->selectRaw('brand, min(brand_rank) as rank_, count(*) as total')
             ->groupBy('brand')
             ->orderBy('rank_')
             ->orderBy('brand')
             ->get()
-            ->map(fn ($r) => ['name' => $r->brand, 'count' => (int) $r->total])
+            ->map(fn ($r) => ['name' => $r->brand, 'count' => (int) $r->total, 'top' => in_array(strtolower($r->brand), $top, true)])
             ->all());
     }
 }

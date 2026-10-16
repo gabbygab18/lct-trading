@@ -63,11 +63,14 @@ export default function Footer() {
                     <div className="footer-col footer-brands">
                         <h3>Brands</h3>
                         <div className="grid grid-cols-2 gap-x-8 gap-y-2.5">
-                            {navBrands.map((brand) => (
-                                <Link key={brand} href={brandUrl(routes, brand)}>
-                                    {brand}
-                                </Link>
-                            ))}
+                            {navBrands
+                                .filter((b) => b.top)
+                                .map(({ name }) => (
+                                    <Link key={name} href={brandUrl(routes, name)}>
+                                        {name}
+                                    </Link>
+                                ))}
+                            <Link href={routes.catalog}>All {navBrands.length} brands →</Link>
                         </div>
                     </div>
 
