@@ -98,13 +98,30 @@ class ProductController extends Controller
     {
         return view('admin.products.import', [
             'placeholders' => Product::where('is_placeholder', true)->count(),
+            'maxMb' => $this->maxUploadKb() / 1024,
         ]);
+    }
+
+    /** The smaller of our 20 MB cap and PHP's upload_max_filesize / post_max_size. */
+    private function maxUploadKb(): int
+    {
+        return (int) min(20480, floor(\Illuminate\Http\UploadedFile::getMaxFilesize() / 1024));
     }
 
     public function import(Request $request): RedirectResponse
     {
+        // PHP can drop an upload before Laravel sees it (size limit, full disk,
+        // no temp folder); say which, instead of a bare "failed to upload".
+        $upload = $request->file('file');
+        if ($upload && ! $upload->isValid()) {
+            return back()->withErrors(['file' => $upload->getErrorMessage()]);
+        }
+
+        $maxMb = round($this->maxUploadKb() / 1024, 1);
         $request->validate([
-            'file' => ['required', 'file', 'max:20480', 'mimes:xlsx,csv,txt'],
+            'file' => ['required', 'file', 'max:'.$this->maxUploadKb(), 'mimes:xlsx,csv,txt'],
+        ], [
+            'file.max' => "The file is bigger than this server accepts ({$maxMb} MB). Split it into smaller sheets.",
         ]);
 
         @set_time_limit(300);

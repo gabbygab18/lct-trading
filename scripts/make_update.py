@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from make_deploy import APP, OUT, ROOT, SKIP_APP, files, run  # noqa: E402
+from make_deploy import APP, OUT, ROOT, SKIP_APP, build, files, run  # noqa: E402
 
 MANIFEST = OUT / "server-manifest.json"
 NEVER = ("vendor/", "bootstrap/cache/", ".env")  # server-only or built there
@@ -71,7 +71,7 @@ def main():
         print("composer.lock changed: vendor/ must be rebuilt. Use make_deploy.py (full zip) instead.")
         sys.exit(1)
 
-    run(["npm", "run", "build"])
+    build()
     server = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else from_full_zips()
     now = current()
 

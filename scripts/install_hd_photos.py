@@ -4,7 +4,10 @@ Each <dir>/<photo>.(jpg|png|webp) becomes public/images/products/<photo>.webp:
 flattened onto white, trimmed, centred on a square, 800px. Too-small or
 unreadable files are skipped and listed.
 
-    python scripts/install_hd_photos.py <dir>
+    python scripts/install_hd_photos.py <dir> [--min 450]
+
+--min lowers the size floor for price-list crops, which are often the only
+picture of a house-brand item.
 """
 import glob, os, pathlib, sys
 import numpy as np
@@ -13,7 +16,7 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DEST = ROOT / "public" / "images" / "products"
 SRC = pathlib.Path(sys.argv[1])
-MIN_SIDE = 450
+MIN_SIDE = int(sys.argv[sys.argv.index("--min") + 1]) if "--min" in sys.argv else 450
 
 done, skipped = 0, []
 for f in sorted(glob.glob(str(SRC / "*.*"))):

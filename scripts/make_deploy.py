@@ -17,6 +17,7 @@ import gzip
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import zipfile
 from pathlib import Path
@@ -102,6 +103,17 @@ def run(cmd, cwd=ROOT):
     subprocess.run(cmd, cwd=cwd, check=True, shell=True)
 
 
+def build():
+    """npm run build, refusing a build that points fonts at this PC's disk.
+
+    Run from a lower-case drive (c:\\...), Vite writes url(../../C:/Users/...)
+    for the fonts, which 404 on the server."""
+    run(["npm", "run", "build"], cwd=Path(str(ROOT)[0].upper() + str(ROOT)[1:]))
+    bad = [p.name for p in (ROOT / "public/build/assets").glob("*.css") if ":/Users/" in p.read_text(encoding="utf-8")]
+    if bad:
+        sys.exit(f"Build has local disk paths in {bad}; run again from C:\\ (capital C).")
+
+
 def files():
     out = subprocess.run(
         ["git", "ls-files", "-co", "--exclude-standard", "-z"],
@@ -112,7 +124,7 @@ def files():
 
 def main():
     OUT.mkdir(exist_ok=True)
-    run(["npm", "run", "build"])
+    build()
     tracked = files()
 
     with tempfile.TemporaryDirectory() as tmp:

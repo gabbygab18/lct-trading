@@ -21,7 +21,7 @@
             <input type="file" name="file" accept=".xlsx,.csv" required class="a-file">
             @error('file')<p class="text-[13px] font-medium text-signal-600">{{ $message }}</p>@enderror
             <button class="a-btn a-btn-primary">Upload and apply</button>
-            <p class="text-[13px] text-steel-700">.xlsx or .csv, first sheet only, up to 20 MB.</p>
+            <p class="text-[13px] text-steel-700">.xlsx or .csv, first sheet only, up to {{ round($maxMb, 1) }} MB.</p>
         </form>
 
         <div class="a-card space-y-3 p-5 text-[14px] leading-relaxed">
