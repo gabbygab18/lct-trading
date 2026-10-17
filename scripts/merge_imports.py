@@ -39,6 +39,9 @@ COLS = ["sku", "name", "brand", "category", "type", "price", "stock", "image", "
 # stock, photos, descriptions and hidden flags.
 UPDATE_COLS = ["sku", "name", "brand", "category", "type", "price"]
 STOCK = 20  # placeholder: price lists carry no stock counts
+# Brands whose whole current range came in a list: their remaining sample-seed
+# items carry old prices from the sample feed, so they are hidden.
+FULL_LISTS = ("Royu", "Omni", "Firefly")
 # Items already in the catalog under another label, found by review.
 SKIP = [
     r"^MDI PP Hollow Board",  # = PP-HOLLOW-12/15/18 from the boards sheet
@@ -332,6 +335,11 @@ for r in out:
             if e["is_placeholder"] and e["is_active"] and e["sku"] not in claimed and e["sku"] not in hide:
                 hide.append(e["sku"])
                 replaced.append(f"{e['sku']} {e['name']}  ->  {r['sku']} {r['name']}")
+full = {norm(b) for b in FULL_LISTS}
+for e in existing.values():
+    if norm(e["brand"]) in full and e["is_placeholder"] and e["is_active"] and e["sku"] not in claimed and e["sku"] not in hide:
+        hide.append(e["sku"])
+        replaced.append(f"{e['sku']} {e['name']}  (not in the {e['brand']} list)")
 with open(OUT.with_name(OUT.stem + "_hide.csv"), "w", encoding="utf-8", newline="") as f:
     w = csv.writer(f, lineterminator="\n")
     w.writerow(["sku", "active"])
