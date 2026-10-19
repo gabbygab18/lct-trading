@@ -45,4 +45,16 @@ class SearchSuggestTest extends TestCase
 
         $this->getJson('/search/suggest?q=g')->assertJsonPath('total', 0);
     }
+
+    public function test_sku_matches_without_dashes_or_slashes(): void
+    {
+        $mk = fn ($sku) => Product::create(['sku' => $sku, 'name' => "Omni outlet {$sku}", 'brand' => 'Omni', 'price' => 155, 'stock' => 5]);
+        $mk('WSG-003');
+        $mk('MD511/DG');
+        $mk('WSO-001');
+
+        $this->assertSame(['WSG-003'], Product::search('wsg003')->pluck('sku')->all());
+        $this->assertSame(['MD511/DG'], Product::search('md511dg')->pluck('sku')->all());
+        $this->assertSame(['WSG-003'], Product::search('WSG-003')->pluck('sku')->all());
+    }
 }

@@ -109,12 +109,21 @@ class Product extends Model
         return $query->active()->where('stock', '<=', static::lowStockThreshold());
     }
 
-    /** Name or SKU contains every word typed, in any order. */
+    /**
+     * Name or SKU contains every word typed, in any order. SKUs also match with
+     * the dashes, slashes, dots and spaces left out, so "wsg003" finds WSG-003.
+     */
     public function scopeSearch(Builder $query, ?string $term): Builder
     {
         foreach (preg_split('/\s+/', trim((string) $term), -1, PREG_SPLIT_NO_EMPTY) as $word) {
             $like = '%'.addcslashes($word, '%_\\').'%';
-            $query->where(fn ($q) => $q->where('name', 'like', $like)->orWhere('sku', 'like', $like)->orWhere('tags', 'like', $like));
+            $flat = preg_replace('/[^A-Za-z0-9]/', '', $word);
+            $query->where(function ($q) use ($like, $flat) {
+                $q->where('name', 'like', $like)->orWhere('sku', 'like', $like)->orWhere('tags', 'like', $like);
+                if (strlen($flat) >= 3) {
+                    $q->orWhereRaw("replace(replace(replace(replace(sku, '-', ''), '/', ''), '.', ''), ' ', '') like ?", ['%'.$flat.'%']);
+                }
+            });
         }
 
         return $query;
