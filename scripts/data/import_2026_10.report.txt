@@ -927,7 +927,7 @@ Master Lock 2050D: kept 600.00 (j-hapsuy-2.csv), skipped 425.00 (o-ufe.csv)
 Master Lock 1900T: kept 210.00 (j-hapsuy-2.csv), skipped 120.00 (o-ufe.csv)
 Master Lock 1901T: kept 200.00 (j-hapsuy-2.csv), skipped 230.00 (o-ufe.csv)
 
-== catalog repeats hidden (242, see _hide.csv)
+== catalog repeats hidden (731, see _hide.csv)
 LCT-9325401
 LCT-0738649
 LCT-6151897
@@ -1170,10 +1170,499 @@ K-750-41937
 K-3800-41937
 FBB179-312X312
 FBB179-4X4
+REFC07-2
+LCT-5085913
+LCT-5118681
+LCT-9112281
+LCT-9145049
+LCT-9177817
+LCT-9210585
+LCT-9243353
+LCT-9276121
+LCT-9308889
+LCT-9341657
+LCT-9374425
+LCT-9407193
+LCT-9439961
+LCT-9472729
+LCT-9505497
+MD913-2
+REFC19
+MD504-3
+MD502-2
+REFC18
+LCT-4297177
+LCT-4329945
+LCT-4362713
+LCT-8572505
+LCT-8605273
+LCT-8638041
+LCT-8670809
+LCT-8703577
+LCT-8736345
+LCT-8769113
+LCT-8801881
+LCT-8834649
+LCT-8867417
+LCT-8900185
+LCT-8932953
+LCT-8965721
+LCT-8998489
+LCT-9031257
+LCT-9064025
+LCT-9096793
+LCT-9129561
+LCT-9162329
+LCT-9195097
+LCT-9227865
+LCT-9260633
+LCT-9293401
+LCT-9326169
+LCT-9358937
+RPSCM0104
+RPSCM0106
+RPSCM0108
+RPSCM0110
+RPSCM0112
+MDS113-2
+MD506-3
+MD515-3
+MD513-3
+MD511-2
+RPPEC75
+RPPEC90
+RPPEC110
+RPPMA32-2
+REDEC705-2
+REDEC704-2
+RPPP63
+RPP20X90
+RFC14ABK150
+RPP20X20-2
+RPP20X25-2
+RPP20X32-2
+RPP20X40-2
+RPP20X50-2
+RPP20X63-2
+RPP20X75-2
+RPP20X90-2
+RPP20X110-2
+LCT-6878809
+LCT-5770457
+REMLN012A-2
+REMLN034A-2
+REMLN100A-2
+REMCP012A-2
+REMCP034A-2
+REMCP100A-2
+REDOU102-2
+REDEC135-2
+REDEC134-5
+REDEC133-3-3
+REDEC133-3-4
+REDEC725-2
+REDEC724-2
+REDEC625-3
+REDEC624-2
+RCLHC00
+RPFCM0104
+RPFCM0106
+RPFCM0108
+RPFCM0110
+RPFCM0112
+RUMF01F2N18
+RMB15C
+RMB20C-2
+RMB30C
+RSB30C-2
+RCO6
+RWO12-2
+RWO11-2
+RWO6
+RMS3-2
+RMS6-A-2
+RMP8-3
+RMP3-3
+RMP2-3
+RMO10-3
+MD901-3
+MDS115-3
+LCT-8243161
+LCT-8275929
+LCT-0635225
+LCT-0667993
+631581204715
+631581204715-2
+631581204715-3
+631581204715-4
+631581204715-5
+631581204715-6
+631581204715-7
+631581204715-8
+631581204715-9
+631581204715-10
+631581204715-11
+631581204715-12
+LCT-2233049
+LCT-2265817
+LCT-2298585
+LCT-5925465
+LCT-5958233
+LCT-5991001
+LCT-6023769
+631583068115
+631583068115-2
+631583068115-3
+631583068115-4
+LCT-3738201
+LCT-8647641
+LCT-3770969
+LCT-3803737
+LCT-8680409
+LCT-3836505
+XFW-200-8
+XFW-250-10
+XFW-300-12
+A27-010
+WCS-001
+LCT-1535193
+LCT-1567961
+LCT-1600729
+LCT-1633497
+WUA-002
+X-300
+X-200
+X-200-2
+X-502
+AEL-T30
+LCT-7104345
+LCT-7137113
+LCT-7169881
+LCT-7029721
+LCT-7062489
+LCT-7095257
+LCT-7128025
+LCT-5174489
+LCT-5207257
+WUA-004-PK
+XFC-200-8
+XFC-250-10
+XFC-300-12
+GU10-002
+E12-102R
+WPG-006
+RDF-350
+DEL-0089-RED
+DEL-0089-BLACK
+DEL-0089-WHITE
+X-200-3
+X-200-4
+AEL-T60
+AC220V
+LCT-4799065
+LCT-4831833
+LCT-6175321
+LCT-6208089
+LCT-8808281
+LCT-8841049
+LCT-4920409
+LCT-4953177
+LCT-4985945
+LCT-7090649
+LCT-7123417
+LCT-3237337
+LCT-3270105
+LCT-3302873
+LCT-0141657
+LCT-0174425
+LCT-0207193
+LCT-2307033
+LCT-2339801
+LCT-7598297
+LCT-7631065
+LCT-7663833
+LCT-7696601
+LCT-5726553
+LCT-7043033
+LCT-7108569
+LCT-4598745
+LCT-4631513
+LCT-5419353
+LCT-5452121
+USB-303
+WP3-WUSB
+WP2-WU
+631581204815
+631581204815-2
+631581204815-3
+631581204815-4
+631581204815-5
+631581204815-6
+631581204815-7
+631581204815-8
+AVR-500
+AVR-1000
+AVR-1500
+ET165Z-4METERS
+ET165Z-16METERS
+WPB-603-PK
+P3-EG
+P2-S13
+P2-S14
+RDF-100
+ECT-202
+MDB-08P
+SP3-WU2
+LNL-102-PK-GREEN
+LNL-102-PK-BLUE
+LNL-102-PK-PINK
+LNL-102-PK-YELLOW
+LNL-102-PK-WHITE
+LNL-101-PK-GREEN
+LNL-101-PK-BLUE
+LNL-101-PK-PINK
+LNL-101-PK-YELLOW
+LNL-101-PK-WHITE
+KNL-501-PK-GREEN
+KNL-501-PK-BLUE
+KNL-501-PK-PINK
+KNL-501-PK-YELLOW
+KNL-501-PK-RED
+DNL-327-PK
+DNL-221-PK
+DNL-123-PK
+DNL-122-PK
+DNL-121-PK
+DNL-327-PK-2
+DNL-221-PK-2
+DNL-123-PK-2
+DNL-122-PK-2
+DNL-121-PK-2
+DSL-0030-RED
+DSL-0030-BLACK
+DSL-0030-WHITE
+X-300-2
+X-300-3
+X-300-4
+X-102
+X-101
+X-202
+SRB-12V
+SRB-6V4-INBLISTE
+AEL-200
+RFL-200-GRAY
+RFL-200-SKYBLUE
+RFL-200-LIMEGREE
+RFL-9128
+LDD-060-2
+LDD-072-2
+LCT-8222425
+LCT-8255193
+AC220V-2
+LCT-1406681
+LCT-0030425
+LCT-0063193
+LCT-0095961
+LCT-6948057
+LCT-6980825
+LCT-7013593
+LCT-7046361
+LCT-8663513
+LCT-8696281
+LCT-2229465
+LCT-2262233
+LCT-2295001
+LCT-2327769
+LCT-2393305
+LCT-8243289
+LCT-8276057
+LCT-2684249
+LCT-2717017
+LCT-2749785
+LCT-2782553
+LCT-1188441
+LCT-1325273
+LCT-7431641
+LCT-7464409
+LCT-7497177
+LCT-4443993
+LCT-4476761
+LCT-8229593
+LCT-8262361
+LCT-8295129
+LCT-8485977
+LCT-8518745
+LCT-2005465
+LCT-5112665
+LCT-8717145
+LCT-8749913
+LCT-8782681
+LCT-4894809
+LCT-4927577
+LCT-0760281
+LCT-0793049
+LCT-0825817
+LCT-0858585
+LCT-0891353
+LCT-0956889
+LCT-1361625
+LCT-1394393
+LCT-5076825
+LCT-5109593
+LCT-5142361
+LCT-5175129
+LCT-1281497
+LCT-1314265
+LCT-1347033
+LCT-1379801
+LCT-3209049
+LCT-3241817
+LCT-6211801
+LCT-6244569
+LCT-6277337
+LCT-2634329
+LCT-3360985
+LCT-3393753
+LCT-3426521
+LCT-1886425
+LCT-1919193
+LCT-2902233
+LCT-0837849
+LCT-0870617
+LCT-8367961
+LCT-8400729
+LCT-1286105
+LCT-5694297
+LCT-3092569
+LCT-3125337
+LCT-3158105
+LCT-3190873
+LCT-5043161
+LCT-0035417
+LCT-4804057
+LCT-4836825
+LCT-8157913
+LCT-8190681
+G24D-DAYLIGHT
+G24D-WARMWHIT
+LCT-6706009
+LCT-6738777
+G24D-DAYLIGHT-2
+G24D-WARMWHIT-2
+LCT-3336665
+LCT-3369433
+LCT-1825369
+LCT-1858137
+LCT-1890905
+LCT-1923673
+LCT-7681113
+LCT-7031513
+LCT-4329049
+LCT-4361817
+LCT-3515609
+LCT-3548377
+LCT-5001689
+LCT-5034457
+G120-6500KDAY
+G120-2700KWAR
+LCT-7050585
+LCT-7083353
+LCT-2638425
+LCT-2671193
+LCT-9918681
+LCT-9951449
+LCT-8444121
+LCT-8476889
+LCT-8187737
+LCT-8318809
+LCT-3706073
+LCT-3738841
+LCT-5729753
+LCT-5762521
+LCT-9363033
+LCT-9395801
+LCT-6151769
+LCT-6184537
+SBR-2P
+CBP-2P
+CBB-2P
+USB-301
+STO-004-PK
+WP2-S13
+WGFCI-201-PK
+WP1-WA
+WP3-S13
+WPO-S13
+631581204415
+631581204415-2
+631581204415-3
+631581204415-4
+631581204415-5
+631581204415-6
+631581204415-7
+631581204415-8
+631581204415-9
+631581204415-10
+631581204415-11
+631581204415-12
+LCT-6693081
+XFG-150S-6
+E27-616-PK
+WDP-303-PK
+WEE-003
+SBMS-2P
+SBM-2P
+SBRS-2P
+SBR-2P-2
+CBB-2P-2
+CBP-2P-2
+WDT-005
+WCS-002
+A14-010
+631581195715
+WUA-005-PK
+USB-204-PK
+WGF-001
+WRP-002
+WEP-001
+STO-003-PK
+SP3-WR
+SP3-WR-2
+SP3-S14
+SP3-S13
+SP3-WG2
+SP3-WD
+SP3-WA
+SP2-S14
+SP2-S13
+SP2-WU
+SP1-WA
+SP0-S14
+SP0-S13
+P3-S14
+P3-EG-2
+P3-S13
+P3-EU
+P3-ER
+P2-ER
+P-WEA-401
+P1-EU-PK
+P1-DM
+P2-EG
+P2-EU
+P2-S13-2
+P1-ER-PK
+P1-ET
+P1-TV
+P1-EG
+P1-EB
+P1-S23
+P1-S14
+P1-S13
 
 == catalog items with the same name at different prices (review)
 
-== sample items replaced by a price-list item with their code (207)
+== sample items replaced by a price-list item with their code (696)
 RTN14A-RED75MBO Royu RTN14A 2.0mm² THHN/THWN-2 Conventional Stranded Building Wires Red (75m/box)  ->  RTN14A Royu THHN/THWN-2 Stranded Wire 14 AWG 2.0mm² 75 m Box
 RTN14A-WHITE75M Royu RTN14A 2.0mm² THHN/THWN-2 Conventional Stranded Building Wires White (75m/box)  ->  RTN14A Royu THHN/THWN-2 Stranded Wire 14 AWG 2.0mm² 75 m Box
 RTN14A-BLACK75M Royu RTN14A 2.0mm² THHN/THWN-2 Conventional Stranded Building Wires Black (75m/box)  ->  RTN14A Royu THHN/THWN-2 Stranded Wire 14 AWG 2.0mm² 75 m Box
@@ -1381,6 +1870,495 @@ K-750-41937 Ridgid K-750 Drum Machine / Drain Auger Cleaning Machine 41937  ->  
 K-3800-41937 Ridgid K-3800 Drum Machine / Drain Auger Cleaning Machine 41937  ->  41937 Ridgid Leather Gloves for K-375
 FBB179-312X312 Stanley FBB179 Ball Bearing Loose Pin Hinge 3-1/2" x 3-1/2"  ->  FBB179 Stanley 2-Ball Bearing Hinges ANSI Grade (FBB179) 3.5 x 3.5 w/ 3.1mm Thickness US26D
 FBB179-4X4 Stanley FBB179 Ball Bearing Loose Pin Hinge 4" x 4"  ->  FBB179 Stanley 2-Ball Bearing Hinges ANSI Grade (FBB179) 3.5 x 3.5 w/ 3.1mm Thickness US26D
+REFC07-2 Royu REFC07 Ceiling Mounted Exhaust Fan REFC07/14* 12"  (not in the Royu list)
+LCT-5085913 Royu PVC Electrical Tape / Insulating Tape Black (4m)  (not in the Royu list)
+LCT-5118681 Royu PVC Electrical Tape / Insulating Tape Black (8m)  (not in the Royu list)
+LCT-9112281 Royu PVC Electrical Tape / Insulating Tape Black (16m)  (not in the Royu list)
+LCT-9145049 Royu PVC Electrical Tape / Insulating Tape Red (4m)  (not in the Royu list)
+LCT-9177817 Royu PVC Electrical Tape / Insulating Tape Red (8m)  (not in the Royu list)
+LCT-9210585 Royu PVC Electrical Tape / Insulating Tape Red (16m)  (not in the Royu list)
+LCT-9243353 Royu PVC Electrical Tape / Insulating Tape Yellow (4m)  (not in the Royu list)
+LCT-9276121 Royu PVC Electrical Tape / Insulating Tape Yellow (8m)  (not in the Royu list)
+LCT-9308889 Royu PVC Electrical Tape / Insulating Tape Yellow (16m)  (not in the Royu list)
+LCT-9341657 Royu PVC Electrical Tape / Insulating Tape Green (4m)  (not in the Royu list)
+LCT-9374425 Royu PVC Electrical Tape / Insulating Tape Green (8m)  (not in the Royu list)
+LCT-9407193 Royu PVC Electrical Tape / Insulating Tape Green (16m)  (not in the Royu list)
+LCT-9439961 Royu PVC Electrical Tape / Insulating Tape White (4m)  (not in the Royu list)
+LCT-9472729 Royu PVC Electrical Tape / Insulating Tape White (8m)  (not in the Royu list)
+LCT-9505497 Royu PVC Electrical Tape / Insulating Tape White (16m)  (not in the Royu list)
+MD913-2 Royu MD913 Duplex Universal Outlet With Ground & Shutter Set 15A (Plano) [White]  (not in the Royu list)
+REFC19 Royu REFC19 Ceiling Mounted Exhaust Fan REFC19/08W*  (not in the Royu list)
+MD504-3 Royu MD504 2-Gang Switch 3-Way Set 16A (Plano) [White]  (not in the Royu list)
+MD502-2 Royu MD502 1-Gang Switch 3-Way Set 16A (Plano) [White]  (not in the Royu list)
+REFC18 Royu REFC18 Ceiling Mounted Exhaust Fan REFC18/08W*  (not in the Royu list)
+LCT-4297177 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 25 x 20mm  (not in the Royu list)
+LCT-4329945 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 32 x 20mm  (not in the Royu list)
+LCT-4362713 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 32 x 25mm  (not in the Royu list)
+LCT-8572505 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 40 x 20mm  (not in the Royu list)
+LCT-8605273 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 40 x 25mm  (not in the Royu list)
+LCT-8638041 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 40 x 32mm  (not in the Royu list)
+LCT-8670809 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 50 x 20mm  (not in the Royu list)
+LCT-8703577 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 50 x 25mm  (not in the Royu list)
+LCT-8736345 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 50 x 32mm  (not in the Royu list)
+LCT-8769113 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 50 x 40mm  (not in the Royu list)
+LCT-8801881 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 63 x 25mm  (not in the Royu list)
+LCT-8834649 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 63 x 32mm  (not in the Royu list)
+LCT-8867417 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 63 x 40mm  (not in the Royu list)
+LCT-8900185 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 63 x 50mm  (not in the Royu list)
+LCT-8932953 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 75 x 25mm  (not in the Royu list)
+LCT-8965721 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 75 x 32mm  (not in the Royu list)
+LCT-8998489 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 75 x 40mm  (not in the Royu list)
+LCT-9031257 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 75 x 50mm  (not in the Royu list)
+LCT-9064025 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 75 x 63mm  (not in the Royu list)
+LCT-9096793 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 90 x 32mm  (not in the Royu list)
+LCT-9129561 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 90 x 40mm  (not in the Royu list)
+LCT-9162329 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 90 x 50mm  (not in the Royu list)
+LCT-9195097 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 90 x 63mm  (not in the Royu list)
+LCT-9227865 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 90 x 75mm  (not in the Royu list)
+LCT-9260633 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 110 x 50mm  (not in the Royu list)
+LCT-9293401 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 110 x 63mm  (not in the Royu list)
+LCT-9326169 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 110 x 75mm  (not in the Royu list)
+LCT-9358937 Royu Pipe Tee Reducer [Hot&Cold] (PPR Fittings) 110 x 90mm  (not in the Royu list)
+RPSCM0104 Royu Center Main Panel Board Surface Mounted (Bolt-On) RPSCM0104  (not in the Royu list)
+RPSCM0106 Royu Center Main Panel Board Surface Mounted (Bolt-On) RPSCM0106  (not in the Royu list)
+RPSCM0108 Royu Center Main Panel Board Surface Mounted (Bolt-On) RPSCM0108  (not in the Royu list)
+RPSCM0110 Royu Center Main Panel Board Surface Mounted (Bolt-On) RPSCM0110  (not in the Royu list)
+RPSCM0112 Royu Center Main Panel Board Surface Mounted (Bolt-On) RPSCM0112  (not in the Royu list)
+MDS113-2 Royu MDS113 2-Gang Universal Outlet Set 15A (Plano) [White]  (not in the Royu list)
+MD506-3 Royu MD506 3-Gang Switch 3-Way Set 16A (Plano) [White]  (not in the Royu list)
+MD515-3 Royu MD515 3-Gang Switch Set 16A (Plano) [White]  (not in the Royu list)
+MD513-3 Royu MD513 2-Gang Switch Set 16A (Plano) [White]  (not in the Royu list)
+MD511-2 Royu MD511 1-Gang Switch Set 16A (Plano) [White]  (not in the Royu list)
+RPPEC75 Royu Pipe End Cap [Hot&Cold] (PPR Fittings) RPPEC75 (75mm)  (not in the Royu list)
+RPPEC90 Royu Pipe End Cap [Hot&Cold] (PPR Fittings) RPPEC90 (90mm)  (not in the Royu list)
+RPPEC110 Royu Pipe End Cap [Hot&Cold] (PPR Fittings) RPPEC110 (110mm)  (not in the Royu list)
+RPPMA32-2 Royu Pipe Male Adapter [Hot&Cold] (PPR Fittings) RPPMA32 (32x1")  (not in the Royu list)
+REDEC705-2 Royu REDEC705 (5-Gang) Individual Switches REDEC705/ G (Gray)  (not in the Royu list)
+REDEC704-2 Royu REDEC704 (4-Gang) Individual Switches REDEC704/ G (Gray)  (not in the Royu list)
+RPPP63 Royu Pipe Flange Plate (Hot&Cold) [PPR Fittings] RPPP63 (63mm)  (not in the Royu list)
+RPP20X90 Royu PN20 Hot & Cold Water Pipe 4-Meters RPP20X90  (not in the Royu list)
+RFC14ABK150 Royu Flat Cord (Stranded, Parallel, Thermoplastic) RFC14ABK150 / SPT3 2.0 mm²  (not in the Royu list)
+RPP20X20-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X20  (not in the Royu list)
+RPP20X25-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X25  (not in the Royu list)
+RPP20X32-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X32  (not in the Royu list)
+RPP20X40-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X40  (not in the Royu list)
+RPP20X50-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X50  (not in the Royu list)
+RPP20X63-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X63  (not in the Royu list)
+RPP20X75-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X75  (not in the Royu list)
+RPP20X90-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X90  (not in the Royu list)
+RPP20X110-2 Royu PN20 Hot & Cold Water Pipe 4-Meters (PPR Fittings) RPP20X110  (not in the Royu list)
+LCT-6878809 Royu EMT Square Box Cover  (not in the Royu list)
+LCT-5770457 Royu EMT Square Box  (not in the Royu list)
+REMLN012A-2 Royu EMT Locknut REMLN012A 1/2"  (not in the Royu list)
+REMLN034A-2 Royu EMT Locknut REMLN034A 3/4"  (not in the Royu list)
+REMLN100A-2 Royu EMT Locknut REMLN100A 1"  (not in the Royu list)
+REMCP012A-2 Royu EMT Conduit Hanger with Screw and Nut REMCP012A 1/2"  (not in the Royu list)
+REMCP034A-2 Royu EMT Conduit Hanger with Screw and Nut REMCP034A 3/4"  (not in the Royu list)
+REMCP100A-2 Royu EMT Conduit Hanger with Screw and Nut REMCP100A 1"  (not in the Royu list)
+REDOU102-2 Royu REDOU102 ( 2-Gang ) Universal Outlet REDOU102 (Black)  (not in the Royu list)
+REDEC135-2 Royu REDEC135-3 ( 4+1 Gang ) Push Button Switch with Light Indicator (3 Meters) REDEC135-2 (White)  (not in the Royu list)
+REDEC134-5 Royu REDEC134-6 ( 3+1 Gang ) Push Button Switch with Light Indicator (6 Meters ) REDEC134-5 (White)  (not in the Royu list)
+REDEC133-3-3 Royu REDEC133-3 ( 2+1 Gang ) Push Button Switch with Light Indicator REDEC133-3 (White)  (not in the Royu list)
+REDEC133-3-4 Royu REDEC133-3 ( 2+1 Gang ) Push Button Switch with Light Indicator REDEC133-3/B (Black)  (not in the Royu list)
+REDEC725-2 Royu REDEC725 (5-Gang) Individual Switches & 2 USB Ports REDEC725/ G (Gray)  (not in the Royu list)
+REDEC724-2 Royu REDEC724 (4-Gang) Individual Switches & 2 USB Ports REDEC724/ G (Gray)  (not in the Royu list)
+REDEC625-3 Royu REDEC625 (5-Gang) 1 Master Switch  & 2 USB Ports  (not in the Royu list)
+REDEC624-2 Royu REDEC624 1-Master Switch  & 2 USB Ports REDEC624 (Gray)  (not in the Royu list)
+RCLHC00 Royu Horizontal Cross (Cable Ladder ) RCLHC00  (not in the Royu list)
+RPFCM0104 Royu Center Main Panel Board Flush Mounted (Bolt-On) RPFCM0104  (not in the Royu list)
+RPFCM0106 Royu Center Main Panel Board Flush Mounted (Bolt-On) RPFCM0106  (not in the Royu list)
+RPFCM0108 Royu Center Main Panel Board Flush Mounted (Bolt-On) RPFCM0108  (not in the Royu list)
+RPFCM0110 Royu Center Main Panel Board Flush Mounted (Bolt-On) RPFCM0110  (not in the Royu list)
+RPFCM0112 Royu Center Main Panel Board Flush Mounted (Bolt-On) RPFCM0112  (not in the Royu list)
+RUMF01F2N18 Royu Metal Base Distribution Box with Busbar RUMF01F2N18 (18Modules)  (not in the Royu list)
+RMB15C Royu Push Button Switch RMB15C/O (15A)  (not in the Royu list)
+RMB20C-2 Royu Push Button Switch RMB20C/O (20A)  (not in the Royu list)
+RMB30C Royu Push Button Switch RMB30C/OO (30A)  (not in the Royu list)
+RSB30C-2 Royu Safety Breaker with Cover & Outlet (Bolt On Type) RSB30C/OO 30A  (not in the Royu list)
+RCO6 Royu RCO6 Universal Outlet 16A (Classic)  (not in the Royu list)
+RWO12-2 Royu RWO12 Duplex Universal Outlet with 2 USB Ports 16A (Wide)  (not in the Royu list)
+RWO11-2 Royu RWO11 Duplex Universal Outlet with Ground & Shutter 15A (Wide)  (not in the Royu list)
+RWO6 Royu RWO6 Universal Outlet 16A (Wide)  (not in the Royu list)
+RMS3-2 Royu RMS3 3-Way Switch (Plano) [White]  (not in the Royu list)
+RMS6-A-2 Royu RMS6-A 1-Way Switch (Plano) [White]  (not in the Royu list)
+RMP8-3 Royu RMP8 1-Gang Plate For RWO8 (Plano) [White]  (not in the Royu list)
+RMP3-3 Royu RMP3 3-Gang Plate (Plano) [White]  (not in the Royu list)
+RMP2-3 Royu RMP2 2-Gang Plate (Plano) [White]  (not in the Royu list)
+RMO10-3 Royu RMO10 Duplex GFCI 20A 6mA (Plano) [White]  (not in the Royu list)
+MD901-3 Royu MD901 1-Gang Aircon Outlet Set 20A (Plano) [White]  (not in the Royu list)
+MDS115-3 Royu MDS115 3-Gang Universal Outlet Set 15A (Plano) [White]  (not in the Royu list)
+LCT-8243161 Omni 1.5W LED Colored Round Mini Light Bulb Blue  (not in the Omni list)
+LCT-8275929 Omni 1.5W LED Colored Round Mini Light Bulb Green  (not in the Omni list)
+LCT-0635225 Omni 1.5W LED Colored Round Mini Light Bulb Red  (not in the Omni list)
+LCT-0667993 Omni 1.5W LED Colored Round Mini Light Bulb Yellow  (not in the Omni list)
+631581204715 Omni T5 Triphosphor Fluorescent Tube 8W Daylight  (not in the Omni list)
+631581204715-2 Omni T5 Triphosphor Fluorescent Tube 8W Warm White  (not in the Omni list)
+631581204715-3 Omni T5 Triphosphor Fluorescent Tube 8W Cool White  (not in the Omni list)
+631581204715-4 Omni T5 Triphosphor Fluorescent Tube 14W Daylight  (not in the Omni list)
+631581204715-5 Omni T5 Triphosphor Fluorescent Tube 14W Warm White  (not in the Omni list)
+631581204715-6 Omni T5 Triphosphor Fluorescent Tube 14W Cool White  (not in the Omni list)
+631581204715-7 Omni T5 Triphosphor Fluorescent Tube 21W Daylight  (not in the Omni list)
+631581204715-8 Omni T5 Triphosphor Fluorescent Tube 21W Warm White  (not in the Omni list)
+631581204715-9 Omni T5 Triphosphor Fluorescent Tube 21W Cool White  (not in the Omni list)
+631581204715-10 Omni T5 Triphosphor Fluorescent Tube 28W Daylight  (not in the Omni list)
+631581204715-11 Omni T5 Triphosphor Fluorescent Tube 28W Warm White  (not in the Omni list)
+631581204715-12 Omni T5 Triphosphor Fluorescent Tube 28W Cool White  (not in the Omni list)
+LCT-2233049 Omni LED Linear Lighting Fixture Light 18W (36x590mm)  (not in the Omni list)
+LCT-2265817 Omni LED Linear Lighting Fixture Light 18W (36x1190mm)  (not in the Omni list)
+LCT-2298585 Omni LED Linear Lighting Fixture Light 36W (36x1190mm)  (not in the Omni list)
+LCT-5925465 Omni Mini Recessed Square Downlight 4W  (not in the Omni list)
+LCT-5958233 Omni Mini Recessed Square Downlight 6W  (not in the Omni list)
+LCT-5991001 Omni Mini Recessed Square Downlight 9W  (not in the Omni list)
+LCT-6023769 Omni Mini Recessed Square Downlight 12W  (not in the Omni list)
+631583068115 Omni T8 Tube Single-Ended Input Fluorescent LED T8 Glass Tube Light 7W (Daylight)  (not in the Omni list)
+631583068115-2 Omni T8 Tube Single-Ended Input Fluorescent LED T8 Glass Tube Light 7W (Warm White)  (not in the Omni list)
+631583068115-3 Omni T8 Tube Single-Ended Input Fluorescent LED T8 Glass Tube Light 15W (Daylight)  (not in the Omni list)
+631583068115-4 Omni T8 Tube Single-Ended Input Fluorescent LED T8 Glass Tube Light 15W (Warm White)  (not in the Omni list)
+LCT-3738201 Omni T8 Tube (Superlux) Single-Ended Input Fluorescent LED Glass Tube Light 10W (Daylight)  (not in the Omni list)
+LCT-8647641 Omni T8 Tube (Superlux) Single-Ended Input Fluorescent LED Glass Tube Light 10W (Cool White)  (not in the Omni list)
+LCT-3770969 Omni T8 Tube (Superlux) Single-Ended Input Fluorescent LED Glass Tube Light 10W (Warm White)  (not in the Omni list)
+LCT-3803737 Omni T8 Tube (Superlux) Single-Ended Input Fluorescent LED Glass Tube Light 20W (Daylight)  (not in the Omni list)
+LCT-8680409 Omni T8 Tube (Superlux) Single-Ended Input Fluorescent LED Glass Tube Light 20W (Cool White)  (not in the Omni list)
+LCT-3836505 Omni T8 Tube (Superlux) Single-Ended Input Fluorescent LED Glass Tube Light 20W (Warm White)  (not in the Omni list)
+XFW-200-8 Omni XFW Wall Mounted Exhaust Fan XFW-200-8"  (not in the Omni list)
+XFW-250-10 Omni XFW Wall Mounted Exhaust Fan XFW-250-10"  (not in the Omni list)
+XFW-300-12 Omni XFW Wall Mounted Exhaust Fan XFW-300-12"  (not in the Omni list)
+A27-010 Omni A27-010 GU10 Adapter with E27 Base 4A 250V  (not in the Omni list)
+WCS-001 Omni WCS-001 Circular Lamp Socket with Starter Holder 2A 250V  (not in the Omni list)
+LCT-1535193 Omni Back-Lit LED Panel Light 20W (30x30)  (not in the Omni list)
+LCT-1567961 Omni Back-Lit LED Panel Light 40W (60x60)  (not in the Omni list)
+LCT-1600729 Omni Back-Lit LED Panel Light 40W (120x30)  (not in the Omni list)
+LCT-1633497 Omni Back-Lit LED Panel Light 60W (120x60)  (not in the Omni list)
+WUA-002 Omni WUA-002 Universal Socket Adapter 10A 250V  (not in the Omni list)
+X-300 Omni LED X-300 D Exit Sign Double Arrow (Recessed)  (not in the Omni list)
+X-200 Omni LED X-200 Exit Sign No Arrow (Acrylic)  (not in the Omni list)
+X-200-2 Omni LED X-200 L Exit Sign Left Arrow (Acrylic)  (not in the Omni list)
+X-502 Omni LED X-502 Automatic Emergency Exit Sign Lamp Light Combo  (not in the Omni list)
+AEL-T30 Omni AEL-T30 Rechargeable Emergency Light  (not in the Omni list)
+LCT-7104345 Omni LED Solar Street Light 7W  (not in the Omni list)
+LCT-7137113 Omni LED Solar Street Light 12W  (not in the Omni list)
+LCT-7169881 Omni LED Solar Street Light 18W  (not in the Omni list)
+LCT-7029721 Omni LED Panel Surface Type Ceiling Lamp Light 6W  (not in the Omni list)
+LCT-7062489 Omni LED Panel Surface Type Ceiling Lamp Light 12W  (not in the Omni list)
+LCT-7095257 Omni LED Panel Surface Type Ceiling Lamp Light 18W  (not in the Omni list)
+LCT-7128025 Omni LED Panel Surface Type Ceiling Lamp Light 24W  (not in the Omni list)
+LCT-5174489 Omni 1.5W LED G40 Mini Light Bulb E27 6500K Daylight  (not in the Omni list)
+LCT-5207257 Omni 1.5W LED G40 Mini Light Bulb E27 2700K Warm White  (not in the Omni list)
+WUA-004-PK Omni WUA-004-PK Nano Universal Travel Adapter  (not in the Omni list)
+XFC-200-8 Omni XFC Ceiling Mounted Exhaust Fan XFC-200-8"  (not in the Omni list)
+XFC-250-10 Omni XFC Ceiling Mounted Exhaust Fan XFC-250-10"  (not in the Omni list)
+XFC-300-12 Omni XFC Ceiling Mounted Exhaust Fan XFC-300-12"  (not in the Omni list)
+GU10-002 Omni GU10-002 Lamp Socket 2A 250V  (not in the Omni list)
+E12-102R Omni E12-102R Pigtail Bulb Socket 2A 250V  (not in the Omni list)
+WPG-006 Omni WPG-006 Parallel Ground Plug 15A 250V  (not in the Omni list)
+RDF-350 Omni RDF-350 Rechargeable Desk Fan 14"  (not in the Omni list)
+DEL-0089-RED Omni DEL-0089 Desk Lamp Light Red  (not in the Omni list)
+DEL-0089-BLACK Omni DEL-0089 Desk Lamp Light Black  (not in the Omni list)
+DEL-0089-WHITE Omni DEL-0089 Desk Lamp Light White  (not in the Omni list)
+X-200-3 Omni LED X-200 D Exit Sign Double Arrow (Acrylic)  (not in the Omni list)
+X-200-4 Omni LED X-200 R Exit Sign Right Arrow (Acrylic)  (not in the Omni list)
+AEL-T60 Omni AEL-T60 Rechargeable Emergency Light  (not in the Omni list)
+AC220V Omni LSPC-AC-NE/RC LED Strip Light Remote Controller AC220V  (not in the Omni list)
+LCT-4799065 Omni LED Road Light 60W  (not in the Omni list)
+LCT-4831833 Omni LED Road Light 100W  (not in the Omni list)
+LCT-6175321 Omni LED Road Light 150W  (not in the Omni list)
+LCT-6208089 Omni LED Road Light 200W  (not in the Omni list)
+LCT-8808281 Omni LED Street Light V2 30W  (not in the Omni list)
+LCT-8841049 Omni LED Street Light V2 50W  (not in the Omni list)
+LCT-4920409 Omni Solar LED Flood Light 6W  (not in the Omni list)
+LCT-4953177 Omni Solar LED Flood Light 18W  (not in the Omni list)
+LCT-4985945 Omni Solar LED Flood Light 35W  (not in the Omni list)
+LCT-7090649 Omni LED Weatherproof Oval Lamp Light V2 10 Watts  (not in the Omni list)
+LCT-7123417 Omni LED Weatherproof Oval Lamp Light V2 20 Watts  (not in the Omni list)
+LCT-3237337 Omni LED High Power Lamp Light V2 60W  (not in the Omni list)
+LCT-3270105 Omni LED High Power Lamp Light V2 80W  (not in the Omni list)
+LCT-3302873 Omni LED High Power Lamp Light V2 100W  (not in the Omni list)
+LCT-0141657 Omni LED Weatherproof Fixture Light 18W  (not in the Omni list)
+LCT-0174425 Omni LED Weatherproof Fixture Light 36W  (not in the Omni list)
+LCT-0207193 Omni LED Weatherproof Fixture Light 45W  (not in the Omni list)
+LCT-2307033 Omni LED Magnetic Cabinet Light (USB-C) [Battery] Black  (not in the Omni list)
+LCT-2339801 Omni LED Magnetic Cabinet Light (USB-C) [Battery] White  (not in the Omni list)
+LCT-7598297 Omni Tricolor LED Surface Type Ceiling Lamp Light (Circle) 10W  (not in the Omni list)
+LCT-7631065 Omni Tricolor LED Surface Type Ceiling Lamp Light (Circle) 20W  (not in the Omni list)
+LCT-7663833 Omni Tricolor LED Surface Type Ceiling Lamp Light (Circle) 30W  (not in the Omni list)
+LCT-7696601 Omni Tricolor LED Surface Type Ceiling Lamp Light (Circle) 40W  (not in the Omni list)
+LCT-5726553 Omni 32W LED Flat Lamp Light  (not in the Omni list)
+LCT-7043033 Omni 22W LED Flat Lamp Light 6500K Daylight  (not in the Omni list)
+LCT-7108569 Omni 22W LED Flat Lamp Light 2700K Warm White  (not in the Omni list)
+LCT-4598745 Omni 8W LED G70 Globe Lamp Light 6500K Daylight  (not in the Omni list)
+LCT-4631513 Omni 8W LED G70 Globe Lamp Light 2700K Warm White  (not in the Omni list)
+LCT-5419353 Omni 6W LED A50 Light Bulb E27 6500K Daylight  (not in the Omni list)
+LCT-5452121 Omni 6W LED A50 Light Bulb E27 2700K Warm White  (not in the Omni list)
+USB-303 Omni USB-303 Travel Extension Cord 3-Gang with 3 USB Outlet & Switch 2500W 10A 250V  (not in the Omni list)
+WP3-WUSB Omni WP3-WUSB/WU USB Charger Outlet and Universal Outlet in White Plate 16A (Wide Series)  (not in the Omni list)
+WP2-WU Omni WP2-WU Universal Outlet in White Plate 16A (Wide Series)  (not in the Omni list)
+631581204815 Omni T5 Coloured Fluorescent Tube 21W Red  (not in the Omni list)
+631581204815-2 Omni T5 Coloured Fluorescent Tube 21W Blue  (not in the Omni list)
+631581204815-3 Omni T5 Coloured Fluorescent Tube 21W Green  (not in the Omni list)
+631581204815-4 Omni T5 Coloured Fluorescent Tube 21W Yellow  (not in the Omni list)
+631581204815-5 Omni T5 Coloured Fluorescent Tube 28W Red  (not in the Omni list)
+631581204815-6 Omni T5 Coloured Fluorescent Tube 28W Blue  (not in the Omni list)
+631581204815-7 Omni T5 Coloured Fluorescent Tube 28W Green  (not in the Omni list)
+631581204815-8 Omni T5 Coloured Fluorescent Tube 28W Yellow  (not in the Omni list)
+AVR-500 Omni Automatic Voltage Regulator AVR-500  (not in the Omni list)
+AVR-1000 Omni Automatic Voltage Regulator AVR-1000  (not in the Omni list)
+AVR-1500 Omni Automatic Voltage Regulator AVR-1500  (not in the Omni list)
+ET165Z-4METERS Omni ET165Z Electrical Tape 4 meters  (not in the Omni list)
+ET165Z-16METERS Omni ET165Z Electrical Tape 16 meters  (not in the Omni list)
+WPB-603-PK Omni WPB-603-PK Weatherproof Push Button (Flush Type)  (not in the Omni list)
+P3-EG Omni P3-EG 3pc Convenience Outlet with Ground in Plate (Flush Type)  (not in the Omni list)
+P2-S13 Omni P2-S13/DM Dimmer Switch & 1-Way Switch in Plate (Flush Type)  (not in the Omni list)
+P2-S14 Omni P2-S14 2pc 1-Way Illuminated Switch in Plate (Flush Type)  (not in the Omni list)
+RDF-100 Omni RDF-100 Mini Rechargeable Desk Fan  (not in the Omni list)
+ECT-202 Omni ECT-202 Electric Circuit Tester 90V-600V  (not in the Omni list)
+MDB-08P Omni MDB-08P MCB Distribution Panel Box 8-Pole  (not in the Omni list)
+SP3-WU2 Omni SP3-WU2 Duplex Universal Outlet w/ Ground in Stainless Plate 16A  (not in the Omni list)
+LNL-102-PK-GREEN Omni LNL-102-PK "Candy" Night Lamp (Square) Green  (not in the Omni list)
+LNL-102-PK-BLUE Omni LNL-102-PK "Candy" Night Lamp (Square) Blue  (not in the Omni list)
+LNL-102-PK-PINK Omni LNL-102-PK "Candy" Night Lamp (Square) Pink  (not in the Omni list)
+LNL-102-PK-YELLOW Omni LNL-102-PK "Candy" Night Lamp (Square) Yellow  (not in the Omni list)
+LNL-102-PK-WHITE Omni LNL-102-PK "Candy" Night Lamp (Square) White  (not in the Omni list)
+LNL-101-PK-GREEN Omni LNL-101-PK "Candy" Night Lamp (Round) Green  (not in the Omni list)
+LNL-101-PK-BLUE Omni LNL-101-PK "Candy" Night Lamp (Round) Blue  (not in the Omni list)
+LNL-101-PK-PINK Omni LNL-101-PK "Candy" Night Lamp (Round) Pink  (not in the Omni list)
+LNL-101-PK-YELLOW Omni LNL-101-PK "Candy" Night Lamp (Round) Yellow  (not in the Omni list)
+LNL-101-PK-WHITE Omni LNL-101-PK "Candy" Night Lamp (Round) White  (not in the Omni list)
+KNL-501-PK-GREEN Omni KNL-501-PK Night Lamp Green  (not in the Omni list)
+KNL-501-PK-BLUE Omni KNL-501-PK Night Lamp Blue  (not in the Omni list)
+KNL-501-PK-PINK Omni KNL-501-PK Night Lamp Pink  (not in the Omni list)
+KNL-501-PK-YELLOW Omni KNL-501-PK Night Lamp Yellow  (not in the Omni list)
+KNL-501-PK-RED Omni KNL-501-PK Night Lamp Red  (not in the Omni list)
+DNL-327-PK Omni DNL-327-PK Night Lamp  (not in the Omni list)
+DNL-221-PK Omni DNL-221-PK Night Lamp  (not in the Omni list)
+DNL-123-PK Omni DNL-123-PK Night Lamp  (not in the Omni list)
+DNL-122-PK Omni DNL-122-PK Night Lamp  (not in the Omni list)
+DNL-121-PK Omni DNL-121-PK Night Lamp  (not in the Omni list)
+DNL-327-PK-2 Omni DNL-327-PK Optical LED Night Light with Built-in Sensor  (not in the Omni list)
+DNL-221-PK-2 Omni DNL-221-PK Optical LED Night Light with Built-in Sensor  (not in the Omni list)
+DNL-123-PK-2 Omni DNL-123-PK Optical LED Night Light with Built-in Sensor  (not in the Omni list)
+DNL-122-PK-2 Omni DNL-122-PK Optical LED Night Light with Built-in Sensor  (not in the Omni list)
+DNL-121-PK-2 Omni DNL-121-PK Optical LED Night Light with Built-in Sensor  (not in the Omni list)
+DSL-0030-RED Omni DSL-0030 Desk Lamp Light Red  (not in the Omni list)
+DSL-0030-BLACK Omni DSL-0030 Desk Lamp Light Black  (not in the Omni list)
+DSL-0030-WHITE Omni DSL-0030 Desk Lamp Light White  (not in the Omni list)
+X-300-2 Omni LED X-300 Exit Sign No Arrow (Recessed)  (not in the Omni list)
+X-300-3 Omni LED X-300 R Exit Sign Right Arrow (Recessed)  (not in the Omni list)
+X-300-4 Omni LED X-300 L Exit Sign Left Arrow (Recessed)  (not in the Omni list)
+X-102 Omni LED X-102 Exit Sign Double Face  (not in the Omni list)
+X-101 Omni LED X-101 Exit Sign Single Face  (not in the Omni list)
+X-202 Omni LED X-202 R Exit Sign (Thermoplastic Housing)  (not in the Omni list)
+SRB-12V Omni SRB-12V Sealed Lead Acid Battery 12v9Ah  (not in the Omni list)
+SRB-6V4-INBLISTE Omni SRB-6V4 Sealed Lead Acid Battery 6v4Ah In Blister Pack (Display Packaging)  (not in the Omni list)
+AEL-200 Omni AEL-200 Emergency Lantern Flashlight  (not in the Omni list)
+RFL-200-GRAY Omni RFL-200 Emergency Mini Torch Flashlight (Candy Colors) Gray  (not in the Omni list)
+RFL-200-SKYBLUE Omni RFL-200 Emergency Mini Torch Flashlight (Candy Colors) Sky Blue  (not in the Omni list)
+RFL-200-LIMEGREE Omni RFL-200 Emergency Mini Torch Flashlight (Candy Colors) Lime Green  (not in the Omni list)
+RFL-9128 Omni RFL-9128 Emergency Torch Flashlight  (not in the Omni list)
+LDD-060-2 Omni LDD-060/072 Strip Light LED Driver AC/DC 12V (60W~72W) LDD-060 (60W)  (not in the Omni list)
+LDD-072-2 Omni LDD-060/072 Strip Light LED Driver AC/DC 12V (60W~72W) LDD-072 (72W)  (not in the Omni list)
+LCT-8222425 Omni Light Strip Clamp AC 220V 14mm  (not in the Omni list)
+LCT-8255193 Omni Light Strip Clamp AC 220V 16mm  (not in the Omni list)
+AC220V-2 Omni LSPC-AC-NE LED Strip Power Cord AC220V  (not in the Omni list)
+LCT-1406681 Omni 8W LED Strip Light  (not in the Omni list)
+LCT-0030425 Omni LED Solar Road Light 20W  (not in the Omni list)
+LCT-0063193 Omni LED Solar Road Light 24W  (not in the Omni list)
+LCT-0095961 Omni LED Solar Road Light 28W  (not in the Omni list)
+LCT-6948057 Omni LED Floodlight Heavy Duty Slim Version 50 Watts  (not in the Omni list)
+LCT-6980825 Omni LED Floodlight Heavy Duty Slim Version 100 Watts  (not in the Omni list)
+LCT-7013593 Omni LED Floodlight Heavy Duty Slim Version 150 Watts  (not in the Omni list)
+LCT-7046361 Omni LED Floodlight Heavy Duty Slim Version 200 Watts  (not in the Omni list)
+LCT-8663513 Omni LED Weatherproof Slim Floodlight V2 10 Watts  (not in the Omni list)
+LCT-8696281 Omni LED Weatherproof Slim Floodlight V2 20 Watts  (not in the Omni list)
+LCT-2229465 Omni LED Weatherproof Slim Floodlight V2 30 Watts  (not in the Omni list)
+LCT-2262233 Omni LED Weatherproof Slim Floodlight V2 50 Watts  (not in the Omni list)
+LCT-2295001 Omni LED Weatherproof Slim Floodlight V2 100 Watts  (not in the Omni list)
+LCT-2327769 Omni LED Weatherproof Slim Floodlight V2 150 Watts  (not in the Omni list)
+LCT-2393305 Omni LED Weatherproof Slim Floodlight V2 200 Watts  (not in the Omni list)
+LCT-8243289 Omni LED Weatherproof Circular Lamp Light V2 10 Watts  (not in the Omni list)
+LCT-8276057 Omni LED Weatherproof Circular Lamp Light V2 20 Watts  (not in the Omni list)
+LCT-2684249 Omni LED Modern Accent Wall Lamp Light 2 Watts  (not in the Omni list)
+LCT-2717017 Omni LED Modern Accent Wall Lamp Light 4 Watts  (not in the Omni list)
+LCT-2749785 Omni LED Modern Accent Wall Lamp Light 6 Watts  (not in the Omni list)
+LCT-2782553 Omni LED Modern Accent Wall Lamp Light 8 Watts  (not in the Omni list)
+LCT-1188441 Omni 15W LED Weatherproof Wall Lamp Light (Square)  (not in the Omni list)
+LCT-1325273 Omni 15W LED Weatherproof Wall Lamp Light (Circle)  (not in the Omni list)
+LCT-7431641 Omni LED Recessed Rectangular Spot Ceiling Downlight (Spotlight) 6W  (not in the Omni list)
+LCT-7464409 Omni LED Recessed Rectangular Spot Ceiling Downlight (Spotlight) 12W  (not in the Omni list)
+LCT-7497177 Omni LED Recessed Rectangular Spot Ceiling Downlight (Spotlight) 18W  (not in the Omni list)
+LCT-4443993 Omni LED Recessed Rectangular Spot Ceiling Downlight (Spotlight) 24W  (not in the Omni list)
+LCT-4476761 Omni LED Recessed Rectangular Spot Ceiling Downlight (Spotlight) 36W  (not in the Omni list)
+LCT-8229593 Omni LED Heavy Duty High Bay Lamp Light 100W  (not in the Omni list)
+LCT-8262361 Omni LED Heavy Duty High Bay Lamp Light 150W  (not in the Omni list)
+LCT-8295129 Omni LED Heavy Duty High Bay Lamp Light 200W  (not in the Omni list)
+LCT-8485977 Omni LED Heavy Duty High Bay Lamp Light Sensor Accessory only  (not in the Omni list)
+LCT-8518745 Omni LED Heavy Duty High Bay Lamp Light Remote only  (not in the Omni list)
+LCT-2005465 Omni LED Slim Panel Light 9W (Daylight)  (not in the Omni list)
+LCT-5112665 Omni LED Slim Panel Light 18W (Daylight  (not in the Omni list)
+LCT-8717145 Omni LED Slim Panel Light 18W (Cool White)  (not in the Omni list)
+LCT-8749913 Omni LED Slim Panel Light 36W (Daylight)  (not in the Omni list)
+LCT-8782681 Omni LED Slim Panel Light 36W (Cool White)  (not in the Omni list)
+LCT-4894809 Omni T5 Slim Surface Mounted Fixture LED Light 5W (Daylight)  (not in the Omni list)
+LCT-4927577 Omni T5 Slim Surface Mounted Fixture LED Light 5W (Warm White)  (not in the Omni list)
+LCT-0760281 Omni T5 Slim Surface Mounted Fixture LED Light 10W (Daylight)  (not in the Omni list)
+LCT-0793049 Omni T5 Slim Surface Mounted Fixture LED Light 10W (Warm White)  (not in the Omni list)
+LCT-0825817 Omni T5 Slim Surface Mounted Fixture LED Light 14W (Daylight)  (not in the Omni list)
+LCT-0858585 Omni T5 Slim Surface Mounted Fixture LED Light 14W (Warm White)  (not in the Omni list)
+LCT-0891353 Omni T5 Slim Surface Mounted Fixture LED Light 18W (Daylight)  (not in the Omni list)
+LCT-0956889 Omni T5 Slim Surface Mounted Fixture LED Light 18W (Warm White)  (not in the Omni list)
+LCT-1361625 Omni T8 Batten Fixture Fluorescent LED Light 7W (Daylight)  (not in the Omni list)
+LCT-1394393 Omni T8 Batten Fixture Fluorescent LED Light 18W (Daylight)  (not in the Omni list)
+LCT-5076825 Omni LED Recessed Circular Downlight (LLRC) 10W  (not in the Omni list)
+LCT-5109593 Omni LED Recessed Circular Downlight (LLRC) 15W  (not in the Omni list)
+LCT-5142361 Omni LED Recessed Circular Downlight (LLRC) 20W  (not in the Omni list)
+LCT-5175129 Omni LED Recessed Circular Downlight (LLRC) 25W  (not in the Omni list)
+LCT-1281497 Omni LED Recessed Circular Downlight (LLDLC) 4W  (not in the Omni list)
+LCT-1314265 Omni LED Recessed Circular Downlight (LLDLC) 6W  (not in the Omni list)
+LCT-1347033 Omni LED Recessed Circular Downlight (LLDLC) 9W  (not in the Omni list)
+LCT-1379801 Omni LED Recessed Circular Downlight (LLDLC) 12W  (not in the Omni list)
+LCT-3209049 Omni LED Recessed Circular Downlight (LLDLC) 18W  (not in the Omni list)
+LCT-3241817 Omni LED Recessed Circular Downlight (LLDLC) 24W  (not in the Omni list)
+LCT-6211801 Omni LED Recessed Downlight Ceiling Lamp Light 7W (Circular)  (not in the Omni list)
+LCT-6244569 Omni LED Recessed Downlight Ceiling Lamp Light 9W (Circular)  (not in the Omni list)
+LCT-6277337 Omni LED Recessed Downlight Ceiling Lamp Light 7W (Square)  (not in the Omni list)
+LCT-2634329 Omni LED Recessed Downlight Ceiling Lamp Light 9W (Square)  (not in the Omni list)
+LCT-3360985 Omni LED Mini Recessed Downlight (Square) 6500K Daylight  (not in the Omni list)
+LCT-3393753 Omni LED Mini Recessed Downlight (Square) 4000K Cool White  (not in the Omni list)
+LCT-3426521 Omni LED Mini Recessed Downlight (Square) 2700K Warm White  (not in the Omni list)
+LCT-1886425 Omni LED Mini Recessed Downlight (Round) Daylight  (not in the Omni list)
+LCT-1919193 Omni LED Mini Recessed Downlight (Round) Cool White  (not in the Omni list)
+LCT-2902233 Omni LED Mini Recessed Downlight (Round) Warm White  (not in the Omni list)
+LCT-0837849 Omni LED Mini Recessed Movable Downlight Round Swivel (8W) Round  (not in the Omni list)
+LCT-0870617 Omni LED Mini Recessed Movable Downlight Round Swivel (8W) Square  (not in the Omni list)
+LCT-8367961 Omni LED Mini Recessed Movable Downlight Round Swivel (3W~5W) 3W  (not in the Omni list)
+LCT-8400729 Omni LED Mini Recessed Movable Downlight Round Swivel (3W~5W) 5W  (not in the Omni list)
+LCT-1286105 Omni 8W LED Mini Recessed Downlight (Square) Triple Mood Selection  (not in the Omni list)
+LCT-5694297 Omni 8W LED Mini Recessed Downlight (Round) Triple Mood Selection  (not in the Omni list)
+LCT-3092569 Omni LED Glare-Free Circular Downlight 10W  (not in the Omni list)
+LCT-3125337 Omni LED Glare-Free Circular Downlight 15W  (not in the Omni list)
+LCT-3158105 Omni LED Glare-Free Circular Downlight 20W  (not in the Omni list)
+LCT-3190873 Omni LED Glare-Free Circular Downlight 25W  (not in the Omni list)
+LCT-5043161 Omni 50W LED High Power Capsule Lamp Light  (not in the Omni list)
+LCT-0035417 Omni 40W LED High Power Capsule Lamp Light  (not in the Omni list)
+LCT-4804057 Omni 20W LED Capsule Lamp Light Daylight  (not in the Omni list)
+LCT-4836825 Omni 20W LED Capsule Lamp Light Warm White  (not in the Omni list)
+LCT-8157913 Omni 15W LED Capsule Lamp Light Daylight  (not in the Omni list)
+LCT-8190681 Omni 15W LED Capsule Lamp Light Warm White  (not in the Omni list)
+G24D-DAYLIGHT Omni 12W LED Pin Lamp Light G24D Daylight  (not in the Omni list)
+G24D-WARMWHIT Omni 12W LED Pin Lamp Light G24D Warm White  (not in the Omni list)
+LCT-6706009 Omni 12W LED Pin Lamp Light E27 Daylight  (not in the Omni list)
+LCT-6738777 Omni 12W LED Pin Lamp Light E27 Warm White  (not in the Omni list)
+G24D-DAYLIGHT-2 Omni 7W LED Pin Lamp Light G24D Daylight  (not in the Omni list)
+G24D-WARMWHIT-2 Omni 7W LED Pin Lamp Light G24D Warm White  (not in the Omni list)
+LCT-3336665 Omni 7W LED Pin Lamp Light E27 Daylight  (not in the Omni list)
+LCT-3369433 Omni 7W LED Pin Lamp Light E27 Warm White  (not in the Omni list)
+LCT-1825369 Omni Tricolor LED Surface Type Ceiling Lamp Light (Square) 10W  (not in the Omni list)
+LCT-1858137 Omni Tricolor LED Surface Type Ceiling Lamp Light (Square) 20W  (not in the Omni list)
+LCT-1890905 Omni Tricolor LED Surface Type Ceiling Lamp Light (Square) 30W  (not in the Omni list)
+LCT-1923673 Omni Tricolor LED Surface Type Ceiling Lamp Light (Square) 40W  (not in the Omni list)
+LCT-7681113 Omni 32W LED Surface Type Ceiling Lamp Light (Daylight)  (not in the Omni list)
+LCT-7031513 Omni 22W LED Surface Type Ceiling Lamp Light (Daylight)  (not in the Omni list)
+LCT-4329049 Omni 12W LED Flat Lamp Light 6500K Daylight  (not in the Omni list)
+LCT-4361817 Omni 12W LED Flat Lamp Light 2700K Warm White  (not in the Omni list)
+LCT-3515609 Omni 4W LED Candle Light Bulb E14 6500K Daylight  (not in the Omni list)
+LCT-3548377 Omni 4W LED Candle Light Bulb E14 2700K Warm White  (not in the Omni list)
+LCT-5001689 Omni 4W LED Candle Light Bulb E27 6500K Daylight  (not in the Omni list)
+LCT-5034457 Omni 4W LED Candle Light Bulb E27 2700K Warm White  (not in the Omni list)
+G120-6500KDAY Omni 16W LED G120 Globe Lamp Light 6500K Daylight  (not in the Omni list)
+G120-2700KWAR Omni 16W LED G120 Globe Lamp Light 2700K Warm White  (not in the Omni list)
+LCT-7050585 Omni 12W LED G95 Globe Lamp Light 6500K Daylight  (not in the Omni list)
+LCT-7083353 Omni 12W LED G95 Globe Lamp Light 2700K Warm White  (not in the Omni list)
+LCT-2638425 Omni 20W LED A95 Light Bulb 12V 6500K Daylight  (not in the Omni list)
+LCT-2671193 Omni 20W LED A95 Light Bulb 12V 2700K Warm White  (not in the Omni list)
+LCT-9918681 Omni 8W LED A60 Light Bulb 12V 6500K Daylight  (not in the Omni list)
+LCT-9951449 Omni 8W LED A60 Light Bulb 12V 2700K Warm White  (not in the Omni list)
+LCT-8444121 Omni 4W LED G45 Light Bulb 12V 6500K Daylight  (not in the Omni list)
+LCT-8476889 Omni 4W LED G45 Light Bulb 12V 2700K Warm White  (not in the Omni list)
+LCT-8187737 Omni 15W LED A72 Light Bulb E27 6500K Daylight  (not in the Omni list)
+LCT-8318809 Omni 15W LED A72 Light Bulb E27 2700K Warm White  (not in the Omni list)
+LCT-3706073 Omni 12W LED A65 Light Bulb E27 6500K Daylight  (not in the Omni list)
+LCT-3738841 Omni 12W LED A65 Light Bulb E27 2700K Warm White  (not in the Omni list)
+LCT-5729753 Omni 9W LED A60 Light Bulb E27 6500K Daylight  (not in the Omni list)
+LCT-5762521 Omni 9W LED A60 Light Bulb E27 2700K Warm White  (not in the Omni list)
+LCT-9363033 Omni 3W LED G45 Mini Light Bulb E14 6500K Daylight  (not in the Omni list)
+LCT-9395801 Omni 3W LED G45 Mini Light Bulb E14 2700K Warm White  (not in the Omni list)
+LCT-6151769 Omni 3W LED G45 Mini Light Bulb E27 6500K Daylight  (not in the Omni list)
+LCT-6184537 Omni 3W LED G45 Mini Light Bulb E27 2700K Warm White  (not in the Omni list)
+SBR-2P Omni SBR-2P Safety Breaker Regular (50A,60A)  (not in the Omni list)
+CBP-2P Omni CBP-2P Plug in Circuit Breaker, 2 Poles (50A,60A)  (not in the Omni list)
+CBB-2P Omni CBB-2P Bolt on Circuit Breaker, 2 Poles (50A, 60A)  (not in the Omni list)
+USB-301 Omni USB-301 Travel Extension Cord 3-Gang with USB Outlet & Switch 2500W 10A 250V  (not in the Omni list)
+STO-004-PK Omni STO-004-PK Spring Type Outlet 4-Gang 10A 250V  (not in the Omni list)
+WP2-S13 Omni WP2-S13 2pcs. 1-Way Switch in White Plate 16A (Wide Series)  (not in the Omni list)
+WGFCI-201-PK Omni WGFCI-201-PK 2-Gang GFCI Safety Outlet Ground Fault in White Plate 20A (Wide Series)  (not in the Omni list)
+WP1-WA Omni WP1-WA Aircon Tandem Outlet in White Plate 20A (Wide Series)  (not in the Omni list)
+WP3-S13 Omni WP3-S13 3pcs. 1-Way Switch in White Plate 16A (Wide Series)  (not in the Omni list)
+WPO-S13 Omni WPO-S13 1pc. 1-Way Switch in White Plate 16A (Wide Series)  (not in the Omni list)
+631581204415 Omni  Weatherproof Par Lamp Light 10W Blue  (not in the Omni list)
+631581204415-2 Omni  Weatherproof Par Lamp Light 10W Green  (not in the Omni list)
+631581204415-3 Omni  Weatherproof Par Lamp Light 10W Red  (not in the Omni list)
+631581204415-4 Omni  Weatherproof Par Lamp Light 10W Yellow  (not in the Omni list)
+631581204415-5 Omni  Weatherproof Par Lamp Light 10W Daylight  (not in the Omni list)
+631581204415-6 Omni  Weatherproof Par Lamp Light 10W Warm White  (not in the Omni list)
+631581204415-7 Omni  Weatherproof Par Lamp Light 15W Blue  (not in the Omni list)
+631581204415-8 Omni  Weatherproof Par Lamp Light 15W Green  (not in the Omni list)
+631581204415-9 Omni  Weatherproof Par Lamp Light 15W Red  (not in the Omni list)
+631581204415-10 Omni  Weatherproof Par Lamp Light 15W Yellow  (not in the Omni list)
+631581204415-11 Omni  Weatherproof Par Lamp Light 15W Daylight  (not in the Omni list)
+631581204415-12 Omni  Weatherproof Par Lamp Light 15W Cool White  (not in the Omni list)
+LCT-6693081 Omni  Weatherproof Par Lamp Light 15W Warm White  (not in the Omni list)
+XFG-150S-6 Omni XFG-150S-6" Glass Mounted Exhaust Fan  (not in the Omni list)
+E27-616-PK Omni E27-616-PK Push Through Bulb Socket Extension 6 Meter Wire 3A 250V  (not in the Omni list)
+WDP-303-PK Omni WDP-303-PK W/ Dual Portable Extension Cord Set 3meters Wire 1,000 6A 250V  (not in the Omni list)
+WEE-003 Omni WEE-003 ECO Extension Cord Set 3-Gang 4 meters Wire 2,000W 15A 250V  (not in the Omni list)
+SBMS-2P Omni SBMS-2P Mini Safety Breaker with Socket (10A, 16A , 20A)  (not in the Omni list)
+SBM-2P Omni SBM-2P Mini Safety Breaker (10A,16A,20A,25A,32A)  (not in the Omni list)
+SBRS-2P Omni SBRS-2P Safety Breaker Regular with Socket (15A,20A)  (not in the Omni list)
+SBR-2P-2 Omni SBR-2P Safety Breaker Regular (15A,20A,30A)  (not in the Omni list)
+CBB-2P-2 Omni CBB-2P Bolt on Circuit Breaker, 2 Poles (15A, 20A, 30A)  (not in the Omni list)
+CBP-2P-2 Omni CBP-2P Plug in Circuit Breaker, 2 Poles (15A,20A, 30A)  (not in the Omni list)
+WDT-005 Omni WDT-005 Telephone Outlet Box 2 Lines  (not in the Omni list)
+WCS-002 Omni WCS-002 Circular Lamp Socket 2A 250V  (not in the Omni list)
+A14-010 Omni A14-010 GU10 Adapter with E14 Base 2A 250V  (not in the Omni list)
+631581195715 Omni GU5.3-001 Lamp Socket 100W 250V  (not in the Omni list)
+WUA-005-PK Omni WUA-005-PK Universal Travel Adapter with USB Outlet 3A 250V  (not in the Omni list)
+USB-204-PK Omni USB-204-PK USB Adapter 5V 1000mA  (not in the Omni list)
+WGF-001 Omni WGF-001 Vertical Ground Adapter 10A 250V  (not in the Omni list)
+WRP-002 Omni WRP-002 Regular Plug 10A 250V  (not in the Omni list)
+WEP-001 Omni WEP-001 Standard Electric Plug 3A 250V  (not in the Omni list)
+STO-003-PK Omni STO-003-PK Spring Type Outlet 3-Gang 10A 250V  (not in the Omni list)
+SP3-WR Omni SP3-WR/WU/WR 2pc Regular Convenience Outlet & Universal Outlet in Stainless Plate (Wide Series)  (not in the Omni list)
+SP3-WR-2 Omni SP3-WR 3pc Regular Convenience Outlet in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP3-S14 Omni SP3-S14 3pc 1-Way Illuminated Switch in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP3-S13 Omni SP3-S13 1-Way Switch in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP3-WG2 Omni SP3-WG2 Duplex Universal Outlet with Ground in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP3-WD Omni SP3-WD Duplex Convenience Outlet in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP3-WA Omni SP3-WA/WU Aircon Tandem Outlet 20A & Universal Outlet 16A in Stainless Plate (Wide Series)  (not in the Omni list)
+SP2-S14 Omni SP2-S14 2pc 1-Way Illuminated Switch in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP2-S13 Omni SP2-S13 2pc 1-Way Switch in Stainless Plate (Wide Series)  (not in the Omni list)
+SP2-WU Omni SP2-WU Universal Outlet in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP1-WA Omni SP1-WA Aircon Tandem Outlet in Stainless Plate 20A (Wide Series)  (not in the Omni list)
+SP0-S14 Omni SP0-S14 1-Way Illuminated Switch in Stainless Plate 16A (Wide Series)  (not in the Omni list)
+SP0-S13 Omni SP0-S13 1-Way Switch in Stainless Plate (Wide Series)  (not in the Omni list)
+P3-S14 Omni P3-S14 3pc 1-Way Illuminate Switch in Plate (Flush Type)  (not in the Omni list)
+P3-EG-2 Omni P3-EG/EU2/EG 2 pc Convenience Outlet with Ground & Universal Outlet with Safety Shutter in Plate (Flush Type)  (not in the Omni list)
+P3-S13 Omni P3-S13 3pc 1-Way Switch in Plate (Flush Type)  (not in the Omni list)
+P3-EU Omni P3-EU 3pc Universal Outlet in Plate (Flush Type)  (not in the Omni list)
+P3-ER Omni P3-ER 3pc Regular Outlet in Plate (Flush Type)  (not in the Omni list)
+P2-ER Omni P2-ER 2pc Regular Outlet in Plate (Flush Type)  (not in the Omni list)
+P-WEA-401 Omni P-WEA-401 Aircon Tandem Outlet in Plate (Flush Type)  (not in the Omni list)
+P1-EU-PK Omni P1-EU-PK Universal Outlet in Plate (Flush Type)  (not in the Omni list)
+P1-DM Omni P1-DM Dimmer Switch in Plate (Flush Type)  (not in the Omni list)
+P2-EG Omni P2-EG 2pc Convenience Outlet with Ground in Plate (Flush Type)  (not in the Omni list)
+P2-EU Omni P2-EU 2pc Universal Outlet in Plate (Flush Type)  (not in the Omni list)
+P2-S13-2 Omni P2-S13 2pc 1-Way Switch in Plate (Flush Type)  (not in the Omni list)
+P1-ER-PK Omni P1-ER-PK Regular Outlet in Plate (Flush Type)  (not in the Omni list)
+P1-ET Omni P1-ET Telephone Outlet 4 Pins in Plate (Flush Type)  (not in the Omni list)
+P1-TV Omni P1-TV TV Cable Outlet in Plate (Flush Type)  (not in the Omni list)
+P1-EG Omni P1-EG Convenience Outlet with Ground in Plate (Flush Type)  (not in the Omni list)
+P1-EB Omni P1-EB Push Button Switch / Bell Push in Plate (Flush Type)  (not in the Omni list)
+P1-S23 Omni P1-S23 3-Way Switch in Plate (Flush Type)  (not in the Omni list)
+P1-S14 Omni P1-S14 1-Way Illuminated Switch in Plate (Flush Type)  (not in the Omni list)
+P1-S13 Omni P1-S13 1-Way Switch in Plate (Flush Type)  (not in the Omni list)
 
 == dropped
 a-setsu-mdi-primero-atlanta.csv p1: 'MDI PP Hollow Board 12mm 1220x2440mm' (already in the catalog under another label)
