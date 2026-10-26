@@ -6,6 +6,7 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Support\ItemImporter;
+use App\Support\Photo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -258,31 +259,12 @@ class ProductController extends Controller
      */
     private static function savePhoto(UploadedFile $file): string
     {
-        $im = function_exists('imagewebp') ? @imagecreatefromstring((string) file_get_contents($file->getRealPath())) : false;
-        if (! $im) {
+        $webp = Photo::encode($file->getRealPath(), 'webp', 1200);
+        if ($webp === null) {
             return $file->store('uploads/products', 'public');
         }
-
-        // Phones store photos sideways plus a "turn me" flag that GD ignores.
-        $turn = function_exists('exif_read_data') ? (int) (@exif_read_data($file->getRealPath())['Orientation'] ?? 1) : 1;
-        $im = match ($turn) {
-            3 => imagerotate($im, 180, 0),
-            6 => imagerotate($im, -90, 0),
-            8 => imagerotate($im, 90, 0),
-            default => $im,
-        };
-        imagepalettetotruecolor($im);
-        [$w, $h] = [imagesx($im), imagesy($im)];
-        if (max($w, $h) > 1200) {
-            $im = imagescale($im, $w >= $h ? 1200 : (int) round(1200 * $w / $h));
-        }
-        imagealphablending($im, false);
-        imagesavealpha($im, true);
-
-        ob_start();
-        imagewebp($im, null, 75);
         $path = 'uploads/products/'.Str::random(40).'.webp';
-        Storage::disk('public')->put($path, ob_get_clean());
+        Storage::disk('public')->put($path, $webp);
 
         return $path;
     }

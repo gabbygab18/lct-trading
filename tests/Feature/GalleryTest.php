@@ -6,12 +6,41 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class GalleryTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function test_images_compress_shrinks_photos_in_place(): void
+    {
+        $tmp = sys_get_temp_dir().'/lct-compress-'.uniqid();
+        @mkdir("$tmp/images/brands", 0777, true);
+        @mkdir("$tmp/storage/app/public/uploads/products", 0777, true);
+        $this->app->usePublicPath($tmp);
+        $this->app->useStoragePath("$tmp/storage");
+
+        $photo = imagecreatetruecolor(3000, 2000);
+        for ($x = 0; $x < 3000; $x += 3) {
+            imageline($photo, $x, 0, 3000 - $x, 2000, $x * 5000);
+        }
+        imagejpeg($photo, "$tmp/storage/app/public/uploads/products/phone.jpg", 98);
+        imagewebp($photo, "$tmp/images/hero.webp", 100);
+        imagewebp($photo, "$tmp/images/brands/logo.webp", 100);
+        $logo = filesize("$tmp/images/brands/logo.webp");
+        $hero = filesize("$tmp/images/hero.webp");
+
+        $this->artisan('images:compress')->assertSuccessful();
+
+        // Uploads: same name and format, cut to 1200px. Site photos keep their size; brand logos untouched.
+        $this->assertSame([1200, 800, IMAGETYPE_JPEG], array_slice(getimagesize("$tmp/storage/app/public/uploads/products/phone.jpg"), 0, 3));
+        $this->assertSame([3000, 2000], array_slice(getimagesize("$tmp/images/hero.webp"), 0, 2));
+        $this->assertLessThan($hero, filesize("$tmp/images/hero.webp"));
+        $this->assertSame($logo, filesize("$tmp/images/brands/logo.webp"));
+        File::deleteDirectory($tmp);
+    }
 
     public function test_admin_adds_and_removes_extra_photos(): void
     {
