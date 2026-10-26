@@ -14,7 +14,11 @@ Artisan::command('inspire', function () {
 // Admin uploads (phone photos) are also cut to 1200px; site photos keep their size.
 Artisan::command('images:compress', function () {
     [$before, $after, $changed] = [0, 0, 0];
-    $folders = [[public_path('images'), null], [storage_path('app/public/uploads'), 1200]];
+    // On cPanel only public_html/index.php says public_html is the public
+    // folder; artisan doesn't know, so look beside the app folder too.
+    $images = is_dir(public_path('images')) ? public_path('images') : dirname(base_path()).'/public_html/images';
+    $this->line("Photos: {$images}");
+    $folders = [[$images, null], [storage_path('app/public/uploads'), 1200]];
 
     foreach ($folders as [$dir, $max]) {
         if (! is_dir($dir)) {
