@@ -70,8 +70,9 @@ class DatabaseSeeder extends Seeder
 
         // October 2026 supplier price lists, merged without duplicates by
         // scripts/merge_imports.py: new items, then price updates to items already
-        // here, then the sample seed's repeats set inactive.
-        foreach (['import_2026_10.csv', 'import_2026_10_updates.csv', 'import_2026_10_hide.csv'] as $file) {
+        // here, then the sample seed's repeats set inactive; last, what only the
+        // Omni flyer lists (scripts/omni_flyer.py).
+        foreach (['import_2026_10.csv', 'import_2026_10_updates.csv', 'import_2026_10_hide.csv', 'import_2026_10_omni_flyer.csv', 'import_2026_10_omni_flyer_revive.csv', 'import_2026_10_omni_flyer_tags.csv'] as $file) {
             $path = base_path("scripts/data/{$file}");
             if (is_file($path)) {
                 $importer = (new ItemImporter)->import($path);
