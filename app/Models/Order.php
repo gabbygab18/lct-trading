@@ -55,6 +55,25 @@ class Order extends Model
         return $ref;
     }
 
+    /** One row of the admin's order tables (React). */
+    public function adminRow(): array
+    {
+        return [
+            'id'            => $this->id,
+            'reference'     => $this->reference,
+            'status'        => $this->status,
+            'is_read'       => (bool) $this->is_read,
+            'customer_name' => $this->customer_name,
+            'phone'         => $this->phone,
+            'subtotal'      => (float) $this->subtotal,
+            'item_count'    => $this->item_count,
+            'created_at'    => $this->created_at?->toIso8601String(),
+            'fulfilment'    => $this->fulfilment === 'ship' ? ($this->city ?: 'Deliver') : 'Pickup',
+            'shipping'      => $this->shipping_preference ? \Illuminate\Support\Str::before(self::SHIPPING[$this->shipping_preference] ?? '', ',') : null,
+            'payment'       => self::PAYMENT[$this->payment_preference] ?? $this->payment_preference,
+        ];
+    }
+
     public function fullAddress(): ?string
     {
         if ($this->fulfilment !== 'ship') {

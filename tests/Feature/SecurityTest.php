@@ -32,14 +32,16 @@ class SecurityTest extends TestCase
         $response->assertStatus(429);
     }
 
-    public function test_admin_cancel_link_only_goes_to_admin_pages(): void
+    public function test_saving_an_item_only_goes_back_to_admin_pages(): void
     {
         $this->actingAs(\App\Models\User::factory()->create());
+        $p = \App\Models\Product::create(['sku' => 'BK-1', 'name' => 'Back test', 'brand' => 'Champ', 'price' => 10, 'stock' => 1]);
+        $form = ['sku' => 'BK-1', 'name' => 'Back test', 'brand' => 'Champ', 'price' => 10, 'stock' => 1, 'is_active' => 1];
 
-        $this->get('/admin/items/create?back='.urlencode('javascript:alert(1)'))
-            ->assertDontSee('javascript:alert(1)', false);
-        $this->get('/admin/items/create?back='.urlencode(url('/admin/items?page=2')))
-            ->assertSee(url('/admin/items?page=2'), false);
+        $this->put("/admin/items/{$p->id}", $form + ['back' => 'javascript:alert(1)'])
+            ->assertRedirect(route('admin.products.index'));
+        $this->put("/admin/items/{$p->id}", $form + ['back' => url('/admin/items?page=2')])
+            ->assertRedirect(url('/admin/items?page=2'));
     }
 
     public function test_csv_export_defuses_spreadsheet_formulas(): void

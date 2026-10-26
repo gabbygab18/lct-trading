@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
 use Throwable;
 
 class SettingController extends Controller
@@ -37,7 +38,14 @@ class SettingController extends Controller
 
     public function edit()
     {
-        return view('admin.settings.edit', ['settings' => Setting::map(), 'mail' => self::mailStatus()]);
+        $settings = Setting::map();
+
+        return Inertia::render('settings', [
+            'title'    => 'Settings',
+            // Only the keys this form edits.
+            'settings' => array_intersect_key($settings, self::FIELDS),
+            'mail'     => self::mailStatus(),
+        ]);
     }
 
     /**

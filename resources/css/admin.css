@@ -1,0 +1,192 @@
+/* Admin (Inertia React): lct-stocks' theme, copied so the admin and lct-stocks
+   look and behave the same. Its own Tailwind build, separate from the shop's
+   app.css, because both name tokens like bg-card and text-muted-foreground. */
+@import '@fontsource/poppins/latin-400.css';
+@import '@fontsource/poppins/latin-500.css';
+@import '@fontsource/poppins/latin-600.css';
+@import '@fontsource/poppins/latin-700.css';
+@import './fonts.css';
+@import 'tailwindcss' source(none);
+
+@source '../js/admin';
+@source '../js/components/glint';
+@source '../js/icons';
+
+@plugin 'tailwindcss-animate';
+
+
+/* .light opts a subtree out of dark mode (e.g. the login card on a phone set to dark). */
+@custom-variant dark (&:where(.dark, .dark *):not(:where(.light, .light *)));
+
+/* inline: utilities read the token vars directly, so a nested .dark (sidebar, dark cards) re-themes them */
+@theme inline {
+    --font-sans:
+        'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --font-display: 'Satoshi', 'Poppins', ui-sans-serif, sans-serif;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+:root,
+.light {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(240, 4%, 11%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(240, 4%, 11%);
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(240, 4%, 11%);
+    --primary: #d7141a;
+    --primary-foreground: hsl(0, 0%, 100%);
+    --secondary: #f4f4f2;
+    --secondary-foreground: hsl(240, 4%, 11%);
+    --muted: #f4f4f2;
+    --muted-foreground: #55585c;
+    --accent: #f4f4f2;
+    --accent-foreground: hsl(240, 4%, 11%);
+    --destructive: #d7141a;
+    --destructive-foreground: hsl(0, 0%, 98%);
+    --border: #e2e2e0;
+    --input: #c7c9cc;
+    --ring: #d7141a;
+    --chart-1: hsl(12, 76%, 61%);
+    --chart-2: hsl(173, 58%, 39%);
+    --chart-3: hsl(197, 37%, 24%);
+    --chart-4: hsl(43, 74%, 66%);
+    --chart-5: hsl(27, 87%, 67%);
+    --radius: 0.875rem;
+    --sidebar-background: hsl(0, 0%, 98%);
+    --sidebar-foreground: hsl(240, 5.3%, 30%);
+    --sidebar-primary: hsl(0, 0%, 10%);
+    --sidebar-primary-foreground: hsl(0, 0%, 98%);
+    --sidebar-accent: hsl(0, 0%, 94%);
+    --sidebar-accent-foreground: hsl(0, 0%, 30%);
+    --sidebar-border: hsl(0, 0%, 91%);
+    --sidebar-ring: hsl(217.2, 91.2%, 59.8%);
+}
+
+.dark {
+    --background: #1b1b1d;
+    --foreground: hsl(0, 0%, 98%);
+    --card: #202023;
+    --card-foreground: hsl(0, 0%, 98%);
+    --popover: #202023;
+    --popover-foreground: hsl(0, 0%, 98%);
+    --primary: #e5383e;
+    --primary-foreground: hsl(0, 0%, 100%);
+    --secondary: #2d2d31;
+    --secondary-foreground: hsl(0, 0%, 98%);
+    --muted: #2d2d31;
+    --muted-foreground: #a8abaf;
+    --accent: #2d2d31;
+    --accent-foreground: hsl(0, 0%, 98%);
+    --destructive: hsl(0, 84%, 60%);
+    --destructive-foreground: hsl(0, 0%, 98%);
+    --border: #3a3c3f;
+    --input: #3a3c3f;
+    --ring: #e5383e;
+    --chart-1: hsl(220, 70%, 50%);
+    --chart-2: hsl(160, 60%, 45%);
+    --chart-3: hsl(30, 80%, 55%);
+    --chart-4: hsl(280, 65%, 60%);
+    --chart-5: hsl(340, 75%, 55%);
+    --sidebar-background: hsl(0, 0%, 7%);
+    --sidebar-foreground: hsl(0, 0%, 80%);
+    --sidebar-primary: hsl(360, 100%, 100%);
+    --sidebar-primary-foreground: hsl(0, 0%, 100%);
+    --sidebar-accent: hsl(0, 0%, 15.9%);
+    --sidebar-accent-foreground: hsl(240, 4.8%, 95.9%);
+    --sidebar-border: hsl(0, 0%, 15.9%);
+    --sidebar-ring: hsl(217.2, 91.2%, 59.8%);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    /* lcttrading.com sets headings and table headers in Satoshi with tight tracking. */
+    h1,
+    h2,
+    h3,
+    th {
+        font-family: 'Satoshi', 'Poppins', ui-sans-serif, sans-serif;
+        letter-spacing: -0.02em;
+    }
+}
+
+/* iOS Safari zooms the page when a focused field is under 16px, which pushed the record dialog off-screen. */
+@media (pointer: coarse) {
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}

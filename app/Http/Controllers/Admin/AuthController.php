@@ -15,7 +15,7 @@ class AuthController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        return view('admin.auth.login');
+        return \Inertia\Inertia::render('auth/login', ['title' => 'Log in']);
     }
 
     public function login(Request $request): RedirectResponse

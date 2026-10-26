@@ -4,6 +4,9 @@
 @import './fonts.css';
 @import './boxicons-subset.css';
 @import 'tailwindcss';
+@source not '../js/admin';
+@source not '../js/components/glint';
+@source not '../js/icons';
 @import './site.css';
 
 /* The registry components' dark: styles follow html.dark, not the OS setting,
@@ -162,8 +165,7 @@
     /* Buttons read like elnovian's: Poppins semibold, sentence case, even
        where a shop button also carries .stamp. */
     .sx-btn,
-    .sx-btn.stamp,
-    .a-btn {
+    .sx-btn.stamp {
         font-family: var(--font-sans);
         font-weight: 600;
         letter-spacing: -0.01em;
@@ -933,162 +935,6 @@
         color: var(--color-steel-50);
         font-weight: 600;
     }
-}
-
-/* ---------- Admin (Blade). Light work surface, foam chrome. ---------- */
-@layer components {
-    .a-surface {
-        background: var(--color-steel-100);
-        color: var(--color-ink);
-        color-scheme: light;
-    }
-    .a-card {
-        background: #fff;
-        border-radius: 6px;
-        box-shadow: 0 0 0 1px rgb(27 27 29 / 0.08), 0 2px 6px -2px rgb(27 27 29 / 0.12);
-    }
-    .a-label {
-        display: block;
-        margin-bottom: 0.35rem;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--color-steel-800);
-    }
-    .a-input {
-        width: 100%;
-        height: 2.6rem;
-        padding: 0 0.75rem;
-        border-radius: 4px;
-        background: #fff;
-        color: var(--color-ink);
-        font-size: 15px;
-        box-shadow: inset 0 0 0 1px var(--color-steel-400), inset 0 1px 2px rgb(0 0 0 / 0.06);
-        outline: none;
-    }
-    textarea.a-input {
-        height: auto;
-        padding: 0.6rem 0.75rem;
-    }
-    .a-input:focus-visible {
-        box-shadow: inset 0 0 0 2px var(--color-signal);
-    }
-    .a-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.4rem;
-        height: 2.5rem;
-        padding: 0 1rem;
-        border-radius: 4px;
-        font-family: var(--font-sans);
-        font-weight: 600;
-        font-size: 14px;
-        letter-spacing: -0.01em;
-        white-space: nowrap;
-        cursor: pointer;
-        transition: background-color 120ms;
-    }
-    .a-btn-primary {
-        background: var(--color-signal);
-        color: #fff;
-    }
-    .a-btn-primary:hover {
-        background: var(--color-signal-600);
-    }
-    .a-btn-ghost {
-        color: var(--color-ink);
-        box-shadow: inset 0 0 0 1px var(--color-steel-400);
-        background: #fff;
-    }
-    .a-btn-ghost:hover {
-        background: var(--color-steel-200);
-    }
-    .a-btn-sm {
-        height: 2rem;
-        padding: 0 0.7rem;
-        font-size: 13.5px;
-    }
-    /* File inputs: the browser's "Choose File" styled as a ghost button, the
-       chosen file name beside it in a dashed drop box. */
-    .a-file {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        border: 1.5px dashed var(--color-steel-400);
-        border-radius: 6px;
-        background: #fff;
-        color: var(--color-steel-700);
-        font-size: 14px;
-        cursor: pointer;
-        transition: border-color 0.15s, background 0.15s;
-    }
-    .a-file:hover,
-    .a-file:focus-visible {
-        border-color: var(--color-signal);
-        background: var(--color-steel-100);
-        outline: none;
-    }
-    .a-file::file-selector-button {
-        height: 2.25rem;
-        margin-right: 12px;
-        padding: 0 1rem;
-        border: 0;
-        border-radius: 4px;
-        background: var(--color-ink);
-        color: #fff;
-        font-family: var(--font-sans);
-        font-weight: 600;
-        font-size: 14px;
-        cursor: pointer;
-        transition: background 0.15s;
-    }
-    .a-file:hover::file-selector-button {
-        background: var(--color-signal);
-    }
-    .a-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 14px;
-    }
-    .a-table th {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-        background: var(--color-foam-800);
-        color: var(--color-steel-200);
-        font-family: var(--font-cond);
-        font-weight: 700;
-        font-size: 12.5px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        text-align: left;
-        padding: 0.6rem 0.75rem;
-        white-space: nowrap;
-    }
-    .a-table td {
-        padding: 0.55rem 0.75rem;
-        border-bottom: 1px solid var(--color-steel-200);
-        vertical-align: middle;
-    }
-    .a-table tr:hover td {
-        background: var(--color-steel-50);
-    }
-    .a-pill {
-        display: inline-block;
-        padding: 0.1rem 0.5rem;
-        border-radius: 3px;
-        font-family: var(--font-cond);
-        font-weight: 700;
-        font-size: 12.5px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-    }
-    .a-pill-pending { background: #fde7c2; color: #7a4a00; }
-    .a-pill-confirmed { background: #d6e6ff; color: #173e7a; }
-    .a-pill-completed { background: #d5f0dc; color: #1b5a2c; }
-    .a-pill-cancelled { background: var(--color-steel-200); color: var(--color-steel-800); }
-    .a-pill-low { background: var(--color-signal-soft); color: var(--color-signal-700); }
-    .a-pill-sample { background: var(--color-steel-200); color: var(--color-steel-800); }
 }
 
 @keyframes flash-red {

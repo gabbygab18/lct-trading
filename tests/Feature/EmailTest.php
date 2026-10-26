@@ -71,7 +71,8 @@ class EmailTest extends TestCase
     public function test_admin_can_send_a_test_email_and_sees_smtp_errors(): void
     {
         $this->actingAs(User::factory()->create())
-            ->get(route('admin.settings.edit'))->assertOk()->assertSee('Send a test email to');
+            ->get(route('admin.settings.edit'))->assertOk()
+            ->assertInertia(fn ($page) => $page->component('settings')->has('mail.mailer'));
 
         // Working mailer: success message.
         $this->from(route('admin.settings.edit'))->post(route('admin.settings.test-email'), ['to' => 'gab@example.com'])

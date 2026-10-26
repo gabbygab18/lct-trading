@@ -11,8 +11,35 @@ class HandleInertiaRequests extends Middleware
 {
     protected $rootView = 'app';
 
+    /** The admin is its own React app (lct-stocks' look), with its own page shell. */
+    public function rootView(Request $request): string
+    {
+        return $this->isAdmin($request) ? 'admin.app' : $this->rootView;
+    }
+
+    private function isAdmin(Request $request): bool
+    {
+        return $request->is('admin', 'admin/*');
+    }
+
     public function share(Request $request): array
     {
+        if ($this->isAdmin($request)) {
+            return array_merge(parent::share($request), [
+                'auth' => ['user' => $request->user()?->only('id', 'name', 'email')],
+                'flash' => [
+                    'success' => fn () => $request->session()->get('success'),
+                    'error'   => fn () => $request->session()->get('error'),
+                ],
+                // Sidebar badges: orders to confirm, inquiries not yet opened.
+                'counts' => fn () => $request->user() ? [
+                    'orders'    => \App\Models\Order::where('status', 'pending')->count(),
+                    'inquiries' => \App\Models\Inquiry::where('is_read', false)->count(),
+                ] : null,
+                'shopUrl' => route('catalog'),
+            ]);
+        }
+
         $settings = Setting::map();
 
         return array_merge(parent::share($request), [
