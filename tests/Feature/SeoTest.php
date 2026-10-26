@@ -10,6 +10,18 @@ class SeoTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_www_and_http_move_to_the_one_canonical_address(): void
+    {
+        config(['app.url' => 'https://lcttrading.com']);
+        $this->app['env'] = 'production';
+
+        $this->get('http://www.lcttrading.com/brands/champ?page=2')->assertStatus(301)
+            ->assertRedirect('https://lcttrading.com/brands/champ?page=2');
+        $this->get('http://lcttrading.com/')->assertStatus(301)->assertRedirect('https://lcttrading.com/');
+        $this->get('https://lcttrading.com/how-to-order')->assertOk();
+        $this->assertNotSame(301, $this->post('http://www.lcttrading.com/checkout')->status()); // posts are never redirected
+    }
+
     public function test_crawlers_get_real_html_schema_sitemap_and_ai_files(): void
     {
         Product::create(['sku' => 'CH-PAINT-BRUSH-1-2', 'name' => 'Champ Paint Brush 1/2"', 'brand' => 'Champ', 'category' => 'Paint & Adhesives', 'price' => 14, 'stock' => 20]);

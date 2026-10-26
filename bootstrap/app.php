@@ -26,6 +26,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
         ]);
+        // After TrustProxies, so https through Cloudflare counts as https.
+        $middleware->append(\App\Http\Middleware\CanonicalHost::class);
         $middleware->append(\App\Http\Middleware\SecurityHeaders::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
