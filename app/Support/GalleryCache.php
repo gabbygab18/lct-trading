@@ -85,7 +85,13 @@ class GalleryCache
         foreach ($sources as $src) {
             $res = $responses[$src] ?? null;
             if ($res instanceof \Illuminate\Http\Client\Response && $res->successful() && str_starts_with((string) $res->header('Content-Type'), 'image/')) {
-                file_put_contents(public_path($local[$src]), $res->body());
+                $file = public_path($local[$src]);
+                file_put_contents($file, $res->body());
+                // The feed's photos come at full quality; saved smaller like the rest.
+                $small = Photo::encode($file, 'webp', 900);
+                if ($small !== null && strlen($small) < filesize($file)) {
+                    file_put_contents($file, $small);
+                }
             }
         }
     }
