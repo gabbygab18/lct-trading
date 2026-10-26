@@ -40,7 +40,7 @@ def webp(name):
             bg.paste(im, mask=im.getchannel("A"))
             im = bg
         im.thumbnail((600, 600), Image.LANCZOS)
-        im.save(dest, quality=84, method=6)
+        im.save(dest, quality=75, method=6)
     return dest.name
 
 

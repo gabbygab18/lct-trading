@@ -21,12 +21,16 @@ class GalleryTest extends TestCase
 
         $this->actingAs(User::factory()->create())
             ->put(route('admin.products.update', $p), $form + [
-                'photos' => [UploadedFile::fake()->image('a.jpg'), UploadedFile::fake()->image('b.jpg')],
+                'photos' => [UploadedFile::fake()->image('a.jpg', 3000, 2000), UploadedFile::fake()->image('b.jpg')],
             ])->assertSessionHasNoErrors();
 
         $gallery = $p->fresh()->ownGallery();
         $this->assertCount(2, $gallery);
         Storage::disk('public')->assertExists($gallery);
+
+        // A phone-sized photo is saved as a 1200px WebP.
+        $this->assertStringEndsWith('.webp', $gallery[0]);
+        $this->assertSame([1200, 800], array_slice(getimagesizefromstring(Storage::disk('public')->get($gallery[0])), 0, 2));
 
         // The item page lists them after the main photo (none here, so just the two).
         $this->get('/shop/FB-1212')->assertInertia(fn ($page) => $page->has('product.gallery', 2));

@@ -46,7 +46,7 @@ for f in sorted(glob.glob(str(SRC / "*.*"))):
     canvas = Image.new("RGB", (side, side), "white")
     canvas.paste(im, ((side - im.width) // 2, (side - im.height) // 2))
     canvas = canvas.resize((800, 800), Image.LANCZOS)
-    canvas.save(DEST / f"{base}.webp", quality=86, method=6)
+    canvas.save(DEST / f"{base}.webp", quality=75, method=6)
     done += 1
 
 print(f"installed {done} HD photos")

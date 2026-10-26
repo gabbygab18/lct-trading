@@ -8,8 +8,11 @@ use App\Models\Product;
 use App\Support\ItemImporter;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Throwable;
 
@@ -30,9 +33,23 @@ class ProductController extends Controller
             ->paginate(50)
             ->withQueryString();
 
-        return view('admin.products.index', [
-            'products'  => $products,
-            'filters'   => $filters,
+        return Inertia::render('items/index', [
+            'title'     => 'Items',
+            'products'  => $products->through(fn (Product $p) => [
+                'id'               => $p->id,
+                'sku'              => $p->sku,
+                'name'             => $p->name,
+                'brand'            => $p->brand,
+                'category'         => $p->category,
+                'price'            => (float) $p->price,
+                'discount_percent' => (float) $p->discount_percent,
+                'sale_price'       => $p->salePrice(),
+                'stock'            => $p->stock,
+                'is_active'        => (bool) $p->is_active,
+                'is_placeholder'   => (bool) $p->is_placeholder,
+                'image_url'        => $p->image_url,
+            ]),
+            'filters'   => (object) $filters,
             'brands'    => Product::query()->distinct()->orderBy('brand')->pluck('brand'),
             'threshold' => Product::lowStockThreshold(),
         ]);
@@ -40,7 +57,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('admin.products.create', ['categories' => $this->categories()]);
+        return $this->form(null);
     }
 
     public function store(Request $request): RedirectResponse
@@ -53,7 +70,7 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('admin.products.edit', ['product' => $product, 'categories' => $this->categories()]);
+        return $this->form($product);
     }
 
     public function update(Request $request, Product $product): RedirectResponse
@@ -91,14 +108,17 @@ class ProductController extends Controller
         }
         $product->delete();
 
-        return back()->with('success', "{$product->sku} removed. Past orders keep their copy of the line.");
+        return redirect()->route('admin.products.index')->with('success', "{$product->sku} removed. Past orders keep their copy of the line.");
     }
 
     public function importForm()
     {
-        return view('admin.products.import', [
-            'placeholders' => Product::where('is_placeholder', true)->count(),
-            'maxMb' => $this->maxUploadKb() / 1024,
+        return Inertia::render('items/import', [
+            'title'            => 'Excel / CSV upload',
+            'placeholders'     => Product::where('is_placeholder', true)->count(),
+            'maxMb'            => $this->maxUploadKb() / 1024,
+            'importErrors'     => session('import_errors'),
+            'importErrorCount' => (int) session('import_error_count', 0),
         ]);
     }
 
@@ -206,9 +226,7 @@ class ProductController extends Controller
             if ($product && str_starts_with((string) $product->image, 'uploads/')) {
                 Storage::disk('public')->delete($product->image);
             }
-            $data['image'] = $request->hasFile('photo')
-                ? $request->file('photo')->store('uploads/products', 'public')
-                : null;
+            $data['image'] = $request->hasFile('photo') ? self::savePhoto($request->file('photo')) : null;
         }
         // Extra photos: keep the ones not ticked for removal, then add new uploads.
         if ($request->hasFile('photos') || $request->filled('remove_gallery')) {
@@ -224,13 +242,78 @@ class ProductController extends Controller
                 $keep[] = $g;
             }
             foreach ((array) $request->file('photos', []) as $file) {
-                $keep[] = $file->store('uploads/products', 'public');
+                $keep[] = self::savePhoto($file);
             }
             $data['gallery'] = $keep ?: null;
         }
         unset($data['photo'], $data['remove_photo'], $data['photos'], $data['remove_gallery']);
 
         return $data;
+    }
+
+    /**
+     * Phone photos run 2–4 MB. Saved as WebP no wider than 1200px they're
+     * around 100 KB and look the same on the shop. Falls back to the file as
+     * uploaded if GD can't read it.
+     */
+    private static function savePhoto(UploadedFile $file): string
+    {
+        $im = function_exists('imagewebp') ? @imagecreatefromstring((string) file_get_contents($file->getRealPath())) : false;
+        if (! $im) {
+            return $file->store('uploads/products', 'public');
+        }
+
+        // Phones store photos sideways plus a "turn me" flag that GD ignores.
+        $turn = function_exists('exif_read_data') ? (int) (@exif_read_data($file->getRealPath())['Orientation'] ?? 1) : 1;
+        $im = match ($turn) {
+            3 => imagerotate($im, 180, 0),
+            6 => imagerotate($im, -90, 0),
+            8 => imagerotate($im, 90, 0),
+            default => $im,
+        };
+        imagepalettetotruecolor($im);
+        [$w, $h] = [imagesx($im), imagesy($im)];
+        if (max($w, $h) > 1200) {
+            $im = imagescale($im, $w >= $h ? 1200 : (int) round(1200 * $w / $h));
+        }
+        imagealphablending($im, false);
+        imagesavealpha($im, true);
+
+        ob_start();
+        imagewebp($im, null, 75);
+        $path = 'uploads/products/'.Str::random(40).'.webp';
+        Storage::disk('public')->put($path, ob_get_clean());
+
+        return $path;
+    }
+
+    /** Add and edit share one React page. */
+    private function form(?Product $product)
+    {
+        return Inertia::render('items/form', [
+            'title'      => $product ? $product->sku : 'Add item',
+            'product'    => $product ? [
+                'id'               => $product->id,
+                'sku'              => $product->sku,
+                'name'             => $product->name,
+                'brand'            => $product->brand,
+                'category'         => $product->category,
+                'price'            => (float) $product->price,
+                'discount_percent' => (float) $product->discount_percent,
+                'stock'            => $product->stock,
+                'description'      => $product->description,
+                'is_active'        => (bool) $product->is_active,
+                'image'            => $product->image,
+                'image_url'        => $product->image_url,
+                'gallery'          => array_map(fn ($g) => ['path' => $g, 'url' => Product::photoUrl($g)], $product->ownGallery()),
+                'changed'          => $product->is_placeholder
+                    ? 'Sample item. Saving it makes it one of LCT’s own.'
+                    : 'Last changed '.$product->updated_at->timezone('Asia/Manila')->diffForHumans(),
+            ] : null,
+            'categories' => $this->categories(),
+            'brands'     => array_values(array_unique([...config('catalog.priority_brands'), ...Product::query()->distinct()->orderBy('brand')->pluck('brand')->all()])),
+            'back'       => request('back'),
+        ]);
     }
 
     private function categories()
