@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Setting;
-use App\Support\GalleryCache;
+use App\Support\Gallery;
 use App\Support\SafeHtml;
 use App\Support\Seo;
 use Illuminate\Http\Request;
@@ -270,7 +270,7 @@ class CatalogController extends Controller
                 // Items without their own text get the plain summary, so the page
                 // (and what crawlers read) always says what it is and how to get it.
                 'description' => SafeHtml::description($product->description) ?: '<p>'.e(Seo::productSummary($product)).'</p>',
-                'gallery'     => GalleryCache::urls($product),
+                'gallery'     => Gallery::urls($product),
                 // Keep "LED Bulb" as printed; only tidy all-lowercase ones ("breaker panel").
                 'type'        => $product->type ? ($product->type === Str::lower($product->type) ? Str::title($product->type) : $product->type) : null,
                 'tags'        => array_values((array) $product->tags),

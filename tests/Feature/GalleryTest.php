@@ -42,6 +42,18 @@ class GalleryTest extends TestCase
         File::deleteDirectory($tmp);
     }
 
+    public function test_feed_photos_come_from_the_cdn_sized_down(): void
+    {
+        $urls = array_map(fn ($i) => "https://cdn.shopify.com/s/files/p{$i}.jpg?v=1", range(1, 7));
+        Product::create(['sku' => 'HM-01', 'name' => 'Hammer', 'brand' => 'Ingco', 'price' => 300, 'stock' => 3, 'is_active' => true,
+            'is_placeholder' => true, 'gallery' => ['https://elsewhere.example/x.jpg', ...$urls]]);
+
+        // At most five, other hosts left out, and nothing is downloaded to the server any more.
+        $this->get('/shop/HM-01')->assertInertia(fn ($page) => $page
+            ->has('product.gallery', 5)
+            ->where('product.gallery.0', 'https://cdn.shopify.com/s/files/p1.jpg?v=1&width=700'));
+    }
+
     public function test_admin_adds_and_removes_extra_photos(): void
     {
         Storage::fake('public');
