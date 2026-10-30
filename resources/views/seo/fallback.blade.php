@@ -19,6 +19,19 @@
     </nav>
 
     @switch($page['component'])
+        @case('Privacy')
+            <h1>Privacy policy</h1>
+            <p>Last updated {{ $p['updated'] }}</p>
+            @foreach ($p['sections'] as [$title, $paragraphs])
+                <h2>{{ $title }}</h2>
+                @foreach ($paragraphs as $text)
+                    <p>{{ $text }}</p>
+                @endforeach
+            @endforeach
+            <h2>Contact us</h2>
+            <p>{{ $p['settings']['email'] ?? '' }} {{ $p['settings']['phone'] ?? '' }}</p>
+            @break
+
         @case('Home')
             <h1>Tools and hardware, ordered in minutes.</h1>
             <p>{{ number_format($p['stats']['items']) }} items from {{ $p['stats']['brands'] }} brands. Find it by SKU, see the price and stock, send the order. LCT Trading confirms by phone; pay cash on delivery or by bank deposit.</p>

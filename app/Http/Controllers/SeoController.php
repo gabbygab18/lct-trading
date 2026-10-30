@@ -16,7 +16,7 @@ class SeoController extends Controller
         $xml = Cache::remember(Product::cacheKey('sitemap:'.config('app.url')), 86400, function () {
             $urls = [
                 [route('home'), 'daily'], [route('catalog'), 'daily'],
-                [route('how-to-order'), 'monthly'], [route('contact'), 'monthly'],
+                [route('how-to-order'), 'monthly'], [route('contact'), 'monthly'], [route('privacy'), 'yearly'],
             ];
             foreach (CatalogController::brands() as $b) {
                 $urls[] = [route('brand', Str::slug($b['name'])), 'weekly'];

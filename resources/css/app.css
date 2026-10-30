@@ -1172,6 +1172,12 @@
     from { opacity: 0; transform: translateY(-6px); }
 }
 
+/* ---- Privacy policy: the prose, dark on the white section ---- */
+.el-site .lct-privacy .lct-prose { color: var(--color-steel-700); }
+.el-site .lct-privacy .lct-prose h3 { color: #1b1b1d; }
+.el-site .lct-privacy .lct-prose h3:first-child { margin-top: 0; }
+.el-site .lct-privacy .lct-prose a { color: var(--color-signal); text-decoration: underline; }
+
 /* ---- CTA before the footer ---- */
 /* Photos on Unsplash: Jelleke Vanooteghem (store wall), Guilherme Mendes (boxes),
    Oxana Melis (fittings shelf). Photo and tint are set per page. */

@@ -69,6 +69,7 @@ class HandleInertiaRequests extends Middleware
                 'catalog'  => route('catalog'),
                 'howTo'    => route('how-to-order'),
                 'contact'  => route('contact'),
+                'privacy'  => route('privacy'),
                 'checkout' => route('checkout'),
                 'orders'   => route('orders.store'),
                 'inquiries' => route('inquiries.store'),

@@ -84,7 +84,9 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <span>© {new Date().getFullYear()} LCT Trading. All rights reserved.</span>
+                    <span>
+                        © {new Date().getFullYear()} LCT Trading. All rights reserved. · <Link href={routes.privacy}>Privacy</Link>
+                    </span>
                     <span className="tag">Order requests are confirmed by phone. Nothing is charged online.</span>
                 </div>
             </div>

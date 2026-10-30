@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/how-to-order', [HomeController::class, 'howToOrder'])->name('how-to-order');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 Route::get('/shop', [CatalogController::class, 'index'])->middleware('throttle:240,1')->name('catalog');
 Route::get('/brands/{slug}', [CatalogController::class, 'brand'])->name('brand');
 Route::get('/categories/{slug}', [CatalogController::class, 'category'])->name('category');
